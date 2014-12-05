@@ -48,6 +48,16 @@
                 </div>
             </li>
         </ol>
+        <div itemscope itemtype="http://schema.org/Person">
+            <a itemprop="url" href="http://www.eduardocruz.com">
+                <div itemprop="name"><strong>Eduardo Cruz</strong></div>
+            </a>
+        <div>
+            <meta itemprop="birthDate" content="1975-03-22">
+                DOB: 03/22/1975
+            </div>
+        </div>
     </div>
 </div>
+
 @stop
