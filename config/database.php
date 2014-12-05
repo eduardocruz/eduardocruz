@@ -54,7 +54,7 @@ return [
 
 		'mysql' => [
 			'driver'    => 'mysql',
-			'host'      => $_ENV["DB_HOST"],
+			'host'      => 'localhost',
 			'database'  => $_ENV["DB_NAME"],
 			'username'  => $_ENV["DB_USER"],
 			'password'  => $_ENV["DB_PASSWORD"],
