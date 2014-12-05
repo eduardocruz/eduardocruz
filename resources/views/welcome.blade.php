@@ -7,10 +7,7 @@
             <h1 class="jumbotron__header">EduardoCruz.com</h1>
 
             <p class="jumbotron__body">
-                Laravel is a web application framework with expressive, elegant syntax. We believe development
-                must be an enjoyable, creative experience. Enjoy the fresh air.
-                + ENV 1 {{App::environment()}}
-                + ENV 2 {{var_dump($_ENV['DB_NAME'])}}
+                Bem-vind@ ao meu site pessoal.
             </p>
         </div>
     </div>
@@ -19,27 +16,18 @@
         <ol class="steps">
             <li class="steps__item">
                 <div class="body">
-                    <h2>Go Exploring</h2>
-
+                    <h2>Currículo</h2>
                     <p>
-                        Review <code>app/Http/routes.php</code> to learn how HTTP requests are
-                        routed to controllers.
-                    </p>
-
-                    <p>
-                        We've included simple login and registration screens to get you started.
+                        Meu currículo.
                     </p>
                 </div>
             </li>
-
             <li class="steps__item">
                 <div class="body">
-                    <h2>Master Your Craft</h2>
-
+                    <h2>Blog/Notícias</h2>
                     <p>
-                        Ready to keep learning more about Laravel? Start here:
+                        Onde publico
                     </p>
-
                     <ul>
                         <li><a href="http://laravel.com/docs">Laravel Documentation</a></li>
                         <li><a href="https://laracasts.com">Laravel 5 From Scratch (via Laracasts)</a></li>
@@ -49,10 +37,9 @@
 
             <li class="steps__item">
                 <div class="body">
-                    <h2>Forge Ahead</h2>
-
+                    <h2>Projetos</h2>
                     <p>
-                        When you're finished building your application, Laravel still has your back. Check out <a href="https://forge.laravel.com">Laravel Forge</a>.
+                        Conheça alguns projetos.
                     </p>
                 </div>
             </li>
