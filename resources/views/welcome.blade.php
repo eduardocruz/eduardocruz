@@ -9,7 +9,8 @@
             <p class="jumbotron__body">
                 Laravel is a web application framework with expressive, elegant syntax. We believe development
                 must be an enjoyable, creative experience. Enjoy the fresh air.
-                ENV {{App::environment()}}
+                + ENV 1 {{App::environment()}}
+                + ENV 2 {{var_dump($_ENV['DB_NAME'])}}
             </p>
         </div>
     </div>
