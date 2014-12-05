@@ -19,7 +19,7 @@
                 <div class="body">
                     <h2>Blog</h2>
                     <p>
-                        <a href="http://blog.eduardocruz.com">Blog.EduardoCruz.com</a>
+                        <a href="http://blog.eduardocruz.com">http://blog.EduardoCruz.com</a>
                     </p>
                 </div>
             </li>
@@ -43,7 +43,7 @@
                 <div class="body">
                     <h2>Currículo</h2>
                     <p>
-                        <a href="http://resume.eduardocruz.com">Resume.EduardoCruz.com</a>
+                        <a href="http://resume.eduardocruz.com">http://resume.EduardoCruz.com</a>
                     </p>
                 </div>
             </li>
