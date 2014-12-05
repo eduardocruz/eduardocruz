@@ -14,32 +14,36 @@
 
     <div class="container">
         <ol class="steps">
-            <li class="steps__item">
-                <div class="body">
-                    <h2>Currículo</h2>
-                    <p>
-                        Meu currículo.
-                    </p>
-                </div>
-            </li>
-            <li class="steps__item">
-                <div class="body">
-                    <h2>Blog/Notícias</h2>
-                    <p>
-                        Onde publico
-                    </p>
-                    <ul>
-                        <li><a href="http://laravel.com/docs">Laravel Documentation</a></li>
-                        <li><a href="https://laracasts.com">Laravel 5 From Scratch (via Laracasts)</a></li>
-                    </ul>
-                </div>
-            </li>
 
+            <li class="steps__item">
+                <div class="body">
+                    <h2>Blog</h2>
+                    <p>
+                        <a href="http://blog.eduardocruz.com">Blog.EduardoCruz.com</a>
+                    </p>
+                </div>
+            </li>
             <li class="steps__item">
                 <div class="body">
                     <h2>Projetos</h2>
                     <p>
                         Conheça alguns projetos.
+                    </p>
+                    <ul>
+                        <li><a href="https://github.com/eduardocruz">https://github.com/eduardocruz</a></li>
+                        <li><a href="https://github.com/ReusoFafire2014">https://github.com/ReusoFafire2014</a></li>
+                        <li><a href="https://github.com/PoliticaColaborativa">https://github.com/PoliticaColaborativa</a></li>
+                        <li><a href="https://github.com/MySkills">https://github.com/MySkills</a></li>
+                        <li><a href="https://github.com/246Apps">https://github.com/246Apps</a></li>
+                        <li><a href="https://github.com/RiSE">https://github.com/RiSE</a></li>
+                    </ul>
+                </div>
+            </li>
+            <li class="steps__item">
+                <div class="body">
+                    <h2>Currículo</h2>
+                    <p>
+                        <a href="http://resume.eduardocruz.com">Resume.EduardoCruz.com</a>
                     </p>
                 </div>
             </li>
