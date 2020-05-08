@@ -13,11 +13,11 @@ class SparkServiceProvider extends ServiceProvider
      * @var array
      */
     protected $details = [
-        'vendor' => 'Your Company',
-        'product' => 'Your Product',
-        'street' => 'PO Box 111',
-        'location' => 'Your Town, NY 12345',
-        'phone' => '555-555-5555',
+        'vendor' => 'EduardoCruz.com',
+        'product' => 'EduardoCruz.com',
+        //'street' => 'Rua Real da Torre',
+        'location' => 'Recife, PE, Brazil',
+        //'phone' => '555-555-5555',
     ];
 
     /**
@@ -25,7 +25,7 @@ class SparkServiceProvider extends ServiceProvider
      *
      * @var string
      */
-    protected $sendSupportEmailsTo = null;
+    protected $sendSupportEmailsTo = 'eduardo@eduardocruz.com';
 
     /**
      * All of the application developer e-mail addresses.
@@ -33,7 +33,7 @@ class SparkServiceProvider extends ServiceProvider
      * @var array
      */
     protected $developers = [
-        //
+        'eduardo@eduardocruz.com'
     ];
 
     /**
@@ -50,17 +50,14 @@ class SparkServiceProvider extends ServiceProvider
      */
     public function booted()
     {
-        Spark::noCardUpFront()->trialDays(10);
+        //Spark::noCardUpFront()->trialDays(10);
 
-        Spark::freePlan()
-            ->features([
-                'First', 'Second', 'Third'
-            ]);
+        Spark::freePlan('Fila de Espera')->features(['Inscreva-se e aguarde novas vagas']);
 
-        Spark::plan('Basic', 'provider-id-1')
-            ->price(10)
+        Spark::plan('Mensal', 'plan_HF9ozhVlP1Pgyg')
+            ->price(21.67)
             ->features([
-                'First', 'Second', 'Third'
+                'Aulas semanais ao vivo.', 'Acesso a gravação das aulas semanais.', 'Acesso a lives antigas.'
             ]);
     }
 
