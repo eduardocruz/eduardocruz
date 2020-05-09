@@ -7,14 +7,16 @@
         <div class="row justify-content-center">
             <div class="col-md-8">
                 <div class="card card-default">
-                    <div class="card-header">{{__('Dashboard')}}</div>
+                    <div class="card-header">Stripe Connect</div>
 
                     <div class="card-body">
-                        {{-- __('Your application\'s dashboard.') --}}
-                           
-                        <a href="https://dashboard.stripe.com/oauth/authorize?response_type=code&client_id=ca_FaRrwPcmvdiQM9JQryYgXTxetNRy2BBI&scope=read_write">
-                            <img src="/images/connect-with-stripe.png" alt="">
-                        </a>
+
+                        @isset($message)
+                        <h3>{{$message}}</h3>
+                        @endif
+                        @isset($error_description)
+                        <h4>{{$error_description}}</h4>
+                        @endif
                     </div>
                 </div>
             </div>
