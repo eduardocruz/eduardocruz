@@ -52,7 +52,7 @@ class SparkServiceProvider extends ServiceProvider
     {
         //Spark::noCardUpFront()->trialDays(10);
 
-        Spark::freePlan('Fila de Espera')->features(['Inscreva-se e aguarde novas vagas']);
+        //Spark::freePlan('Fila de Espera')->features(['Inscreva-se e aguarde novas vagas']);
 
         Spark::plan('Mensal', 'plan_HF9ozhVlP1Pgyg')
             ->price(21.67)
