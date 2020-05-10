@@ -3,8 +3,11 @@
 namespace App\Nova;
 
 use Illuminate\Http\Request;
+use Laravel\Nova\Fields\DateTime;
 use Laravel\Nova\Fields\ID;
+use Laravel\Nova\Fields\Number;
 use Laravel\Nova\Fields\Text;
+use Laravel\Nova\Fields\Textarea;
 use Laravel\Nova\Http\Requests\NovaRequest;
 
 class Video extends Resource
@@ -42,10 +45,15 @@ class Video extends Resource
     {
         return [
             ID::make()->sortable(),
-            Text::make('Name')->sortable(),
-            Text::make('Summary')->sortable(),
-            Text::make('video_url')->sortable(),
-            Text::make('image_url')->sortable(),
+            Text::make('Title')->sortable(),
+            Text::make('Summary')->sortable()->hideFromIndex(),
+            Textarea::make('Description')->sortable(),
+            Text::make('Category')->sortable()->hideFromIndex(),
+            Text::make('video_url')->sortable()->hideFromIndex(),
+            Text::make('image_url')->sortable()->hideFromIndex(),
+            Number::make('Duration')->sortable(),
+            Text::make('Duration_String')->sortable(),
+            DateTime::make('Released_At')->sortable(),
         ];
     }
 
