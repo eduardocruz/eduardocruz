@@ -18,3 +18,5 @@ Route::get('/home', 'HomeController@show');
 Route::get('/connect', 'HomeController@connect');
 
 Route::get('/connected', 'HomeController@connected');
+
+Route::resource('videos', 'VideoController');

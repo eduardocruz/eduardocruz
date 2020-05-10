@@ -11,6 +11,10 @@
 
                     <div class="card-body">
                         {{-- __('Your application\'s dashboard.') --}}
+                        <p>
+                            <a href="/videos" class="btn btn-primary">Assistir Videos</a>
+                        </p>
+
                         @foreach($users as $user)
                             @isset($user->email)
                                 <img
