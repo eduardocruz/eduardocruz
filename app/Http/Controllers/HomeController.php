@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Video;
 use App\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Log;
@@ -29,8 +30,10 @@ class HomeController extends Controller
      */
     public function show()
     {
+        $video_count = Video::whereNotNull('video_url')->count();
+        $video_minutes = Video::whereNotNull('video_url')->sum('duration');
         $users = User::orderBy('created_at', 'desc')->get();
-        return view('home', compact('users'));
+        return view('home', compact('users', 'video_count', 'video_minutes'));
     }
 
 

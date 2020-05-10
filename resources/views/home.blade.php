@@ -7,7 +7,9 @@
         <div class="row justify-content-center">
             <div class="col-md-8">
                 <div class="card card-default">
-                    <div class="card-header">{{__('Dashboard')}}</div>
+                    <div class="card-header">{{__('Dashboard')}} -
+                        {{$video_minutes}} minutos en {{$video_count}} aulas para você ir para outro patamar profissional.
+                    </div>
 
                     <div class="card-body">
                         {{-- __('Your application\'s dashboard.') --}}
