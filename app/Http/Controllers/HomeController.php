@@ -33,6 +33,13 @@ class HomeController extends Controller
         return view('home', compact('users'));
     }
 
+
+    public function connect()
+    {
+        return view('connect');
+    }
+
+
     public function connected(Request $request)
     {
         Log::info('Stripe Connnect Result');

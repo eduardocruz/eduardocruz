@@ -15,4 +15,6 @@ Route::get('/', 'WelcomeController@show');
 
 Route::get('/home', 'HomeController@show');
 
+Route::get('/connect', 'HomeController@connect');
+
 Route::get('/connected', 'HomeController@connected');
