@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Log;
 
@@ -28,7 +29,8 @@ class HomeController extends Controller
      */
     public function show()
     {
-        return view('home');
+        $users = User::all();
+        return view('home', compact('users'));
     }
 
     public function connected(Request $request)
