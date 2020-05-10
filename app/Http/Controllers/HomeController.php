@@ -29,7 +29,7 @@ class HomeController extends Controller
      */
     public function show()
     {
-        $users = User::all();
+        $users = User::orderBy('created_at', 'desc')->get();
         return view('home', compact('users'));
     }
 
