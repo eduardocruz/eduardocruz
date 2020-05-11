@@ -19,20 +19,23 @@
 
 
                         @foreach($users as $user)
-                            @isset($user->email)
+                            @if(isset($user->photo_url))
+                                <img
+                                    src="{{$user->photo_url}}"
+                                    class="img-thumbnail rounded-circle rounded-full w-8 h-8 mr-3"
+                                />
+                            @else
                                 <img
                                     src="https://secure.gravatar.com/avatar/{{ md5(\Illuminate\Support\Str::lower($user->email)) }}?size=64"
                                     class="img-thumbnail rounded-circle rounded-full w-8 h-8 mr-3"
                                 />
-                            {{--
+                            @endif
+                        @endforeach
+                        {{--
                                 <span class="text-90">
                             {{ $user->name ?? $user->email ?? __('Nova User') }}
                             </span>
                             --}}
-                            @endisset
-
-
-                        @endforeach
                     </div>
                 </div>
             </div>
