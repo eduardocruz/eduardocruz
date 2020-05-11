@@ -16,7 +16,7 @@
 
                         <div class="col text-center">
                             <a href="https://us02web.zoom.us/j/85115327880" target="_blank" class="btn btn-primary">
-                                11/04 - https://us02web.zoom.us/j/85115327880
+                                11/05 - https://us02web.zoom.us/j/85115327880
                             </a>
                         </div>
 
