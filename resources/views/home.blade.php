@@ -8,14 +8,15 @@
             <div class="col-md-8">
                 <div class="card card-default">
                     <div class="card-header">{{__('Dashboard')}} -
-                        {{$video_minutes}} minutos en {{$video_count}} aulas para você ir para outro patamar profissional.
+                        {{floor($video_minutes/60)}} horas e {{$video_minutes%60}} minutos em {{$video_count}} aulas para você ir para outro patamar profissional.
                     </div>
 
                     <div class="card-body">
                         {{-- __('Your application\'s dashboard.') --}}
-                        <p>
-                            <a href="/videos" class="btn btn-primary">Assistir Videos</a>
-                        </p>
+                        <div class="col text-center">
+                                <a href="/videos" class="btn btn-primary">Assistir Videos Agora</a>
+                        </div>
+
 
                         @foreach($users as $user)
                             @isset($user->email)
