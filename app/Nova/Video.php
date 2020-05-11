@@ -32,7 +32,7 @@ class Video extends Resource
      * @var array
      */
     public static $search = [
-        'name',
+        'title',
     ];
 
     /**
