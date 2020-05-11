@@ -14,14 +14,14 @@
                     <div class="card-body">
                         {{-- __('Your application\'s dashboard.') --}}
                         <div class="col text-center">
-                                <a href="/videos" class="btn btn-primary mb-4">Assistir Videos</a>
+                                <a href="/videos" class="btn btn-primary">Assistir Videos</a>
                         </div>
 
                         @foreach($users as $user)
                             @isset($user->email)
                                 <img
                                     src="{{$user->photo_url}}"
-                                    class="img-thumbnail rounded-circle rounded-full w-8 h-8 mr-3"
+                                    class="img-thumbnail rounded-circle rounded-full w-8 h-8 mr-2 mt-2"
                                     width="100"
                                 />
                             {{--
