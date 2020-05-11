@@ -14,7 +14,7 @@
                     <div class="card-body">
                         {{-- __('Your application\'s dashboard.') --}}
                         <div class="col text-center">
-                                <a href="/videos" class="btn btn-primary">Assistir Videos Agora</a>
+                                <a href="/videos" class="btn btn-primary mb-4">Assistir Videos Agora</a>
                         </div>
 
 
