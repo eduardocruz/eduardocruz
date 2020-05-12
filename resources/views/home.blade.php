@@ -5,7 +5,7 @@
     <div class="container">
         <!-- Application Dashboard -->
         <div class="row justify-content-center">
-            <div class="col-md-10">
+            <div class="col-md-12">
                 <div class="card card-default">
                     <div class="card-header">{{__('Dashboard')}} -
                         {{floor($video_minutes/60)}} horas e {{$video_minutes%60}} minutos em {{$video_count}} aulas para você ir para outro patamar profissional.
@@ -24,7 +24,7 @@
                                 <img
                                     src="{{$user->photo_url}}"
                                     class="img-thumbnail rounded-circle rounded-full w-8 h-8 mr-2 mt-2"
-                                    width="100"
+                                    width="140"
                                 />
                             {{--
                                 <span class="text-90">
