@@ -54,11 +54,20 @@ class SparkServiceProvider extends ServiceProvider
 
         //Spark::freePlan('Fila de Espera')->features(['Inscreva-se e aguarde novas vagas']);
 
-        Spark::plan('Mensal', 'plan_HF9ozhVlP1Pgyg')
+
+        Spark::plan('Mensal', 'plan_HFhocp5DrQZTu7')
+            ->price(43.34)
+            ->features([
+                'Aulas semanais ao vivo.', 'Acesso a gravação das aulas semanais.', 'Acesso a lives antigas.'
+            ]);
+
+        /*
+        Spark::plan('Mensal Founder', 'plan_HF9ozhVlP1Pgyg')
             ->price(21.67)
             ->features([
                 'Aulas semanais ao vivo.', 'Acesso a gravação das aulas semanais.', 'Acesso a lives antigas.'
             ]);
+          */
     }
 
     /**
