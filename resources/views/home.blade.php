@@ -5,7 +5,7 @@
     <div class="container">
         <!-- Application Dashboard -->
         <div class="row justify-content-center">
-            <div class="col-md-8">
+            <div class="col-md-10">
                 <div class="card card-default">
                     <div class="card-header">{{__('Dashboard')}} -
                         {{floor($video_minutes/60)}} horas e {{$video_minutes%60}} minutos em {{$video_count}} aulas para você ir para outro patamar profissional.
