@@ -50,9 +50,13 @@ class SparkServiceProvider extends ServiceProvider
      */
     public function booted()
     {
-        //Spark::noCardUpFront()->trialDays(10);
+        //Spark::noCardUpFront()->trialDays(7);
 
-        //Spark::freePlan('Fila de Espera')->features(['Inscreva-se e aguarde novas vagas']);
+        //Spark::noAdditionalTeams();
+
+        //Spark::promotion('20200518-PROMO');
+
+        //Spark::freePlan('Fila de Espera')->features(['Inscreva-se e aguarde novas vagas'])->trialDays(0);
 
 
         Spark::plan('Mensal', 'plan_HFhocp5DrQZTu7')
@@ -64,7 +68,7 @@ class SparkServiceProvider extends ServiceProvider
 
         Spark::plan('Mensal Founder', 'plan_HF9ozhVlP1Pgyg')
             ->price(21.67)
-            ->archived()
+           // ->archived()
             ->features([
                 'Aulas semanais ao vivo.', 'Acesso a gravação das aulas semanais.', 'Acesso a lives antigas.'
             ]);
