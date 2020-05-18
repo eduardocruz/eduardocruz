@@ -14,6 +14,9 @@
                     <div class="card-body">
                         {{-- __('Your application\'s dashboard.') --}}
 
+                        <a href="https://us02web.zoom.us/j/89528153317">
+                            <h1>Zoom Meeting - https://us02web.zoom.us/j/89528153317</h1>
+                        </a>
                         <div class="col text-center">
                             <a href="/videos" class="btn btn-primary">Assistir Videos</a>
                         </div>
