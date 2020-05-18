@@ -16,7 +16,12 @@ class VideoController extends Controller
     {
         $unlockedVideos = Video::whereNotNull('video_url')->orderBy('created_at', 'desc')->get();
         $lockedVideos = Video::whereNull('video_url')->orderBy('created_at', 'desc')->get();
-        return view('videos.index', compact('unlockedVideos', 'lockedVideos'));
+        $video_count = Video::whereNotNull('video_url')->count();
+        $video_minutes = Video::whereNotNull('video_url')->sum('duration');
+        return view('videos.index', compact(
+            'unlockedVideos', 'lockedVideos',
+            'video_count', 'video_minutes'
+        ));
     }
 
     /**
