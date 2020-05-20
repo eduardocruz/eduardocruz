@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Video;
 use Illuminate\Http\Request;
+use Laravel\Spark\Spark;
 
 class VideoController extends Controller
 {
@@ -53,6 +54,12 @@ class VideoController extends Controller
      */
     public function show(Video $video)
     {
+        if(!isset($video->video_url))
+            return abort(403);
+
+        if(Spark::usesTeams() && !auth()->user()->hasTeams() && $video->created_at > '2020-04-17 00:00:00')
+            return abort(403);
+
         return view('videos.show', compact('video'));
     }
 

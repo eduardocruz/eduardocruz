@@ -15,6 +15,9 @@ class VerifyUserHasTeam
      */
     public function handle($request, $next)
     {
+        if(\Str::contains($request->getRequestUri(), 'videos'))
+            return $next($request);
+
         if (Spark::usesTeams() && $request->user() && ! $request->user()->hasTeams()) {
             return redirect(Spark::teamsPrefix().'/missing');
         }
