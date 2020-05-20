@@ -28,7 +28,7 @@
 
                     <h4>Estamos esperando você</h4>
 
-                    @foreach(\App\User::whereNotNull('stripe_id')->orderBy('created_at', 'desc')->get() as $user)
+                    @foreach(\App\User::orderBy('created_at', 'desc')->get() as $user)
                         @isset($user->email)
                             <img
                                 src="{{$user->photo_url}}"
