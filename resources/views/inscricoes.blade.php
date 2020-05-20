@@ -25,6 +25,24 @@
                         valores acima da média salarial brasileira.
                     </p>
                     <p class="col text-center"><a href="/register" class="btn btn-primary btn-large">Fazer a minha inscrição agora.</a></p>
+
+                    <h4>Estamos esperando você</h4>
+
+                    @foreach(\App\User::whereNotNull('stripe_id')->orderBy('created_at', 'desc')->get() as $user)
+                        @isset($user->email)
+                            <img
+                                src="{{$user->photo_url}}"
+                                class="img-thumbnail rounded-circle rounded-full w-8 h-8 mr-2 mt-2 mb-2"
+                                width="100"
+                            />
+                            {{--
+                                <span class="text-90">
+                            {{ $user->name ?? $user->email ?? __('Nova User') }}
+                            </span>
+                            --}}
+                        @endisset
+                    @endforeach
+
                     <h4>O foco</h4>
                     <p>
                         O foco aqui é ter aulas semanais ligadas a desenvolvimento web (com ênfase no framework Laravel)
@@ -32,6 +50,14 @@
                         web apoiando alguém a criar a uma startup baseada em um serviço web (SaaS).  Ou você criando a sua
                         startup. Prospectando clientes no Brasil ou no exterior. Os das aulas semanais são diversos. Ferramentas,
                         framwork, infra-estrutura ... mas o objetivo é um só. Levar você para o seu próximo patamar profissional.
+                    </p>
+                    <h4>Importante</h4>
+                    <p>Aqui não tem esquema ou truque para ganhar dinheiro rápido. Se esse é o seu objetivo, você veio ao lugar errado.
+                    Aqui é para pessoas que querem investir na sua carreira. Evoluir, fazer as coisas do jeito certo e no tempo certo.
+                    Eu estou condensando mais de 20 anos de aprendizado nesse curso. O que vai lhe ajudar a economizar tempo
+                        e lhe ajudar a ir na direção correta. Mas não existe mágica. Não existe enriquecimento da noite
+                        pro dia. O que existe é resultado baseado em trabalho com foco e persistência.
+
                     </p>
                     <h4>Levando você para o seu próximo patamar profissional</h4>
                     <p>
@@ -76,37 +102,7 @@
 
                     </p>
                     <p class="col text-center"><a href="/register" class="btn btn-primary btn-large">Fazer a minha inscrição agora.</a></p>
-                    <ul>
 
-                        <li><a href="https://www2.eduardocruz.com/videos/2">Aula #001 - Introdução e Parte 1</a> -
-                            Nessa aula eu dou as boas vindas a primeira turmas e eles também se apresentam apresentam.
-                            Assista caso você queira entender quem são as pessoas que já estão participando.</li>
-                        <li><a href="https://www2.eduardocruz.com/videos/28">Aula #004 - Introdução ao Laravel</a> -
-                            Caso você esteja começando com o Laravel ou mesmo que já trabalhe quer revisar alguns
-                            conceitos básicos, dá uma olhada nessa aula. Ou nunca viu nada do Laravel e quer ter alguma
-                            noção essa aula é para você.</li>
-                        <li><a href="https://www2.eduardocruz.com/videos/26">Aula #003 - Stripe e Marketplaces</a> -
-                            Se você quer conhecer mais sobre um dos gateways de
-                            pagamento mais usados por desenvolvedores americanos, comece por essa aula. Se você tem
-                            interesse no conceito de Marketplaces é mais um motivo para assistir.</li>
-
-                    </ul>
-                    <h4>Estamos esperando você</h4>
-
-                    @foreach(\App\User::whereNotNull('stripe_id')->orderBy('created_at', 'desc')->get() as $user)
-                        @isset($user->email)
-                            <img
-                                src="{{$user->photo_url}}"
-                                class="img-thumbnail rounded-circle rounded-full w-8 h-8 mr-2 mt-2 mb-2"
-                                width="100"
-                            />
-                            {{--
-                                <span class="text-90">
-                            {{ $user->name ?? $user->email ?? __('Nova User') }}
-                            </span>
-                            --}}
-                        @endisset
-                    @endforeach
                     <h2  class="mb-4">Algumas aulas que você terá acesso.</h2>
                     <div class="row">
 
