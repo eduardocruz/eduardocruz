@@ -52,7 +52,7 @@ class SparkServiceProvider extends ServiceProvider
     {
         //Spark::noCardUpFront()->trialDays(7);
 
-        //Spark::noAdditionalTeams();
+        Spark::noAdditionalTeams();
 
         //Spark::promotion('20200518-PROMO');
 
@@ -72,6 +72,14 @@ class SparkServiceProvider extends ServiceProvider
             ->features([
                 'Aulas semanais ao vivo.', 'Acesso a gravação das aulas semanais.', 'Acesso a lives antigas.'
             ]);
+
+        /*
+        Spark::plan('Dev Test', 'plan_H3xDm6bX8tWPey')
+            ->price(5.00)
+            ->features([
+                'Aulas semanais ao vivo.', 'Acesso a gravação das aulas semanais.', 'Acesso a lives antigas.'
+            ]);
+*/
 
     }
 
