@@ -13,6 +13,9 @@
                 </div>
                 <div class="card-body">
                     <h4>ATENÇÃO</h4>
+                    <a href="https://us02web.zoom.us/j/88195976736">
+                        <h3>Zoom Meeting 25/05 20h - https://us02web.zoom.us/j/88195976736</h3>
+                    </a>
                     <p>
                         Você concluiu a sua inscrição mas ainda falta um passo muito importante que é você efetivamente
                         entrar no time de alunos.
