@@ -12,13 +12,10 @@
 */
 
 Route::get('/', 'WelcomeController@show');
-
 Route::get('inscricoes', 'WelcomeController@inscricoes');
-
 Route::get('/home', 'HomeController@show');
-
 Route::get('/connect', 'HomeController@connect');
-
 Route::get('/connected', 'HomeController@connected');
 
 Route::resource('videos', 'VideoController');
+Route::resource('users', 'UserController');
