@@ -93,7 +93,7 @@ class User extends Resource
     public function filters(Request $request)
     {
         return [
-            new Filters\UserEmail
+            //new Filters\UserEmail
         ];
     }
 
