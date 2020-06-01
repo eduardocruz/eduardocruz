@@ -18,7 +18,7 @@
                     />
                     <div class="card-body">
                         <h5 class="card-title">{{$user->name}}</h5>
-                        <p class="card-text text-left">Descrição.</p>
+                        <p class="card-text text-left">.</p>
                     </div>
                 </div>
                 @endforeach
