@@ -39,6 +39,16 @@
                             {{ session('status') }}
                         </div>
                     @endif
+                        <h3>Top Technologies</h3>
+                        <ul>
+                            @foreach($user->technologies as $technology)
+                                <li>
+                                    <a href="/technologies/{{$technology->id}}">
+                                        {{$technology->name}}
+                                    </a>
+                                </li>
+                            @endforeach
+                        </ul>
                         <h3>Following</h3>
                         <ul>
                             @foreach($user->followings()->get() as $following)

@@ -19,6 +19,9 @@ Route::get('/connected', 'HomeController@connected');
 
 Route::resource('videos', 'VideoController');
 Route::resource('users', 'UserController');
+Route::resource('technologies', 'TechnologyController');
 
 Route::get('follow/{user}', 'FollowController@follow')->middleware('auth');
 Route::get('unfollow/{user}', 'FollowController@unfollow')->middleware('auth');
+
+Route::get('checkin/{technology}', 'CheckinController@checkin')->middleware('auth');

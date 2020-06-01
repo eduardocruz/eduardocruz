@@ -2,6 +2,8 @@
 
 namespace App;
 
+use App\Models\Checkin;
+use App\Models\Technology;
 use Laravel\Spark\CanJoinTeams;
 use Laravel\Spark\User as SparkUser;
 use Multicaret\Acquaintances\Traits\CanBeFollowed;
@@ -55,4 +57,14 @@ class User extends SparkUser
         'trial_ends_at' => 'datetime',
         'uses_two_factor_auth' => 'boolean',
     ];
+
+    public function technologies()
+    {
+        return $this->belongsToMany(Technology::class, 'checkins');
+    }
+
+    public function checkins()
+    {
+        return $this->hasMany(Checkin::class);
+    }
 }
