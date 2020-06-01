@@ -24,11 +24,14 @@
 
                         @foreach($users as $user)
                             @isset($user->email)
-                                <img
-                                    src="{{$user->photo_url}}"
-                                    class="img-thumbnail rounded-circle rounded-full w-8 h-8 mr-2 mt-2"
-                                    width="140"
-                                />
+                                    <img
+                                        src="{{$user->photo_url}}"
+                                        class="img-thumbnail rounded-circle rounded-full w-8 h-8 mr-2 mt-2"
+                                        width="140"
+                                        data-toggle="tooltip"
+                                        data-placement="top"
+                                        title="{{$user->name}}"
+                                    />
                             {{--
                                 <span class="text-90">
                             {{ $user->name ?? $user->email ?? __('Nova User') }}
