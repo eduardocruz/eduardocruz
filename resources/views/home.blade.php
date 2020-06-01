@@ -52,7 +52,7 @@
                         <div class="card text-center">
                             <a href="/technologies/{{$technology->id}}">
                                 <img
-                                    src="{{$technology->image}}"
+                                    src="{{Storage::url($technology->image)}}"
                                     class="img-thumbnail  rounded  w-1 h-1 mr-2 mt-2 mx-auto"
                                     width="60"
                                     data-toggle="tooltip"
