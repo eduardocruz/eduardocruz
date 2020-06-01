@@ -23,7 +23,9 @@
                                 @if(auth()->check() && auth()->user()->isFollowing($user))
                                     <a href="/unfollow/{{$user->id}}" class="btn btn-warning btn-sm">Unfollow</a>
                                 @else
-                                    <a href="/follow/{{$user->id}}" class="btn btn-primary btn-sm">Follow</a>
+                                    @if(auth()->check() && auth()->user()->id != $user->id)
+                                        <a href="/follow/{{$user->id}}" class="btn btn-primary btn-sm">Follow</a>
+                                    @endif
                                 @endif
                             </p>
                         </div>
