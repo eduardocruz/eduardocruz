@@ -10,7 +10,10 @@
                         <div class="card text-center">
                             <img
                                 src="{{$user->photo_url}}"
-                                class="img-thumbnail rounded-circle rounded-full w-1 h-1 mr-2 mt-2 mx-auto"
+                                class="img-thumbnail rounded-circle rounded-full w-1 h-1 mr-2 mt-2 mx-auto
+                                {{$user->status == 'success' ? 'bg-success' : null}}
+                                {{$user->status == 'danger' ? 'bg-danger' : null}}
+                                {{$user->status == 'warning' ? 'bg-warning' : null}}"
                                 width="140"
                                 data-toggle="tooltip"
                                 data-placement="top"
