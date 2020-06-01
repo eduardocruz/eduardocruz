@@ -27,4 +27,10 @@ class FollowController extends Controller
         auth()->user()->follow($user);
         return redirect('/users/'.$user->id)->with('status', 'User followed!');
     }
+
+    public function unfollow(User $user)
+    {
+        auth()->user()->unfollow($user);
+        return redirect('/users/'.$user->id)->with('status', 'User unfollowed!');
+    }
 }

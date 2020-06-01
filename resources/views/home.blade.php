@@ -49,6 +49,7 @@
                 <div class="card-columns">
                     @foreach($users as $user)
                     <div class="card text-center">
+                        <a href="/users/{{$user->id}}">
                         <img
                             src="{{$user->photo_url}}"
                             class="img-thumbnail rounded-circle rounded-full w-1 h-1 mr-2 mt-2 mx-auto"
@@ -61,6 +62,7 @@
                         <p class="card-text mb-2"><small class="text-muted">
                                 {{Str::limit(ucwords(strtolower($user->name)), 12)}}
                             </small></p>
+                        </a>
                     </div>
                     @endforeach
                 </div>
