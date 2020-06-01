@@ -18,7 +18,8 @@
         "laravel/spark-aurelius": "*@dev",
         "laravel/telescope": "^3.5",
         "laravel/tinker": "^2.0",
-        "laravel/ui": "^2.0"
+        "laravel/ui": "^2.0",
+        "multicaret/laravel-acquaintances": "^3.3"
     },
     "require-dev": {
         "facade/ignition": "^2.0",

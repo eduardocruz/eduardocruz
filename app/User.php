@@ -4,11 +4,14 @@ namespace App;
 
 use Laravel\Spark\CanJoinTeams;
 use Laravel\Spark\User as SparkUser;
+use Multicaret\Acquaintances\Traits\CanBeFollowed;
+use Multicaret\Acquaintances\Traits\CanFollow;
 
 class User extends SparkUser
 {
 
     use CanJoinTeams;
+    use CanFollow, CanBeFollowed;
 
     /**
      * The attributes that are mass assignable.
