@@ -7,6 +7,21 @@ use Illuminate\Http\Request;
 
 class FollowController extends Controller
 {
+
+    /**
+     * Create a new controller instance.
+     *
+     * @return void
+     */
+    public function __construct()
+    {
+        $this->middleware('auth');
+
+        //$this->middleware('subscribed');
+
+        // $this->middleware('verified');
+    }
+
     public function follow(User $user)
     {
         auth()->user()->follow($user);

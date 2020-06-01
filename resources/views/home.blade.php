@@ -21,7 +21,7 @@
                         <div class="col text-center">
                             <a href="/videos" class="btn btn-primary">Assistir Videos</a>
                         </div>
-
+{{--
                         @foreach($users as $user)
                             @isset($user->email)
                                     <img
@@ -36,12 +36,57 @@
                                 <span class="text-90">
                             {{ $user->name ?? $user->email ?? __('Nova User') }}
                             </span>
-                            --}}
+
                             @endisset
                         @endforeach
-
+                        --}}
                     </div>
                 </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-4">
+                <div class="card-columns">
+                    @foreach($users as $user)
+                    <div class="card text-center">
+                        <img
+                            src="{{$user->photo_url}}"
+                            class="img-thumbnail rounded-circle rounded-full w-1 h-1 mr-2 mt-2 mx-auto"
+                            width="60"
+                            data-toggle="tooltip"
+                            data-placement="top"
+                            title="{{$user->name}}"
+                            alt="{{$user->name}}"
+                        />
+                        <p class="card-text mb-2"><small class="text-muted">
+                                {{$user->name}}
+                            </small></p>
+                    </div>
+                    @endforeach
+                </div>
+            </div>
+            <div class="col-8">
+                @if (session('status'))
+                    <div class="alert alert-success">
+                        {{ session('status') }}
+                    </div>
+                @endif
+                <h3>Events</h3>
+                <ul>
+                    @foreach($interactions as $interaction)
+                        <li>
+                            {{$interaction->created_at->diffForHumans()}}
+                            <a href="/users/{{$interaction->user->id}}">
+                                {{$interaction->user->name}}
+                            </a>
+                            {{$interaction->relation}}ed
+
+                            <a href="/users/{{$interaction->subject->id}}">
+                                {{$interaction->subject->name}}
+                            </a>
+                        </li>
+                    @endforeach
+                </ul>
             </div>
         </div>
     </div>
