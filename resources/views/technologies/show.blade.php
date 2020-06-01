@@ -32,7 +32,7 @@
                                 </p>
                                 --}}
                                 <p class="card-text text-left text-center">
-                                    <a href="/checkin/{{$technology->id}}" class="btn btn-primary btn-sm">Checkin</a>
+                                    <a href="/checkin/{{$technology->id}}" class="btn btn-primary btn-sm">I worked with {{$technology->name}} today</a>
                                 </p>
                                 <p class="card-text text-left">{{$technology->description}}</p>
                             </div>
