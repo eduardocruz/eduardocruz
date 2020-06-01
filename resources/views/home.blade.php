@@ -59,7 +59,7 @@
                             alt="{{$user->name}}"
                         />
                         <p class="card-text mb-2"><small class="text-muted">
-                                {{$user->name}}
+                                {{Str::limit(ucwords(strtolower($user->name)), 13)}}
                             </small></p>
                     </div>
                     @endforeach
