@@ -9,6 +9,8 @@ class Checkin extends Pivot
 {
     protected $table = 'checkins';
 
+    protected $dates = ['checkin_at'];
+
     public function user()
     {
         return $this->belongsTo(User::class);

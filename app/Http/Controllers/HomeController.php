@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Checkin;
 use App\Models\Interaction;
 use App\Models\Technology;
 use App\Models\Video;
@@ -37,12 +38,14 @@ class HomeController extends Controller
         $users = User::orderBy('created_at', 'desc')->get();
         $technologies = Technology::orderBy('created_at', 'desc')->get();
         $interactions = Interaction::all();
+        $checkins = Checkin::orderBy('created_at', 'desc')->get();
         return view('home', compact(
             'users',
             'video_count',
             'video_minutes',
             'interactions',
             'technologies',
+            'checkins'
         ));
     }
 

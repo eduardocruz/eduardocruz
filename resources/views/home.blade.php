@@ -95,6 +95,20 @@
                         {{ session('status') }}
                     </div>
                 @endif
+                <h3>Checkins</h3>
+                    <ul>
+                        @foreach($checkins as $checkin)
+                            <li>
+                                {{$checkin->checkin_at->format('d/m/Y')}}
+                                <a href="/users/{{$checkin->user->id}}">
+                                    {{$checkin->user->name}}
+                                </a> worked with
+                                <a href="/technologies/{{$checkin->technology->id}}">
+                                    {{$checkin->technology->name}}
+                                </a>
+                            </li>
+                        @endforeach
+                    </ul>
                 <h3>Events</h3>
                 <ul>
                     @foreach($interactions as $interaction)
