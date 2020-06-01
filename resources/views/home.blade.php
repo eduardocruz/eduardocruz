@@ -67,7 +67,7 @@
                         </div>
                     @endforeach
                 </div>
-                <h3>Top User</h3>
+                <h3>Top Users</h3>
                 <div class="card-columns">
                     @foreach($users as $user)
                     <div class="card text-center">
