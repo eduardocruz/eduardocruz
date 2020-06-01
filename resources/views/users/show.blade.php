@@ -20,7 +20,7 @@
                             <div class="card-body">
                                 <h5 class="card-title">{{$user->name}}</h5>
                                 <p class="card-text text-left text-center">
-                                    @if(auth()->user()->isFollowing($user))
+                                    @if(auth()->check() && auth()->user()->isFollowing($user))
                                         <a href="/unfollow/{{$user->id}}" class="btn btn-warning btn-sm">Unfollow</a>
                                     @else
                                         <a href="/follow/{{$user->id}}" class="btn btn-primary btn-sm">Follow</a>
