@@ -11,4 +11,9 @@ class Technology extends Model
     {
         return $this->belongsToMany(User::class, 'checkins');
     }
+
+    public function checkins()
+    {
+        return $this->hasMany(Checkin::class);
+    }
 }

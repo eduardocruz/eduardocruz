@@ -49,6 +49,18 @@
                                 </li>
                             @endforeach
                         </ul>
+                        <h3>Checkins</h3>
+                        <ul>
+                            @foreach($user->checkins as $checkin)
+                                <li>
+                                    {{$checkin->created_at->diffForHumans()}}
+                                    <a href="/technologies/{{$checkin->technology->id}}">
+                                        {{$checkin->technology->name}}
+                                    </a>
+                                </li>
+                            @endforeach
+                        </ul>
+
                         <h3>Following</h3>
                         <ul>
                             @foreach($user->followings()->get() as $following)
