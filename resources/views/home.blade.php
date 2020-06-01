@@ -46,6 +46,28 @@
         </div>
         <div class="row">
             <div class="col-4">
+                <h3>Top Technologies</h3>
+                <div class="card-columns">
+                    @foreach($technologies as $technology)
+                        <div class="card text-center">
+                            <a href="/technologies/{{$technology->id}}">
+                                <img
+                                    src="{{$technology->image}}"
+                                    class="img-thumbnail  rounded  w-1 h-1 mr-2 mt-2 mx-auto"
+                                    width="60"
+                                    data-toggle="tooltip"
+                                    data-placement="top"
+                                    title="{{$technology->name}}"
+                                    alt="{{$technology->name}}"
+                                />
+                                <p class="card-text mb-2"><small class="text-muted">
+                                        {{Str::limit(ucwords(strtolower($technology->name)), 12)}}
+                                    </small></p>
+                            </a>
+                        </div>
+                    @endforeach
+                </div>
+                <h3>Top User</h3>
                 <div class="card-columns">
                     @foreach($users as $user)
                     <div class="card text-center">
