@@ -54,6 +54,8 @@ class SparkServiceProvider extends ServiceProvider
 
         Spark::noAdditionalTeams();
 
+        //Spark::collectBillingAddress();
+
         //Spark::promotion('20200518-PROMO');
 
         //Spark::freePlan('Fila de Espera')->features(['Inscreva-se e aguarde novas vagas'])->trialDays(0);
