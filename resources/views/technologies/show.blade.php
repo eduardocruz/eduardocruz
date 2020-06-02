@@ -56,7 +56,7 @@
                     </ul>
                     <h3>Checkins</h3>
                     <ul>
-                        @foreach($technology->checkins as $checkin)
+                        @foreach($technology->checkins()->orderBy('created_at', 'desc')->get() as $checkin)
                             <li>
                                 {{$checkin->created_at->diffForHumans()}}
                                 <a href="/users/{{$checkin->user->id}}">
