@@ -60,7 +60,7 @@
                             <li>
                                 {{$checkin->created_at->diffForHumans()}}
                                 <a href="/users/{{$checkin->user->id}}">
-                                    {{$follower->name}}
+                                    {{$checkin->user->name}}
                                 </a>
                             </li>
                         @endforeach
