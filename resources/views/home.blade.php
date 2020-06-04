@@ -102,7 +102,7 @@
                     <ul>
                         @foreach($checkins as $checkin)
                             <li>
-                                {{$checkin->checkin_at->format('d/m/Y')}}
+                                {{$checkin->created_at->diffForHumans()}}
                                 <a href="/users/{{$checkin->user->id}}">
                                     {{$checkin->user->name}}
                                 </a> worked with
