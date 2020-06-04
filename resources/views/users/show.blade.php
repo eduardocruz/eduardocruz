@@ -44,7 +44,7 @@
                     @endif
                         <h3>Top Technologies</h3>
                         <ul>
-                            @foreach($user->technologies as $technology)
+                            @foreach($user->technologies()->distinct()->get() as $technology)
                                 <li>
                                     <a href="/technologies/{{$technology->id}}">
                                         {{$technology->name}}

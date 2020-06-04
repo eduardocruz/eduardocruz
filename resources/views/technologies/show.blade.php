@@ -46,7 +46,7 @@
                     @endif
                     <h3>Top Users</h3>
                     <ul>
-                        @foreach($technology->users as $follower)
+                        @foreach($technology->users()->distinct()->get() as $follower)
                             <li>
                                 <a href="/users/{{$follower->id}}">
                                     {{$follower->name}}
