@@ -13,11 +13,11 @@
 
                     <div class="card-body">
                         {{-- __('Your application\'s dashboard.') --}}
-{{--
-                        <a href="https://us02web.zoom.us/j/87475384993">
-                            <h3>Zoom Meeting 01/06 20h - https://us02web.zoom.us/j/87475384993</h3>
+
+                        <a href="https://us02web.zoom.us/j/86238483591">
+                            <h3>Zoom Meeting 08/06 20h - https://us02web.zoom.us/j/86238483591</h3>
                         </a>
---}}
+
                         <div class="col text-center">
                             <a href="/videos" class="btn btn-primary">Assistir Videos</a>
                         </div>
