@@ -44,29 +44,58 @@
                             {{ session('status') }}
                         </div>
                     @endif
-                    <h3>Top Users</h3>
-                    <ul>
-                        @foreach($technology->users()->distinct()->get() as $follower)
-                            <li>
-                                <a href="/users/{{$follower->id}}">
-                                    {{$follower->name}}
-                                </a>
-                            </li>
-                        @endforeach
-                    </ul>
-                    <h3>Checkins</h3>
-                    <ul>
-                        @foreach($technology->checkins()->orderBy('created_at', 'desc')->get() as $checkin)
-                            <li>
-                                {{$checkin->created_at->diffForHumans()}}
-                                <a href="/users/{{$checkin->user->id}}">
-                                    {{$checkin->user->name}}
-                                </a>
-                            </li>
-                        @endforeach
-                    </ul>
-                </div>
-            </div>
+
+                        <div class="row">
+                            <div class="col-12">
+                                <h3>Top Users</h3>
+                            </div>
+                        </div>
+                        <div class="row">
+
+                                @foreach($technology->users()->distinct()->get() as $user)
+                                <div class="col-2">
+                                    <div class="card text-center">
+                                        <a href="/users/{{$user->id}}">
+                                            <img
+                                                src="{{$user->photo_url}}"
+                                                class="img-thumbnail rounded-circle rounded-full w-1 h-1 mr-2 mt-2 mx-auto
+                                {{$user->status == 'success' ? 'bg-success' : null}}
+                                                {{$user->status == 'danger' ? 'bg-danger' : null}}
+                                                {{$user->status == 'warning' ? 'bg-warning' : null}}"
+                                                width="60"
+                                                data-toggle="tooltip"
+                                                data-placement="top"
+                                                title="{{$user->name}}"
+                                                alt="{{$user->name}}"
+                                            />
+                                            <p class="card-text mb-2"><small class="text-muted">
+                                                    {{Str::limit(ucwords(strtolower($user->name)), 12)}}
+                                                </small></p>
+                                        </a>
+                                    </div>
+                                </div>
+                                @endforeach
+
+                        </div>
+                        <div class="row">
+                            <div class="col-12">
+
+                                    <h3>Checkins</h3>
+                                    <ul>
+                                        @foreach($technology->checkins()->orderBy('created_at', 'desc')->get() as $checkin)
+                                            <li>
+                                                {{$checkin->created_at->diffForHumans()}}
+                                                <a href="/users/{{$checkin->user->id}}">
+                                                    {{$checkin->user->name}}
+                                                </a>
+                                            </li>
+                                        @endforeach
+                                    </ul>
+
+                            </div>
+                            </div>
+                        </div>
+
 
         </div>
     </home>
