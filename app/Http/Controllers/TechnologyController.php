@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Checkin;
 use App\Models\Technology;
+use App\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
@@ -49,20 +50,20 @@ class TechnologyController extends Controller
      */
     public function show(Technology $technology)
     {
-        $topUser = Checkin::join('users', 'users.id', 'checkins.user_id')
+        $mainUser = User::join('checkins', 'users.id', 'checkins.user_id')
             ->where('checkins.technology_id', $technology->id)
-            ->select('users.name',
-                'photo_url',
+            ->select(
+                'users.id',
                 DB::raw('count(checkins.id) as total'
                 ))
             ->groupBy('users.id')
-            ->orderBy('total', 'asc')
-            ->get()
-            ->take(1);
+            ->orderBy('total', 'desc')
+            ->first();
+        $topUser = User::find($mainUser->id);
+        $topUser->totalCheckins = $mainUser->total;
+        $users = $technology->users()->distinct()->get()->except($topUser->id);
 
-        //return dd($topUser);
-
-        return view('technologies.show', compact('technology', 'topUser'));
+        return view('technologies.show', compact('technology', 'topUser', 'users'));
     }
 
     /**

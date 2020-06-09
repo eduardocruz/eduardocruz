@@ -51,8 +51,28 @@
                             </div>
                         </div>
                         <div class="row">
-
-                                @foreach($technology->users()->distinct()->get() as $user)
+                            <div class="col-4">
+                                <div class="card text-center">
+                                    <a href="/users/{{$topUser->id}}">
+                                        <img
+                                            src="{{$topUser->photo_url}}"
+                                            class="img-thumbnail rounded-circle rounded-full w-1 h-1 mr-2 mt-2 mx-auto
+                                {{$topUser->status == 'success' ? 'bg-success' : null}}
+                                            {{$topUser->status == 'danger' ? 'bg-danger' : null}}
+                                            {{$topUser->status == 'warning' ? 'bg-warning' : null}}"
+                                            width="160"
+                                            data-toggle="tooltip"
+                                            data-placement="top"
+                                            title="{{$topUser->name}}"
+                                            alt="{{$topUser->name}}"
+                                        />
+                                        <p class="card-text mb-2">
+                                                {{Str::limit(ucwords(strtolower($topUser->name)), 12)}}
+                                            </p>
+                                    </a>
+                                </div>
+                            </div>
+                                @foreach($users as $user)
                                 <div class="col-2">
                                     <div class="card text-center">
                                         <a href="/users/{{$user->id}}">
