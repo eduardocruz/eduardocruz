@@ -46,7 +46,9 @@
         </div>
         <div class="row">
             <div class="col-4">
-                <h3>Top Technologies</h3>
+                <h3>
+                    <a href="/technologies">Top Technologies</a>
+                </h3>
                 <div class="card-columns">
                     @foreach($technologies as $technology)
                         <div class="card text-center">
@@ -67,7 +69,9 @@
                         </div>
                     @endforeach
                 </div>
-                <h3>Top Users</h3>
+                <h3>
+                    <a href="/users">Top Users</a>
+                    </h3>
                 <div class="card-columns">
                     @foreach($users as $user)
                     <div class="card text-center">
