@@ -37,8 +37,8 @@ class HomeController extends Controller
         $video_minutes = Video::whereNotNull('video_url')->sum('duration');
         $users = User::orderBy('created_at', 'desc')->get();
         $technologies = Technology::orderBy('created_at', 'desc')->get();
-        $interactions = Interaction::orderBy('created_at', 'desc')->get();;
-        $checkins = Checkin::orderBy('created_at', 'desc')->get();
+        $interactions = Interaction::orderBy('created_at', 'desc')->get()->take(15);;
+        $checkins = Checkin::orderBy('created_at', 'desc')->get()->take(15);
         return view('home', compact(
             'users',
             'video_count',
