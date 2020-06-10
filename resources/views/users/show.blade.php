@@ -33,7 +33,9 @@
 
                                 </p>
                                 <p class="card-text text-left">.</p>
+                                {{--
                                 <div id="cal-heatmap"></div>
+
                                 <script type="text/javascript">
                                     var cal = new CalHeatMap();
                                     cal.init({
@@ -44,6 +46,7 @@
                                         range: 1,
                                     });
                                 </script>
+                                --}}
                             </div>
                         </div>
                 </div>
