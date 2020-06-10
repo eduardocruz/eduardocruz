@@ -57,7 +57,7 @@
                                         <img
                                             src="{{$topUser->photo_url}}"
                                             class="img-thumbnail rounded-circle rounded-full w-1 h-1 mr-2 mt-2 mx-auto
-                                {{$topUser->status == 'success' ? 'bg-success' : null}}
+                                            {{$topUser->status == 'success' ? 'bg-success' : null}}
                                             {{$topUser->status == 'danger' ? 'bg-danger' : null}}
                                             {{$topUser->status == 'warning' ? 'bg-warning' : null}}"
                                             width="160"
@@ -67,13 +67,14 @@
                                             alt="{{$topUser->name}}"
                                         />
                                         <p class="card-text mb-2">
-                                                {{Str::limit(ucwords(strtolower($topUser->name)), 12)}}
+                                                {{Str::limit(ucwords(strtolower($topUser->name)), 12)}} ({{$topUser->checkins()->where('technology_id', $technology->id)->count()}})
                                             </p>
                                     </a>
                                 </div>
                             </div>
                                 @foreach($users as $user)
-                                <div class="col-2">
+                                @if($user->id != $topUser->id)
+                                    <div class="col-2">
                                     <div class="card text-center">
                                         <a href="/users/{{$user->id}}">
                                             <img
@@ -89,11 +90,12 @@
                                                 alt="{{$user->name}}"
                                             />
                                             <p class="card-text mb-2"><small class="text-muted">
-                                                    {{Str::limit(ucwords(strtolower($user->name)), 12)}}
+                                                    {{Str::limit(ucwords(strtolower($user->name)), 12)}} ({{$user->checkins()->where('technology_id', $technology->id)->count()}})
                                                 </small></p>
                                         </a>
                                     </div>
                                 </div>
+                                @endif
                                 @endforeach
 
                         </div>
