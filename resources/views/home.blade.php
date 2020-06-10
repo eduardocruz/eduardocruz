@@ -52,7 +52,7 @@
                 <div class="d-flex flex-wrap">
                     @foreach($technologies as $technology)
                         <div class="card text-center mr- col-2 ml-2 mr-3">
-                            <a ref="/technologies/{{$technology->id}}">
+                            <a href="/technologies/{{$technology->id}}">
                                 <img
                                     src="{{Storage::url($technology->image)}}"
                                     class="img-thumbnail  rounded  w-1 h-1 mr-2 mt-2 mx-auto"
