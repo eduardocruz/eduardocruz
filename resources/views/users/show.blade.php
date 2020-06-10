@@ -33,6 +33,17 @@
 
                                 </p>
                                 <p class="card-text text-left">.</p>
+                                <div id="cal-heatmap"></div>
+                                <script type="text/javascript">
+                                    var cal = new CalHeatMap();
+                                    cal.init({
+                                        domain: "month",
+                                        subDomain: "x_day",
+                                        subDomainTextFormat: "%d",
+                                        cellSize: 40,
+                                        range: 1,
+                                    });
+                                </script>
                             </div>
                         </div>
                 </div>
@@ -42,6 +53,7 @@
                             {{ session('status') }}
                         </div>
                     @endif
+
                         <h3>Top Technologies</h3>
                         <ul>
                             @foreach($user->technologies()->distinct()->get() as $technology)
@@ -54,7 +66,7 @@
                         </ul>
                         <h3>Checkins</h3>
                         <ul>
-                            @foreach($user->checkins as $checkin)
+                            @foreach($user->checkins()->orderBy('created_at', 'desc')->get() as $checkin)
                                 <li>
                                     {{$checkin->created_at->diffForHumans()}}
                                     <a href="/technologies/{{$checkin->technology->id}}">
@@ -85,6 +97,7 @@
                         @endforeach
                     </ul>
 
+
                 </div>
             </div>
 
@@ -92,5 +105,10 @@
     </home>
 @endsection
 
+@push('scripts')
+    <script type="text/javascript" src="//d3js.org/d3.v3.min.js"></script>
+    <script type="text/javascript" src="//cdn.jsdelivr.net/cal-heatmap/3.3.10/cal-heatmap.min.js"></script>
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/cal-heatmap/3.3.10/cal-heatmap.css" />
+@endpush
 
 
