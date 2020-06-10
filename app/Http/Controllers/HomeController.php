@@ -36,7 +36,12 @@ class HomeController extends Controller
         $video_count = Video::whereNotNull('video_url')->count();
         $video_minutes = Video::whereNotNull('video_url')->sum('duration');
 
-        $technologies = Technology::orderBy('created_at', 'desc')->get();
+        //$technologies = Technology::orderBy('created_at', 'desc')->get();
+        $technologies = Technology::with('checkins')->distinct()->get()->sortByDesc(function($technology)
+        {
+            return $technology->checkins->count();
+        });
+
         $interactions = Interaction::orderBy('created_at', 'desc')->get()->take(15);;
         $checkins = Checkin::orderBy('created_at', 'desc')->get()->take(15);
 

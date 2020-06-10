@@ -50,6 +50,7 @@ class TechnologyController extends Controller
      */
     public function show(Technology $technology)
     {
+        /*
         $mainUser = User::join('checkins', 'users.id', 'checkins.user_id')
             ->where('checkins.technology_id', $technology->id)
             ->select(
@@ -61,7 +62,14 @@ class TechnologyController extends Controller
             ->first();
         $topUser = User::find($mainUser->id);
         $topUser->totalCheckins = $mainUser->total;
-        $users = $technology->users()->distinct()->get()->except($topUser->id);
+        */
+        //$users = $technology->users()->distinct()->get()->except($topUser->id);
+        $users = $technology->users()->distinct()->get()->sortByDesc(function($user)
+        {
+            return $user->checkins->count();
+        });
+
+        $topUser =  $users->first();
 
         return view('technologies.show', compact('technology', 'topUser', 'users'));
     }
