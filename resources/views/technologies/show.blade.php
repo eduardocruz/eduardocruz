@@ -2,7 +2,7 @@
 
 @section('content')
     <home :user="user" inline-template>
-        <div class="container">
+        <div class="container-fluid">
             <!-- Application Dashboard -->
             <div class="row">
                 <div class="col-3">
@@ -44,80 +44,72 @@
                         </div>
                     @endif
 
-                            <div class="col-12">
-                                <h3>Top Users</h3>
-                            </div>
-                        <div class="d-flex flex-wrap">
-                            <div class="col-4">
-                                <div class="card text-center">
-                                    <a href="/users/{{$topUser->id}}">
-                                        <img
-                                            src="{{$topUser->photo_url}}"
-                                            class="img-thumbnail rounded-circle rounded-full w-1 h-1 mr-2 mt-2 mx-auto
-                                            {{$topUser->status == 'success' ? 'bg-success' : null}}
-                                            {{$topUser->status == 'danger' ? 'bg-danger' : null}}
-                                            {{$topUser->status == 'warning' ? 'bg-warning' : null}}"
-                                            width="160"
-                                            data-toggle="tooltip"
-                                            data-placement="top"
-                                            title="{{$topUser->name}}"
-                                            alt="{{$topUser->name}}"
-                                        />
-                                        <p class="card-text mb-2">
-                                                {{Str::limit(ucwords(strtolower($topUser->name)), 12)}} ({{$topUser->checkins()->where('technology_id', $technology->id)->count()}})
-                                            </p>
-                                    </a>
-                                </div>
-                            </div>
-                            <div class="col-8">
-                                <div class="d-flex flex-wrap">
-                                    @foreach($users as $user)
-                                        @if($user->id != $topUser->id)
-                                            <div class="col-5">
-                                                <div class="card text-center">
-                                                    <a href="/users/{{$user->id}}">
-                                                        <img
-                                                            src="{{$user->photo_url}}"
-                                                            class="img-thumbnail rounded-circle rounded-full w-1 h-1 mr-2 mt-2 mx-auto
-                                                {{$user->status == 'success' ? 'bg-success' : null}}
-                                                            {{$user->status == 'danger' ? 'bg-danger' : null}}
-                                                            {{$user->status == 'warning' ? 'bg-warning' : null}}"
-                                                            width="60"
-                                                            data-toggle="tooltip"
-                                                            data-placement="top"
-                                                            title="{{$user->name}}"
-                                                            alt="{{$user->name}}"
-                                                        />
-                                                        <p class="card-text mb-2"><small class="text-muted">
-                                                                {{Str::limit(ucwords(strtolower($user->name)), 12)}} ({{$user->checkins()->where('technology_id', $technology->id)->count()}})
-                                                            </small></p>
-                                                    </a>
-                                                </div>
-                                            </div>
-                                        @endif
-                                    @endforeach
-                                </div>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-12">
-                                    <h3>Checkins</h3>
-                                    <ul>
-                                        @foreach($technology->checkins()->orderBy('created_at', 'desc')->get() as $checkin)
-                                            <li>
-                                                {{$checkin->created_at->diffForHumans()}}
-                                                <a href="/users/{{$checkin->user->id}}">
-                                                    {{$checkin->user->name}}
-                                                </a>
-                                            </li>
-                                        @endforeach
-                                    </ul>
+            <div class="col-12">
+                <h3>Top Users</h3>
+            </div>
+            <div class="d-flex flex-wrap">
+                <div class="col-3">
+                    <div class="card text-center">
+                        <a href="/users/{{$topUser->id}}">
+                            <img
+                                src="{{$topUser->photo_url}}"
+                                class="img-thumbnail rounded-circle rounded-full w-1 h-1 mr-2 mt-2 mx-auto
+                                {{$topUser->status == 'success' ? 'bg-success' : null}}
+                                {{$topUser->status == 'danger' ? 'bg-danger' : null}}
+                                {{$topUser->status == 'warning' ? 'bg-warning' : null}}"
+                                width="160"
+                                data-toggle="tooltip"
+                                data-placement="top"
+                                title="{{$topUser->name}}"
+                                alt="{{$topUser->name}}"
+                            />
+                            <p class="card-text mb-2">
+                                    {{Str::limit(ucwords(strtolower($topUser->name)), 12)}} ({{$topUser->checkins()->where('technology_id', $technology->id)->count()}})
+                                </p>
+                        </a>
+                    </div>
+                </div>
+                <div class="col-9">
+                    <div class="d-flex flex-wrap">
+                        @foreach($users as $user)
+                            @if($user->id != $topUser->id)
 
-                            </div>
-                            </div>
-                        </div>
+                                    <div class="card text-center col-3 ml-0 mr-1 mb-1 mt-0">
+                                        <a href="/users/{{$user->id}}">
+                                            <img
+                                                src="{{$user->photo_url}}"
+                                                class="img-thumbnail rounded-circle rounded-full w-1 h-1 mr-2 mt-2 mx-auto
+                                    {{$user->status == 'success' ? 'bg-success' : null}}
+                                                {{$user->status == 'danger' ? 'bg-danger' : null}}
+                                                {{$user->status == 'warning' ? 'bg-warning' : null}}"
+                                                width="60"
+                                                data-toggle="tooltip"
+                                                data-placement="top"
+                                                title="{{$user->name}}"
+                                                alt="{{$user->name}}"
+                                            />
+                                            <p class="card-text mb-2"><small class="text-muted">
+                                                    {{Str::limit(ucwords(strtolower($user->name)), 12)}} ({{$user->checkins()->where('technology_id', $technology->id)->count()}})
+                                                </small></p>
+                                        </a>
+                                    </div>
 
-
+                            @endif
+                        @endforeach
+                    </div>
+                </div>
+            </div>
+            <h3>Checkins</h3>
+            <ul>
+                @foreach($technology->checkins()->orderBy('created_at', 'desc')->get() as $checkin)
+                    <li>
+                        {{$checkin->created_at->diffForHumans()}}
+                        <a href="/users/{{$checkin->user->id}}">
+                            {{$checkin->user->name}}
+                        </a>
+                    </li>
+                @endforeach
+            </ul>
         </div>
     </home>
 @endsection
