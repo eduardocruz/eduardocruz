@@ -45,14 +45,14 @@
             </div>
         </div>
         <div class="row">
-            <div class="col-4">
+            <div class="col-7">
                 <h3>
                     <a href="/technologies">Top Technologies</a>
                 </h3>
-                <div class="card-columns">
+                <div class="d-flex flex-wrap">
                     @foreach($technologies as $technology)
-                        <div class="card text-center">
-                            <a href="/technologies/{{$technology->id}}">
+                        <div class="card text-center mr- col-2 ml-2 mr-3">
+                            <a ref="/technologies/{{$technology->id}}">
                                 <img
                                     src="{{Storage::url($technology->image)}}"
                                     class="img-thumbnail  rounded  w-1 h-1 mr-2 mt-2 mx-auto"
@@ -72,13 +72,13 @@
                 <h3>
                     <a href="/users">Top Users</a>
                     </h3>
-                <div class="card-columns">
+                <div class="d-flex flex-wrap">
                     @foreach($users as $user)
-                    <div class="card text-center">
+                    <div class="card text-center col-2  mr-2 ml-3">
                         <a href="/users/{{$user->id}}">
                         <img
                             src="{{$user->photo_url}}"
-                            class="img-thumbnail rounded-circle rounded-full w-1 h-1 mr-2 mt-2 mx-auto
+                            class="img-thumbnail rounded-circle rounded-full w-1 h-1 mr-1 mt-1 mx-auto
                                 {{$user->status == 'success' ? 'bg-success' : null}}
                                 {{$user->status == 'danger' ? 'bg-danger' : null}}
                                 {{$user->status == 'warning' ? 'bg-warning' : null}}"
@@ -96,7 +96,7 @@
                     @endforeach
                 </div>
             </div>
-            <div class="col-8">
+            <div class="col-5">
                 @if (session('status'))
                     <div class="alert alert-success">
                         {{ session('status') }}
