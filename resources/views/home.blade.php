@@ -2,7 +2,7 @@
 
 @section('content')
 <home :user="user" inline-template>
-    <div class="container">
+    <div class="container-fluid">
         <!-- Application Dashboard -->
         <div class="row justify-content-center">
             <div class="col-md-12">
