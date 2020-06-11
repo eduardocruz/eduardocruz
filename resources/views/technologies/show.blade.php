@@ -63,10 +63,10 @@
                                 title="{{$topUser->name}}"
                                 alt="{{$topUser->name}}"
                             />
-                            <p class="card-text mb-2">
+                            <p class="card-text mb-1">
                                     {{Str::limit(ucwords(strtolower($topUser->name)), 12)}} ({{$topUser->checkins()->where('technology_id', $technology->id)->count()}})
                                 </p>
-                            <div class="progress ml-2 mr-2 mb-3">
+                            <div class="progress ml-2 mr-2 mb-1">
                                 <div class="progress-bar" role="progressbar" style="width: {{(100*$topUser->checkins()->where('technology_id', $technology->id)->count())/30}}%;" aria-valuenow="" aria-valuemin="0" aria-valuemax="100">{{$topUser->checkins()->where('technology_id', $technology->id)->count()}}/30</div>
                             </div>
 
@@ -96,10 +96,10 @@
                                                 title="{{$user->name}}"
                                                 alt="{{$user->name}}"
                                             />
-                                            <p class="card-text mb-2"><small class="text-muted">
+                                            <p class="card-text mb-1"><small class="text-muted">
                                                     {{Str::limit(ucwords(strtolower($user->name)), 12)}} ({{$user->checkins()->where('technology_id', $technology->id)->count()}})
                                                 </small></p>
-                                            <div class="progress ml-0 mr-0 mb-3">
+                                            <div class="progress ml-0 mr-0 mb-1">
                                                 <div class="progress-bar" role="progressbar" style="width: {{(100*$topUser->checkins()->where('technology_id', $technology->id)->count())/30}}%;" aria-valuenow="" aria-valuemin="0" aria-valuemax="100">{{$topUser->checkins()->where('technology_id', $technology->id)->count()}}/30</div>
                                             </div>
 
