@@ -20,6 +20,7 @@ Route::get('/connected', 'HomeController@connected');
 Route::resource('videos', 'VideoController');
 Route::resource('users', 'UserController');
 Route::resource('technologies', 'TechnologyController');
+Route::resource('services', 'ServiceController');
 
 Route::get('follow/{user}', 'FollowController@follow')->middleware('auth');
 Route::get('unfollow/{user}', 'FollowController@unfollow')->middleware('auth');
