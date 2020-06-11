@@ -4,12 +4,33 @@
 <home :user="user" inline-template>
     <div class="container-fluid">
         <!-- Application Dashboard -->
+        <div class="row">
+            @foreach($videos as $video)
+                <div class="col-md-2">
+                    <div class="card mb-0 shadow-sm">
+                        <img src="{{$video->image_url}}" class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <div class="d-flex justify-content-between align-items-center">
+                                <div class="btn-group">
+                                    <a type="button" class="btn btn-sm btn-outline-secondary" href="/videos/{{$video->id}}">Assistir</a>
+                                </div>
+                                <small class="text-muted">{{$video->duration}} mins</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            @endforeach
+        </div>
+
+        {{--
         <div class="row justify-content-center">
             <div class="col-md-12">
                 <div class="card card-default">
                     <div class="card-header">{{__('Dashboard')}} -
                         {{floor($video_minutes/60)}} horas e {{$video_minutes%60}} minutos em {{$video_count}} aulas para você ir para outro patamar profissional.
                     </div>
+
+
 
                     <div class="card-body">
                         {{-- __('Your application\'s dashboard.') --}}
@@ -18,9 +39,11 @@
                             <h3>Zoom Meeting 08/06 20h - https://us02web.zoom.us/j/86238483591</h3>
                         </a>
 --}}
+                        {{--
                         <div class="col text-center">
                             <a href="/videos" class="btn btn-primary">Assistir Videos</a>
                         </div>
+                        --}}
 {{--
                         @foreach($users as $user)
                             @isset($user->email)
@@ -39,19 +62,18 @@
 
                             @endisset
                         @endforeach
-                        --}}
+
                     </div>
                 </div>
             </div>
         </div>
+        --}}
         <div class="row">
             <div class="col-7">
-                <h3>
-                    <a href="/technologies">Top Technologies</a>
-                </h3>
+
                 <div class="d-flex flex-wrap">
                     @foreach($technologies as $technology)
-                        <div class="card text-center mr- col-2 ml-1 mr-1 mb-2">
+                        <div class="card text-center mr- col-2 ml-1 mr-1 mb-2 mt-4">
                             <a href="/technologies/{{$technology->id}}">
                                 <img
                                     src="{{Storage::url($technology->image)}}"
@@ -69,9 +91,7 @@
                         </div>
                     @endforeach
                 </div>
-                <h3>
-                    <a href="/users">Top Users</a>
-                    </h3>
+
                 <div class="d-flex flex-wrap">
                     @foreach($users as $user)
                     <div class="card text-center col-2  mr-1 ml-1 mb-2">
@@ -96,13 +116,13 @@
                     @endforeach
                 </div>
             </div>
-            <div class="col-5">
+            <div class="col-5 mt-4">
                 @if (session('status'))
                     <div class="alert alert-success">
                         {{ session('status') }}
                     </div>
                 @endif
-                <h3>Checkins</h3>
+
                     <ul>
                         @foreach($checkins as $checkin)
                             <li>
