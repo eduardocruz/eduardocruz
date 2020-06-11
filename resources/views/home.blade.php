@@ -85,7 +85,7 @@
                                     alt="{{$technology->name}}"
                                 />
                                 <p class="card-text mb-2"><small class="text-muted">
-                                        {{Str::limit(ucwords(strtolower($technology->name)), 12)}}
+                                        {{Str::limit(ucwords(strtolower($technology->name)), 10)}}
                                     </small></p>
                             </a>
                         </div>
