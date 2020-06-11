@@ -42,8 +42,8 @@ class HomeController extends Controller
             return $technology->checkins->count();
         });
 
-        $interactions = Interaction::orderBy('created_at', 'desc')->get()->take(13);;
-        $checkins = Checkin::orderBy('created_at', 'desc')->get()->take(13);
+        $interactions = Interaction::orderBy('created_at', 'desc')->get()->take(11);;
+        $checkins = Checkin::orderBy('created_at', 'desc')->get()->take(11);
 
         $users = User::with('checkins')->distinct()->get()->sortByDesc(function($user)
         {
