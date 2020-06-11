@@ -5,7 +5,7 @@
         <div class="container">
             <!-- Application Dashboard -->
             <div class="row">
-                <div class="col-4">
+                <div class="col-sm-4">
 
                         <div class="card text-center">
                             <img
@@ -50,17 +50,17 @@
                             </div>
                         </div>
                 </div>
-                <div class="col-8">
+                <div class="col-sm-8">
                     @if (session('status'))
                         <div class="alert alert-success">
                             {{ session('status') }}
                         </div>
                     @endif
                     <div class="row">
-                        <div class="col-1">
+                        <div class="col-sm-1 text-center">
                             <img src="/img/level1.png" alt="" class="float-left">
                         </div>
-                        <div class="col-11">
+                        <div class="col-sm-11">
 
                             @foreach($user->technologies()->distinct()->get() as $technology)
 

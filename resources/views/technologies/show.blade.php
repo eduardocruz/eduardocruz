@@ -5,7 +5,7 @@
         <div class="container-fluid">
             <!-- Application Dashboard -->
             <div class="row">
-                <div class="col-3">
+                <div class="col-sm-3">
                         <div class="card text-center">
                             <img
                                 src="{{Storage::url($technology->image)}}"
@@ -37,18 +37,18 @@
                             </div>
                         </div>
                 </div>
-                <div class="col-9">
+                <div class="col-sm-9">
                     @if (session('status'))
                         <div class="alert alert-success">
                             {{ session('status') }}
                         </div>
                     @endif
 
-            <div class="col-12">
+            <div class="col-sm-12">
                 <h3>Top Users</h3>
             </div>
             <div class="d-flex flex-wrap">
-                <div class="col-3">
+                <div class="col-sm-3">
                     <div class="card text-center">
                         <a href="/users/{{$topUser->id}}">
                             <img
@@ -77,12 +77,12 @@
                         </a>
                     </div>
                 </div>
-                <div class="col-9">
+                <div class="col-sm-9">
                     <div class="d-flex flex-wrap">
                         @foreach($users as $user)
                             @if($user->id != $topUser->id)
 
-                                    <div class="card text-center col-3 ml-0 mr-1 mb-1 mt-0">
+                                    <div class="card text-center col-sm-3 col-5 ml-1 mr-1 mb-2 mt-0">
                                         <a href="/users/{{$user->id}}">
                                             <img
                                                 src="{{$user->photo_url}}"

@@ -6,7 +6,7 @@
         <!-- Application Dashboard -->
         <div class="d-flex flex-wrap justify-content-center">
             @foreach($videos as $video)
-                <div class="col-sm-2">
+                <div class="col-sm-2 col-6">
                     <div class="card mb-0 shadow-sm">
                         <img src="{{$video->image_url}}" class="card-img-top" alt="...">
                         <div class="card-body">
@@ -73,7 +73,7 @@
 
                 <div class="d-flex flex-wrap justify-content-center">
                     @foreach($technologies as $technology)
-                        <div class="card text-center mr- col-sm-2 ml-2 mr-2 mb-2 mt-4">
+                        <div class="card text-center mr- col-sm-2 col-3 ml-2 mr-2 mb-2 mt-4">
                             <a href="/technologies/{{$technology->id}}">
                                 <img
                                     src="{{Storage::url($technology->image)}}"
@@ -94,7 +94,7 @@
 
                 <div class="d-flex flex-wrap justify-content-center">
                     @foreach($users as $user)
-                    <div class="card text-center col-sm-2  mr-2 ml-2 mb-2">
+                    <div class="card text-center col-sm-2 col-3 mr-2 ml-2 mb-2">
                         <a href="/users/{{$user->id}}">
                         <img
                             src="{{$user->photo_url}}"
