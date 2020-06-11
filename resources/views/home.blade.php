@@ -4,7 +4,7 @@
 <home :user="user" inline-template>
     <div class="container-fluid">
         <!-- Application Dashboard -->
-        <div class="row">
+        <div class="row mt-0">
             @foreach($videos as $video)
                 <div class="col-md-2">
                     <div class="card mb-0 shadow-sm">
@@ -73,12 +73,12 @@
 
                 <div class="d-flex flex-wrap">
                     @foreach($technologies as $technology)
-                        <div class="card text-center mr- col-2 ml-1 mr-1 mb-2 mt-4">
+                        <div class="card text-center mr- col-2 ml-2 mr-2 mb-2 mt-4">
                             <a href="/technologies/{{$technology->id}}">
                                 <img
                                     src="{{Storage::url($technology->image)}}"
                                     class="img-thumbnail  rounded  w-1 h-1 mr-2 mt-2 mx-auto"
-                                    width="60"
+                                    width="90"
                                     data-toggle="tooltip"
                                     data-placement="top"
                                     title="{{$technology->name}}"
@@ -92,9 +92,9 @@
                     @endforeach
                 </div>
 
-                <div class="d-flex flex-wrap">
+                <div class="d-flex flex-wrap text-center">
                     @foreach($users as $user)
-                    <div class="card text-center col-2  mr-1 ml-1 mb-2">
+                    <div class="card text-center col-2  mr-2 ml-2 mb-2">
                         <a href="/users/{{$user->id}}">
                         <img
                             src="{{$user->photo_url}}"
@@ -102,7 +102,7 @@
                                 {{$user->status == 'success' ? 'bg-success' : null}}
                                 {{$user->status == 'danger' ? 'bg-danger' : null}}
                                 {{$user->status == 'warning' ? 'bg-warning' : null}}"
-                            width="60"
+                            width="90"
                             data-toggle="tooltip"
                             data-placement="top"
                             title="{{$user->name}}"
