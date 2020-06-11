@@ -51,7 +51,7 @@
                 </h3>
                 <div class="d-flex flex-wrap">
                     @foreach($technologies as $technology)
-                        <div class="card text-center mr- col-2 ml-2 mr-3">
+                        <div class="card text-center mr- col-2 ml-1 mr-1 mb-2">
                             <a href="/technologies/{{$technology->id}}">
                                 <img
                                     src="{{Storage::url($technology->image)}}"
@@ -74,7 +74,7 @@
                     </h3>
                 <div class="d-flex flex-wrap">
                     @foreach($users as $user)
-                    <div class="card text-center col-2  mr-2 ml-3">
+                    <div class="card text-center col-2  mr-1 ml-1 mb-2">
                         <a href="/users/{{$user->id}}">
                         <img
                             src="{{$user->photo_url}}"
