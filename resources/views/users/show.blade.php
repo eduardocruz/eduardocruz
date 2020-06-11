@@ -56,17 +56,33 @@
                             {{ session('status') }}
                         </div>
                     @endif
+                    <div class="row">
+                        <div class="col-1">
+                            <img src="/img/level1.png" alt="" class="float-left">
+                        </div>
+                        <div class="col-11">
 
-                        <h3>Top Technologies</h3>
-                        <ul>
                             @foreach($user->technologies()->distinct()->get() as $technology)
-                                <li>
-                                    <a href="/technologies/{{$technology->id}}">
-                                        {{$technology->name}}
-                                    </a>
-                                </li>
+
+                                <a href="/technologies/{{$technology->id}}" class="ml-2">
+                                    {{$technology->name}}
+                                </a>
+
+                                <div class="progress ml-2 mr-0 mb-1 ">
+                                    <div class="progress-bar" role="progressbar" style="width: {{(100*$user->checkins()->where('technology_id', $technology->id)->count())/30}}%;" aria-valuenow="" aria-valuemin="0" aria-valuemax="100">{{$user->checkins()->where('technology_id', $technology->id)->count()}}/30</div>
+                                </div>
                             @endforeach
-                        </ul>
+
+                            <div class="progress ml-2 mr-0 mb-3 mt-4">
+                                <div class="progress-bar bg-danger" role="progressbar" style="width: 100%;" aria-valuenow="" aria-valuemin="0" aria-valuemax="100"></div>
+                            </div>
+                        </div>
+                    </div>
+
+
+
+
+
                         <h3>Checkins</h3>
                         <ul>
                             @foreach($user->checkins()->orderBy('created_at', 'desc')->get() as $checkin)
