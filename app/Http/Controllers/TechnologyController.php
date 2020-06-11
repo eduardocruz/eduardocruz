@@ -64,9 +64,9 @@ class TechnologyController extends Controller
         $topUser->totalCheckins = $mainUser->total;
         */
         //$users = $technology->users()->distinct()->get()->except($topUser->id);
-        $users = $technology->users()->distinct()->get()->sortByDesc(function($user)
+        $users = $technology->users()->distinct()->get()->sortByDesc(function($user) use ($technology)
         {
-            return $user->checkins->count();
+            return $user->checkins()->where('technology_id', $technology->id)->count();
         });
 
         $topUser =  $users->first();
