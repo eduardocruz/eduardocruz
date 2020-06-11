@@ -9,14 +9,14 @@
                 <div class="card card-default">
                     <div class="card-header">{{$video->title}}</div>
 
-                    <div class="card-body">
+                    <div class="card-body text-center">
                         {{-- __('Your application\'s dashboard.') --}}
                         <video
                             id="my-player"
                             class="video-js"
                             controls
                             preload="auto"
-                            width="640"
+                            width="80%"
                             poster="{{$video->image_url}}"
                             data-setup='{}'>
                             <source src="{{$video->video_url}}" type="video/mp4"></source>
