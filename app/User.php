@@ -3,6 +3,7 @@
 namespace App;
 
 use App\Models\Checkin;
+use App\Models\Service;
 use App\Models\Technology;
 use Laravel\Spark\CanJoinTeams;
 use Laravel\Spark\User as SparkUser;
@@ -66,5 +67,10 @@ class User extends SparkUser
     public function checkins()
     {
         return $this->hasMany(Checkin::class);
+    }
+
+    public function services()
+    {
+        return $this->belongsToMany(Service::class);
     }
 }
