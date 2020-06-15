@@ -21,7 +21,9 @@
                 </div>
             @endforeach
         </div>
-
+        <a href="https://us02web.zoom.us/j/83158475054">
+            <h3>Zoom Meeting 15/06 20h - https://us02web.zoom.us/j/83158475054</h3>
+        </a>
         {{--
         <div class="row justify-content-center">
             <div class="col-md-12">
