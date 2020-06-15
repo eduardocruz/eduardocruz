@@ -27,6 +27,7 @@ class CheckinsPerDay extends Trend
     public function ranges()
     {
         return [
+            15 => '15 Days',
             30 => '30 Days',
             60 => '60 Days',
             90 => '90 Days',
