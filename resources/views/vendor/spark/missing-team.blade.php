@@ -14,7 +14,7 @@
                 <div class="card-body">
                     <h4>ATENÇÃO</h4>
 
-                    <a href="https://us02web.zoom.us/j/83158475054">
+                    <a href="https://us02web.zoom.us/j/83158475054" class="text-center">
                         <h3>Zoom Meeting 15/06 20h - https://us02web.zoom.us/j/83158475054</h3>
                     </a>
 

@@ -4,7 +4,11 @@
 <home :user="user" inline-template>
     <div class="container-fluid">
         <!-- Application Dashboard -->
+        <a href="https://us02web.zoom.us/j/83158475054" class="text-center">
+            <h3>Zoom Meeting 15/06 20h - https://us02web.zoom.us/j/83158475054</h3>
+        </a>
         <div class="d-flex flex-wrap justify-content-center">
+
             @foreach($videos as $video)
                 <div class="col-sm-2 col-6">
                     <div class="card mb-0 shadow-sm">
@@ -21,9 +25,7 @@
                 </div>
             @endforeach
         </div>
-        <a href="https://us02web.zoom.us/j/83158475054">
-            <h3>Zoom Meeting 15/06 20h - https://us02web.zoom.us/j/83158475054</h3>
-        </a>
+
         {{--
         <div class="row justify-content-center">
             <div class="col-md-12">
