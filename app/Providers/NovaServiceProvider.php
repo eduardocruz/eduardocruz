@@ -2,6 +2,8 @@
 
 namespace App\Providers;
 
+use App\Nova\Metrics\CheckinsPerDay;
+use App\Nova\Metrics\MeetingPerDay;
 use App\Nova\Metrics\NewUsers;
 use Illuminate\Support\Facades\Gate;
 use Laravel\Nova\Cards\Help;
@@ -57,8 +59,10 @@ class NovaServiceProvider extends NovaApplicationServiceProvider
     protected function cards()
     {
         return [
-            new NewUsers
-            //new Help,
+            (new NewUsers)->width('1/4'),
+            (new CheckinsPerDay)->width('3/4'),
+            new MeetingPerDay,
+
         ];
     }
 

@@ -35,6 +35,8 @@ class Video extends Resource
         'title',
     ];
 
+    public static $orderBy = ['id' => 'asc'];
+
     /**
      * Get the fields displayed by the resource.
      *

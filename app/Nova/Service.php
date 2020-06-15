@@ -34,6 +34,8 @@ class Service extends Resource
         'name',
     ];
 
+    public static $orderBy = ['name' => 'asc'];
+
     /**
      * Get the fields displayed by the resource.
      *

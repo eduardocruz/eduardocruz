@@ -37,6 +37,8 @@ class User extends Resource
         'id', 'name', 'email',
     ];
 
+    public static $orderBy = ['name' => 'asc'];
+
     /**
      * Get the fields displayed by the resource.
      *
