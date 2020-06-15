@@ -61,7 +61,7 @@ class NovaServiceProvider extends NovaApplicationServiceProvider
         return [
             (new NewUsers)->width('1/4'),
             (new CheckinsPerDay)->width('3/4'),
-            new MeetingPerDay,
+            //new MeetingPerDay,
 
         ];
     }
