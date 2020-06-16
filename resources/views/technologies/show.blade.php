@@ -48,6 +48,7 @@
                 <h3>Top Users</h3>
             </div>
             <div class="d-flex flex-wrap">
+                @if(!empty($topUser))
                 <div class="col-sm-3">
                     <div class="card text-center">
                         <a href="/users/{{$topUser->id}}">
@@ -77,6 +78,7 @@
                         </a>
                     </div>
                 </div>
+                @endif
                 <div class="col-sm-9">
                     <div class="d-flex flex-wrap">
                         @foreach($users as $user)
