@@ -6,7 +6,7 @@
         <!-- Application Dashboard -->
 
         <a href="https://us02web.zoom.us/j/82306177120" class="text-center">
-            <h3>Zoom Meeting 22/06 20h - https://us02web.zoom.us/j/82306177120</h3>
+            <h3>Zoom Meeting 22/06 20h - https://us02web.zoom.us/j/82306177120</h3> 
         </a>
 
         <div class="d-flex flex-wrap justify-content-center">
