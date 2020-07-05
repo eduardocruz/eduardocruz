@@ -26,3 +26,9 @@ Route::get('follow/{user}', 'FollowController@follow')->middleware('auth');
 Route::get('unfollow/{user}', 'FollowController@unfollow')->middleware('auth');
 
 Route::get('checkin/{technology}', 'CheckinController@checkin')->middleware('auth');
+Route::get('callback/upwork', function(){
+    return 'Upwork';
+});
+Route::post('callback/upwork', function(){
+    return 'Upwork';
+});
