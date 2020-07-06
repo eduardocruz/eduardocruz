@@ -115,9 +115,9 @@
                         />
                         <p class="card-text mb-2"><small class="text-muted">
                                 {{Str::limit(ucwords(strtolower($user->name)), 9)}}
-                                {{--
+                                
                                 ({{$user->checkins->count()}})
-                                --}}
+
                             </small></p>
                         </a>
                     </div>
