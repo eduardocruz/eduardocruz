@@ -13,11 +13,11 @@
                 </div>
                 <div class="card-body">
                     <h4>ATENÇÃO</h4>
-<!--
-                    <a href="https://us02web.zoom.us/j/82306177120" class="text-center">
-                        <h3>Zoom Meeting 22/06 20h - https://us02web.zoom.us/j/82306177120</h3>
+
+                    <a href="https://us02web.zoom.us/j/81168609033" class="text-center">
+                        <h3>Zoom Meeting 06/07 20h - https://us02web.zoom.us/j/81168609033</h3>
                     </a>
--->
+
                     <p>
                         Você concluiu a sua inscrição mas ainda falta um passo muito importante que é você efetivamente
                         entrar no time de alunos.

@@ -4,11 +4,11 @@
 <home :user="user" inline-template>
     <div class="container-fluid">
         <!-- Application Dashboard -->
-<!--
-        <a href="https://us02web.zoom.us/j/88685517386" class="text-center">
-            <h3>Zoom Meeting 29/06 20h - https://us02web.zoom.us/j/88685517386</h3>
+
+        <a href="https://us02web.zoom.us/j/81168609033" class="text-center">
+            <h3>Zoom Meeting 06/07 20h - https://us02web.zoom.us/j/81168609033</h3>
         </a>
--->
+
         <div class="d-flex flex-wrap justify-content-center">
             @foreach($videos as $video)
                 <div class="col-sm-2 col-6">
@@ -115,7 +115,7 @@
                         />
                         <p class="card-text mb-2"><small class="text-muted">
                                 {{Str::limit(ucwords(strtolower($user->name)), 9)}}
-                                
+
                                 ({{$user->checkins->count()}})
 
                             </small></p>
