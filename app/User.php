@@ -73,4 +73,9 @@ class User extends SparkUser
     {
         return $this->belongsToMany(Service::class);
     }
+
+    public function max_checkins()
+    {
+        return $this->checkins()->selectRaw('count(id) as total')->groupBy('technology_id')->get()->max('total');
+    }
 }

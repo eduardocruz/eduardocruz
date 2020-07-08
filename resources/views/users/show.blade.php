@@ -58,7 +58,11 @@
                     @endif
                     <div class="row">
                         <div class="col-sm-1 text-center">
-                            <img src="/img/level1.png" alt="" class="float-left">
+                            @if($user->max_checkins() > 2 && $user->max_checkins() <= 90)
+                                <img src="/img/level2.png" alt="" class="float-left">
+                            @else
+                                <img src="/img/level1.png" alt="" class="float-left">
+                            @endif
                         </div>
                         <div class="col-sm-11">
 
@@ -69,7 +73,11 @@
                                 </a>
 
                                 <div class="progress ml-2 mr-0 mb-1 ">
-                                    <div class="progress-bar" role="progressbar" style="width: {{(100*$user->checkins()->where('technology_id', $technology->id)->count())/30}}%;" aria-valuenow="" aria-valuemin="0" aria-valuemax="100">{{$user->checkins()->where('technology_id', $technology->id)->count()}}/30</div>
+                                    @if($user->checkins()->where('technology_id', $technology->id)->count() > 30)
+                                        <div class="progress-bar" role="progressbar" style="width: {{(100*($user->checkins()->where('technology_id', $technology->id)->count()-30))/60}}%;" aria-valuenow="" aria-valuemin="0" aria-valuemax="100">{{$user->checkins()->where('technology_id', $technology->id)->count()-30}}/60</div>
+                                    @else
+                                        <div class="progress-bar" role="progressbar" style="width: {{(100*$user->checkins()->where('technology_id', $technology->id)->count())/30}}%;" aria-valuenow="" aria-valuemin="0" aria-valuemax="100">{{$user->checkins()->where('technology_id', $technology->id)->count()}}/30</div>
+                                    @endif
                                 </div>
                             @endforeach
 
