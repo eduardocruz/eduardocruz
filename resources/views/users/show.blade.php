@@ -57,14 +57,16 @@
                         </div>
                     @endif
                     <div class="row">
-                        <div class="col-sm-1 text-center">
+                        <div class="col-sm-2 text-center">
                             @if($user->max_checkins() > 30 && $user->max_checkins() <= 60)
-                                <img src="/img/level2.png" alt="" class="float-left">
+                                <img src="/img/level2.png" alt="" class="mx-auto">
+                                <p class=""><small>Level 2</small></p>
                             @else
-                                <img src="/img/level1.png" alt="" class="float-left">
+                                <img src="/img/level1.png" alt="" class="mx-auto">
+                                <p class=""><small>Level 1</small></p>
                             @endif
                         </div>
-                        <div class="col-sm-11">
+                        <div class="col-sm-10">
 
                             @foreach($user->technologies()->distinct()->get() as $technology)
 
