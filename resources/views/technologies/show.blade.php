@@ -67,17 +67,32 @@
                             <p class="card-text mb-1">
                                     {{Str::limit(ucwords(strtolower($topUser->name)), 12)}} ({{$topUser->checkins()->where('technology_id', $technology->id)->count()}})
                                 </p>
-                            <div class="progress ml-2 mr-2 mb-1">
-                                @if($topUser->checkins()->where('technology_id', $technology->id)->count() > 30)
-                                    <div class="progress-bar" role="progressbar" style="width: {{(100*($topUser->checkins()->where('technology_id', $technology->id)->count()-30))/60}}%;" aria-valuenow="" aria-valuemin="0" aria-valuemax="100">{{$topUser->checkins()->where('technology_id', $technology->id)->count()-30}}/60</div>
-                                @else
-                                    <div class="progress-bar" role="progressbar" style="width: {{(100*$topUser->checkins()->where('technology_id', $technology->id)->count())/30}}%;" aria-valuenow="" aria-valuemin="0" aria-valuemax="100">{{$topUser->checkins()->where('technology_id', $technology->id)->count()}}/30</div>
-                                @endif
+                            <div class="row">
+                                <div class="col-sm-3 text-center ml-0 pr-0 pl-3">
+                                    @if($topUser->max_checkins() > 30 && $topUser->max_checkins() <= 60)
+                                        <img src="/img/level2.png" alt="" class="float-left" width="55">
+                                        <p class=""><small>Level 2</small></p>
+                                    @else
+                                        <img src="/img/level1.png" alt="" class="mx-auto" width="55">
+                                        <p class=""><small>Level 1</small></p>
+                                    @endif
+                                </div>
+                                <div class="col-sm-9 pl-0 pr-0">
+                                    <div class="progress ml-0 mr-4 mb-1">
+                                        @if($topUser->checkins()->where('technology_id', $technology->id)->count() > 30)
+                                            <div class="progress-bar" role="progressbar" style="width: {{(100*($topUser->checkins()->where('technology_id', $technology->id)->count()-30))/60}}%;" aria-valuenow="" aria-valuemin="0" aria-valuemax="100">{{$topUser->checkins()->where('technology_id', $technology->id)->count()-30}}/60</div>
+                                        @else
+                                            <div class="progress-bar" role="progressbar" style="width: {{(100*$topUser->checkins()->where('technology_id', $technology->id)->count())/30}}%;" aria-valuenow="" aria-valuemin="0" aria-valuemax="100">{{$topUser->checkins()->where('technology_id', $technology->id)->count()}}/30</div>
+                                        @endif
+                                    </div>
+                                    <div class="progress ml-0 mr-4 mb-1">
+                                        <div class="progress-bar bg-danger" role="progressbar" style="width: 100%;" aria-valuenow="" aria-valuemin="0" aria-valuemax="100"></div>
+                                    </div>
+                                </div>
                             </div>
 
-                            <div class="progress ml-2 mr-2 mb-3">
-                                <div class="progress-bar bg-danger" role="progressbar" style="width: 100%;" aria-valuenow="" aria-valuemin="0" aria-valuemax="100"></div>
-                            </div>
+
+
 
                         </a>
                     </div>
@@ -105,16 +120,27 @@
                                             <p class="card-text mb-1"><small class="text-muted">
                                                     {{Str::limit(ucwords(strtolower($user->name)), 12)}} ({{$user->checkins()->where('technology_id', $technology->id)->count()}})
                                                 </small></p>
-                                            <div class="progress ml-0 mr-0 mb-1">
-                                                @if($user->checkins()->where('technology_id', $technology->id)->count() > 30)
-                                                    <div class="progress-bar" role="progressbar" style="width: {{(100*($user->checkins()->where('technology_id', $technology->id)->count()-30))/60}}%;" aria-valuenow="" aria-valuemin="0" aria-valuemax="100">{{$user->checkins()->where('technology_id', $technology->id)->count()-30}}/60</div>
-                                                @else
-                                                    <div class="progress-bar" role="progressbar" style="width: {{(100*$user->checkins()->where('technology_id', $technology->id)->count())/30}}%;" aria-valuenow="" aria-valuemin="0" aria-valuemax="100">{{$user->checkins()->where('technology_id', $technology->id)->count()}}/30</div>
-                                                @endif
-                                            </div>
+                                            <div class="row">
+                                                <div class="col-sm-3 text-center ml-0 pr-0 pl-1">
+                                                    @if($topUser->max_checkins() > 30 && $topUser->max_checkins() <= 60)
+                                                        <img src="/img/level2.png" alt="" class="float-left" width="55">
+                                                    @else
+                                                        <img src="/img/level1.png" alt="" class="mx-auto" width="35">
+                                                    @endif
+                                                </div>
+                                                <div class="col-sm-9 pl-0 pr-2">
+                                                    <div class="progress ml-0 mr-0 mb-1">
+                                                        @if($user->checkins()->where('technology_id', $technology->id)->count() > 30)
+                                                            <div class="progress-bar" role="progressbar" style="width: {{(100*($user->checkins()->where('technology_id', $technology->id)->count()-30))/60}}%;" aria-valuenow="" aria-valuemin="0" aria-valuemax="100">{{$user->checkins()->where('technology_id', $technology->id)->count()-30}}/60</div>
+                                                        @else
+                                                            <div class="progress-bar" role="progressbar" style="width: {{(100*$user->checkins()->where('technology_id', $technology->id)->count())/30}}%;" aria-valuenow="" aria-valuemin="0" aria-valuemax="100">{{$user->checkins()->where('technology_id', $technology->id)->count()}}/30</div>
+                                                        @endif
+                                                    </div>
 
-                                            <div class="progress ml-0 mr-0 mb-3">
-                                                <div class="progress-bar bg-danger" role="progressbar" style="width: 100%;" aria-valuenow="" aria-valuemin="0" aria-valuemax="100"></div>
+                                                    <div class="progress ml-0 mr-0 mb-3">
+                                                        <div class="progress-bar bg-danger" role="progressbar" style="width: 100%;" aria-valuenow="" aria-valuemin="0" aria-valuemax="100"></div>
+                                                    </div>
+                                                </div>
                                             </div>
 
                                         </a>
