@@ -68,7 +68,11 @@
                                     {{Str::limit(ucwords(strtolower($topUser->name)), 12)}} ({{$topUser->checkins()->where('technology_id', $technology->id)->count()}})
                                 </p>
                             <div class="progress ml-2 mr-2 mb-1">
-                                <div class="progress-bar" role="progressbar" style="width: {{(100*$topUser->checkins()->where('technology_id', $technology->id)->count())/30}}%;" aria-valuenow="" aria-valuemin="0" aria-valuemax="100">{{$topUser->checkins()->where('technology_id', $technology->id)->count()}}/30</div>
+                                @if($topUser->checkins()->where('technology_id', $technology->id)->count() > 30)
+                                    <div class="progress-bar" role="progressbar" style="width: {{(100*($topUser->checkins()->where('technology_id', $technology->id)->count()-30))/60}}%;" aria-valuenow="" aria-valuemin="0" aria-valuemax="100">{{$topUser->checkins()->where('technology_id', $technology->id)->count()-30}}/60</div>
+                                @else
+                                    <div class="progress-bar" role="progressbar" style="width: {{(100*$topUser->checkins()->where('technology_id', $technology->id)->count())/30}}%;" aria-valuenow="" aria-valuemin="0" aria-valuemax="100">{{$topUser->checkins()->where('technology_id', $technology->id)->count()}}/30</div>
+                                @endif
                             </div>
 
                             <div class="progress ml-2 mr-2 mb-3">
