@@ -122,7 +122,7 @@
                                                 </small></p>
                                             <div class="row">
                                                 <div class="col-sm-3 text-center ml-0 pr-0 pl-1">
-                                                    @if($topUser->max_checkins() > 30 && $topUser->max_checkins() <= 60)
+                                                    @if($user->max_checkins() > 30 && $user->max_checkins() <= 60)
                                                         <img src="/img/level2.png" alt="" class="float-left" width="55">
                                                     @else
                                                         <img src="/img/level1.png" alt="" class="mx-auto" width="35">
