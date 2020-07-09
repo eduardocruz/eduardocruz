@@ -58,7 +58,7 @@
                     @endif
                     <div class="row">
                         <div class="col-sm-1 text-center">
-                            @if($user->max_checkins() > 2 && $user->max_checkins() <= 90)
+                            @if($user->max_checkins() > 30 && $user->max_checkins() <= 60)
                                 <img src="/img/level2.png" alt="" class="float-left">
                             @else
                                 <img src="/img/level1.png" alt="" class="float-left">
