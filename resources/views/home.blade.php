@@ -4,11 +4,9 @@
 <home :user="user" inline-template>
     <div class="container-fluid">
         <!-- Application Dashboard -->
-        {{--
-        <a href="https://us02web.zoom.us/j/82689275145" class="text-center">
-            <h3>Zoom Meeting 20/07 20h - https://us02web.zoom.us/j/82689275145</h3>
+        <a href="https://us02web.zoom.us/j/87951985429" class="text-center">
+            <h3>Zoom Meeting 27/07 20h - https://us02web.zoom.us/j/87951985429</h3>
         </a>
---}}
         <div class="d-flex flex-wrap justify-content-center">
             @foreach($videos as $video)
                 <div class="col-sm-2 col-6">
