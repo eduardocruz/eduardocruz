@@ -19,8 +19,8 @@ class UpworkController extends Controller
     public function getToken(Request $request)
     {
 
-        $request->session()->forget(['request_token', 'request_secret']);
-        $request->session()->flush();
+        //$request->session()->forget(['request_token', 'request_secret']);
+        //$request->session()->flush();
 
         $config = new \Upwork\API\Config(
             array(
