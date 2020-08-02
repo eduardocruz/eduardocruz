@@ -59,11 +59,11 @@ class UpworkController extends Controller
 
             // gets info of the authenticated user
             $auth = new \Upwork\API\Routers\Auth($client);
-            //$info = $auth->getUserInfo();
-            //return dd($info);
+            $info = $auth->getUserInfo();
+            return dd($info);
 
-            $applications = new \Upwork\API\Routers\Hr\Freelancers\Applications($client);
-            return dd($applications->getList());
+            //$applications = new \Upwork\API\Routers\Hr\Freelancers\Applications($client);
+            //return dd($applications->getList());
         }
     }
 }
