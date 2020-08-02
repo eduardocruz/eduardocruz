@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "e7139ff9daa13214c760093748d3f523",
+    "content-hash": "6c56ef71151a3bf57b676b1b97ff2d50",
     "packages": [
         {
             "name": "algolia/algoliasearch-client-php",
@@ -3689,16 +3689,16 @@
         },
         {
             "name": "stripe/stripe-php",
-            "version": "v7.44.0",
+            "version": "v7.45.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/stripe/stripe-php.git",
-                "reference": "b39ccc77358fbe0d462e6cc89ac01b7a0c896f35"
+                "reference": "21e5001f5e0d787e4755c8bfc00e578dce9ae058"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/stripe/stripe-php/zipball/b39ccc77358fbe0d462e6cc89ac01b7a0c896f35",
-                "reference": "b39ccc77358fbe0d462e6cc89ac01b7a0c896f35",
+                "url": "https://api.github.com/repos/stripe/stripe-php/zipball/21e5001f5e0d787e4755c8bfc00e578dce9ae058",
+                "reference": "21e5001f5e0d787e4755c8bfc00e578dce9ae058",
                 "shasum": ""
             },
             "require": {
@@ -3742,7 +3742,7 @@
                 "payment processing",
                 "stripe"
             ],
-            "time": "2020-07-20T21:25:50+00:00"
+            "time": "2020-07-29T04:29:52+00:00"
         },
         {
             "name": "swiftmailer/swiftmailer",
@@ -5753,6 +5753,63 @@
             "description": "CssToInlineStyles is a class that enables you to convert HTML-pages/files into HTML-pages/files with inline styles. This is very useful when you're sending emails.",
             "homepage": "https://github.com/tijsverkoyen/CssToInlineStyles",
             "time": "2020-07-13T06:12:54+00:00"
+        },
+        {
+            "name": "upwork/php-upwork",
+            "version": "v1.3.3",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/upwork/php-upwork.git",
+                "reference": "66cef54d9763efa1b7a8d9bf3567859cb33b9920"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/upwork/php-upwork/zipball/66cef54d9763efa1b7a8d9bf3567859cb33b9920",
+                "reference": "66cef54d9763efa1b7a8d9bf3567859cb33b9920",
+                "shasum": ""
+            },
+            "require": {
+                "ext-json": "*",
+                "php": ">=5.3.3"
+            },
+            "require-dev": {
+                "phpunit/php-invoker": "*",
+                "phpunit/phpunit": "3.7.*"
+            },
+            "suggest": {
+                "apigen/apigen": "dev-master",
+                "ext-oauth": "This extension from PECL provides OAuth consumer and provider bindings. See more under http://www.php.net/oauth",
+                "roave/better-reflection": "dev-master"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-0": {
+                    "Upwork\\API": "src/"
+                },
+                "files": [
+                    "src/Upwork/API/constants.php"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "Apache-2.0"
+            ],
+            "authors": [
+                {
+                    "name": "Maksym Novozhylov",
+                    "email": "mnovozhilov@upwork.com",
+                    "homepage": "http://mnov.tel",
+                    "role": "Software Engineer, Platform/Integrity"
+                }
+            ],
+            "description": "PHP bindings for Upwork API",
+            "homepage": "http://www.upwork.com",
+            "keywords": [
+                "api",
+                "php",
+                "upwork"
+            ],
+            "time": "2020-05-08T00:00:00+00:00"
         },
         {
             "name": "vlucas/phpdotenv",
