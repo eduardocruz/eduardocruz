@@ -36,6 +36,8 @@ Route::post('callback/upwork', function(){
     return 'Upwork';
 });
 */
+/*
 Route::get('info', function(){
     return phpinfo();
 });
+*/
