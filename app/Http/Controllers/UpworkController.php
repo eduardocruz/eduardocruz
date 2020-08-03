@@ -22,6 +22,15 @@ class UpworkController extends Controller
         //$request->session()->forget(['request_token', 'request_secret']);
         //$request->session()->flush();
 
+        dump('A');
+        dump(session('access_token'));
+        dump('B');
+        dump(session('access_secret'));
+        dump('C');
+        dump(session('request_token'));
+        dump('D');
+        dump(session('request_secret'));
+        return dd('SESSIONS');
         $config = new \Upwork\API\Config(
             array(
                 'consumerKey'       => env('UPWORK_KEY'),  // SETUP YOUR CONSUMER KEY
@@ -51,6 +60,15 @@ class UpworkController extends Controller
             // request authorization
             $client->auth();
         } elseif (empty(session('access_token'))) {
+            dump('1');
+            dump(session('access_token'));
+            dump('2');
+            dump(session('access_secret'));
+            dump('3');
+            dump(session('request_token'));
+            dump('4');
+            dump(session('request_secret'));
+            return dd(session('access_token'));
             $accessTokenInfo = $client->auth();
             session(['access_token' => $accessTokenInfo['access_token']]);
             session(['access_secret' => $accessTokenInfo['access_secret']]);
