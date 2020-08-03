@@ -48,7 +48,7 @@ class UpworkController extends Controller
             session(['request_secret' => $requestTokenInfo['oauth_token_secret']]);
             // request authorization
             $client->auth();
-        } elseif (empty($_SESSION['access_token'])) {
+        } elseif (empty(session('access_token'))) {
             $accessTokenInfo = $client->auth();
             session(['access_token' => $accessTokenInfo['access_token']]);
             session(['access_secret' => $accessTokenInfo['access_secret']]);
