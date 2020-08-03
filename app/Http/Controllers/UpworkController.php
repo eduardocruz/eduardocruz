@@ -54,8 +54,13 @@ class UpworkController extends Controller
             $user = auth()->user();
             session(['access_token' => $accessTokenInfo['access_token']]);
             session(['access_secret' => $accessTokenInfo['access_secret']]);
-            $user->upwork_access_token = $accessTokenInfo['access_token'];
-            $user->upwork_access_secret = $accessTokenInfo['access_secret'];
+            
+            if(empty($user->upwork_access_token))
+                $user->upwork_access_token = $accessTokenInfo['access_token'];
+
+            if(empty($user->upwork_access_secret))
+                $user->upwork_access_secret = $accessTokenInfo['access_secret'];
+
             $user->save();
         }
 
