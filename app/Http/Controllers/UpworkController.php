@@ -124,7 +124,8 @@ class UpworkController extends Controller
         $client = new Client($config);
         $client->auth();
         $applications = new \Upwork\API\Routers\Hr\Freelancers\Applications($client);
-        $jobs = $applications->getList();
+        $params = ['cursor_limit' => 100];
+        $jobs = $applications->getList($params);
         return dd($jobs);
     }
 }
