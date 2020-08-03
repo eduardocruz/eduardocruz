@@ -44,6 +44,7 @@ class UpworkController extends Controller
             // we need to get and save the request token. It will be used again
             // after the redirect from the Upwork site
             $requestTokenInfo = $client->getRequestToken();
+            return dd($requestTokenInfo);
             session(['request_token' => $requestTokenInfo['oauth_token']]);
             //session(['request_secret' => $requestTokenInfo['oauth_token_secret']]);
             session(['request_secret' => $requestTokenInfo['oauth_verifier']]);
