@@ -28,6 +28,8 @@ Route::get('unfollow/{user}', 'FollowController@unfollow')->middleware('auth');
 Route::get('checkin/{technology}', 'CheckinController@checkin')->middleware('auth');
 Route::get('callback/upwork', 'UpworkController@getToken');
 Route::post('callback/upwork', 'UpworkController@getToken');
+
+Route::get('upwork/info', 'UpworkController@getInfo');
 /*
 Route::post('callback/upwork', function(){
     return 'Upwork';
