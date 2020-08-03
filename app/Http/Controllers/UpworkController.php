@@ -46,34 +46,17 @@ class UpworkController extends Controller
             $requestTokenInfo = $client->getRequestToken();
             session(['request_token' => $requestTokenInfo['oauth_token']]);
             session(['request_secret' => $requestTokenInfo['oauth_token_secret']]);
-
-            dump('A');
-            dump(session('access_token'));
-            dump('B');
-            dump(session('access_secret'));
-            dump('C');
-            dump(session('request_token'));
-            dump('D');
-            dump(session('request_secret'));
-
             // request authorization
             $client->auth();
         } elseif (empty(session('access_token'))) {
-            dump('1');
-            dump(session('access_token'));
-            dump('2');
-            dump(session('access_secret'));
-            dump('3');
-            dump(session('request_token'));
-            dump('4');
-            dump(session('request_secret'));
             //return dd(session('access_token'));
             $accessTokenInfo = $client->auth();
             $user = auth()->user();
             session(['access_token' => $accessTokenInfo['access_token']]);
-            $user->upwork_access_token = $accessTokenInfo['access_token'];
             session(['access_secret' => $accessTokenInfo['access_secret']]);
+            $user->upwork_access_token = $accessTokenInfo['access_token'];
             $user->upwork_access_secret = $accessTokenInfo['access_secret'];
+            $user->save();
         }
 
 
