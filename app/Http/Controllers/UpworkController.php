@@ -22,15 +22,6 @@ class UpworkController extends Controller
         //$request->session()->forget(['request_token', 'request_secret']);
         //$request->session()->flush();
 
-        dump('A');
-        dump(session('access_token'));
-        dump('B');
-        dump(session('access_secret'));
-        dump('C');
-        dump(session('request_token'));
-        dump('D');
-        dump(session('request_secret'));
-        return dd('SESSIONS');
         $config = new \Upwork\API\Config(
             array(
                 'consumerKey'       => env('UPWORK_KEY'),  // SETUP YOUR CONSUMER KEY
@@ -42,7 +33,7 @@ class UpworkController extends Controller
                 'verifier'          => $request->oauth_verifier,         // got oauth verifier after authorization
                 'mode'              => 'web',                           // can be 'nonweb' for console apps (default),
                 // and 'web' for web-based apps
-	            //'debug' => true, // enables debug mode. Note that enabling debug in web-based applications can block redirects
+	            'debug' => true, // enables debug mode. Note that enabling debug in web-based applications can block redirects
                 //	'authType' => 'MyOAuth' // your own authentication type, see AuthTypes directory
             )
         );
@@ -53,10 +44,18 @@ class UpworkController extends Controller
             // we need to get and save the request token. It will be used again
             // after the redirect from the Upwork site
             $requestTokenInfo = $client->getRequestToken();
-            return dd($requestTokenInfo);
             session(['request_token' => $requestTokenInfo['oauth_token']]);
-            //session(['request_secret' => $requestTokenInfo['oauth_token_secret']]);
-            session(['request_secret' => $requestTokenInfo['oauth_verifier']]);
+            session(['request_secret' => $requestTokenInfo['oauth_token_secret']]);
+
+            dump('A');
+            dump(session('access_token'));
+            dump('B');
+            dump(session('access_secret'));
+            dump('C');
+            dump(session('request_token'));
+            dump('D');
+            dump(session('request_secret'));
+            
             // request authorization
             $client->auth();
         } elseif (empty(session('access_token'))) {
@@ -68,7 +67,7 @@ class UpworkController extends Controller
             dump(session('request_token'));
             dump('4');
             dump(session('request_secret'));
-            return dd(session('access_token'));
+            //return dd(session('access_token'));
             $accessTokenInfo = $client->auth();
             session(['access_token' => $accessTokenInfo['access_token']]);
             session(['access_secret' => $accessTokenInfo['access_secret']]);
