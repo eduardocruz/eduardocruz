@@ -90,7 +90,7 @@ class UpworkController extends Controller
                 'verifier'          => $request->oauth_verifier,         // got oauth verifier after authorization
                 'mode'              => 'web',                           // can be 'nonweb' for console apps (default),
                 // and 'web' for web-based apps
-                'debug' => true, // enables debug mode. Note that enabling debug in web-based applications can block redirects
+                //'debug' => true, // enables debug mode. Note that enabling debug in web-based applications can block redirects
                 //	'authType' => 'MyOAuth' // your own authentication type, see AuthTypes directory
             )
         );
@@ -101,5 +101,30 @@ class UpworkController extends Controller
         $auth = new \Upwork\API\Routers\Auth($client);
         $info = $auth->getUserInfo();
         return dd($info);
+    }
+
+    public function jobs(Request $request)
+    {
+
+        $config = new \Upwork\API\Config(
+            array(
+                'consumerKey'       => env('UPWORK_KEY'),  // SETUP YOUR CONSUMER KEY
+                'consumerSecret'    => env('UPWORK_SECRET'),  // SETUP YOUR CONSUMER KEY
+                'accessToken'       => auth()->user()->upwork_access_token,       // got access token
+                'accessSecret'      => auth()->user()->upwork_access_secret,      // got access secret
+                'requestToken'      => null,      // got request token
+                'requestSecret'     => null,     // got request secret
+                'verifier'          => $request->oauth_verifier,         // got oauth verifier after authorization
+                'mode'              => 'web',                           // can be 'nonweb' for console apps (default),
+                // and 'web' for web-based apps
+                //'debug' => true, // enables debug mode. Note that enabling debug in web-based applications can block redirects
+                //	'authType' => 'MyOAuth' // your own authentication type, see AuthTypes directory
+            )
+        );
+        $client = new Client($config);
+        $client->auth();
+        $applications = new \Upwork\API\Routers\Hr\Freelancers\Applications($client);
+        $jobs = $applications->getList();
+        return dd($jobs);
     }
 }

@@ -30,6 +30,7 @@ Route::get('callback/upwork', 'UpworkController@getToken');
 Route::post('callback/upwork', 'UpworkController@getToken');
 
 Route::get('upwork/info', 'UpworkController@getInfo');
+Route::get('upwork/jobs', 'UpworkController@jobs');
 /*
 Route::post('callback/upwork', function(){
     return 'Upwork';
