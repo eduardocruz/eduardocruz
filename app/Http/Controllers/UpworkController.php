@@ -55,7 +55,7 @@ class UpworkController extends Controller
             dump(session('request_token'));
             dump('D');
             dump(session('request_secret'));
-            
+
             // request authorization
             $client->auth();
         } elseif (empty(session('access_token'))) {
@@ -69,8 +69,11 @@ class UpworkController extends Controller
             dump(session('request_secret'));
             //return dd(session('access_token'));
             $accessTokenInfo = $client->auth();
+            $user = auth()->user();
             session(['access_token' => $accessTokenInfo['access_token']]);
+            $user->upwork_access_token = $accessTokenInfo['access_token'];
             session(['access_secret' => $accessTokenInfo['access_secret']]);
+            $user->upwork_access_secret = $accessTokenInfo['access_secret'];
         }
 
 
