@@ -54,7 +54,7 @@ class UpworkController extends Controller
             $user = auth()->user();
             session(['access_token' => $accessTokenInfo['access_token']]);
             session(['access_secret' => $accessTokenInfo['access_secret']]);
-            
+
             if(empty($user->upwork_access_token))
                 $user->upwork_access_token = $accessTokenInfo['access_token'];
 
@@ -129,7 +129,7 @@ class UpworkController extends Controller
         $client = new Client($config);
         $client->auth();
         $applications = new \Upwork\API\Routers\Hr\Freelancers\Applications($client);
-        $params = ['cursor_limit' => 100];
+        $params = ['cursor_limit' => 25];
         $jobs = $applications->getList($params);
         return dd($jobs);
     }
