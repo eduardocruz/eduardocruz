@@ -35,7 +35,7 @@
                         </video>
                         <p class="card-text text-left text-center">
                             @if(auth()->user()->videos->contains($video))
-                                <a href="/toggle/watch/{{$video->id}}" class="btn btn-warning btn-lg">Marcar como não assistido</a>
+                                <a href="/toggle/watch/{{$video->id}}" class="btn btn-warning btn-lg">Marcar aula como não assistido</a>
                             @else
                                 <a href="/toggle/watch/{{$video->id}}" class="btn btn-primary btn-lg">Marcar aula como assistida</a>
                             @endif
