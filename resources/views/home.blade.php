@@ -4,9 +4,11 @@
 <home :user="user" inline-template>
     <div class="container-fluid">
         <!-- Application Dashboard -->
+        {{--
         <a href="https://us02web.zoom.us/j/87951985429" class="text-center">
             <h3>Zoom Meeting 03/08 20h - https://us02web.zoom.us/j/87951985429</h3>
         </a>
+        --}}
         <div class="d-flex flex-wrap justify-content-center">
             @foreach($videos as $video)
                 <div class="col-sm-2 col-6">
@@ -90,6 +92,9 @@
                                 <p class="card-text mb-2"><small class="text-muted">
                                         {{Str::limit(ucwords(strtolower($technology->name)), 12)}}
                                     </small></p>
+                                <p class="card-text text-left text-center">
+                                    <a href="/checkin/{{$technology->id}}" class="btn btn-primary btn-sm">Checkin</a>
+                                </p>
                             </a>
                         </div>
                     @endforeach
