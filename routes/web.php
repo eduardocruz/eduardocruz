@@ -25,6 +25,8 @@ Route::resource('services', 'ServiceController');
 Route::get('follow/{user}', 'FollowController@follow')->middleware('auth');
 Route::get('unfollow/{user}', 'FollowController@unfollow')->middleware('auth');
 
+Route::get('toggle/watch/{video}', 'UserVideoController@toggleWatched')->middleware('auth');
+
 Route::get('checkin/{technology}', 'CheckinController@checkin')->middleware('auth');
 Route::get('callback/upwork', 'UpworkController@getToken');
 Route::post('callback/upwork', 'UpworkController@getToken');

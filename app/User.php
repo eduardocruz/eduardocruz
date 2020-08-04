@@ -5,6 +5,7 @@ namespace App;
 use App\Models\Checkin;
 use App\Models\Service;
 use App\Models\Technology;
+use App\Models\Video;
 use Laravel\Spark\CanJoinTeams;
 use Laravel\Spark\User as SparkUser;
 use Multicaret\Acquaintances\Traits\CanBeFollowed;
@@ -62,6 +63,11 @@ class User extends SparkUser
     public function technologies()
     {
         return $this->belongsToMany(Technology::class, 'checkins');
+    }
+
+    public function videos()
+    {
+        return $this->belongsToMany(Video::class);
     }
 
     public function checkins()
