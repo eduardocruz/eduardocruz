@@ -6,8 +6,7 @@
             <!-- Application Dashboard -->
             <div class="row">
                 <div class="col-sm-4">
-
-                        <div class="card text-center">
+                    <div class="card text-center">
                             <img
                                 src="{{$user->photo_url}}"
                                 class="img-thumbnail rounded-circle rounded-full w-1 h-1 mr-2 mt-2 mx-auto
@@ -48,7 +47,40 @@
                                 </script>
                                 --}}
                             </div>
-                        </div>
+                </div>
+
+                    <h3>Checkins</h3>
+                    <ul>
+                        @foreach($user->checkins()->orderBy('created_at', 'desc')->get() as $checkin)
+                            <li>
+                                {{$checkin->created_at->diffForHumans()}}
+                                <a href="/technologies/{{$checkin->technology->id}}">
+                                    {{$checkin->technology->name}}
+                                </a>
+                            </li>
+                        @endforeach
+                    </ul>
+
+                    <h3>Following</h3>
+                    <ul>
+                        @foreach($user->followings()->get() as $following)
+                            <li>
+                                <a href="/users/{{$following->id}}">
+                                    {{$following->name}}
+                                </a>
+                            </li>
+                        @endforeach
+                    </ul>
+                    <h3>Followers</h3>
+                    <ul>
+                        @foreach($user->followers()->get() as $follower)
+                            <li>
+                                <a href="/users/{{$follower->id}}">
+                                    {{$follower->name}}
+                                </a>
+                            </li>
+                        @endforeach
+                    </ul>
                 </div>
                 <div class="col-sm-8">
                     @if (session('status'))
@@ -67,7 +99,6 @@
                             @endif
                         </div>
                         <div class="col-sm-10">
-
                             @foreach($user->technologies()->distinct()->get() as $technology)
 
                                 <a href="/technologies/{{$technology->id}}" class="ml-2">
@@ -82,49 +113,34 @@
                                     @endif
                                 </div>
                             @endforeach
-
                             <div class="progress ml-2 mr-0 mb-3 mt-4">
                                 <div class="progress-bar bg-danger" role="progressbar" style="width: 100%;" aria-valuenow="" aria-valuemin="0" aria-valuemax="100"></div>
                             </div>
                         </div>
                     </div>
+                        <h3>Aulas assistidas</h3>
+                    <div class="row">
 
-
-
-
-
-                        <h3>Checkins</h3>
-                        <ul>
-                            @foreach($user->checkins()->orderBy('created_at', 'desc')->get() as $checkin)
-                                <li>
-                                    {{$checkin->created_at->diffForHumans()}}
-                                    <a href="/technologies/{{$checkin->technology->id}}">
-                                        {{$checkin->technology->name}}
-                                    </a>
-                                </li>
-                            @endforeach
-                        </ul>
-
-                        <h3>Following</h3>
-                        <ul>
-                            @foreach($user->followings()->get() as $following)
-                                <li>
-                                    <a href="/users/{{$following->id}}">
-                                        {{$following->name}}
-                                    </a>
-                                </li>
-                            @endforeach
-                        </ul>
-                    <h3>Followers</h3>
-                    <ul>
-                        @foreach($user->followers()->get() as $follower)
-                            <li>
-                                <a href="/users/{{$follower->id}}">
-                                    {{$follower->name}}
-                                </a>
-                            </li>
+                        @foreach($user->videos as $video)
+                            <div class="col-sm-4 col-4">
+                                <div class="card mb-0 shadow-sm">
+                                    <img src="{{$video->image_url}}" class="card-img-top" alt="...">
+                                    <div class="card-body">
+                                        <div class="d-flex justify-content-between align-items-center">
+                                            <div class="btn-group">
+                                                <a type="button" class="btn btn-sm btn-outline-secondary" href="/videos/{{$video->id}}">Assistir</a>
+                                            </div>
+                                            <small class="text-muted">{{$video->duration}} mins</small>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
                         @endforeach
-                    </ul>
+                    </div>
+
+
+
+
 
 
                 </div>
