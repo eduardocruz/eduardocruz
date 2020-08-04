@@ -78,11 +78,11 @@
 
                 <div class="d-flex flex-wrap justify-content-center">
                     @foreach($technologies as $technology)
-                        <div class="card-body d-flex flex-column text-center mr- col-sm-2 col-3 ml-2 mr-2 mb-2 mt-4">
+                        <div class="card text-center mr- col-sm-2 col-3 ml-2 mr-2 mb-2 mt-4">
                             <a href="/technologies/{{$technology->id}}">
                                 <img
                                     src="{{Storage::url($technology->image)}}"
-                                    class="img-thumbnail  rounded  w-1 mr-2 mt-2 h-25"
+                                    class="img-thumbnail  rounded  w-1 mr-2 mt-2 h-50"
                                     width="90"
                                     data-toggle="tooltip"
                                     data-placement="top"
