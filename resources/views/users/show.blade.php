@@ -118,7 +118,7 @@
                             </div>
                         </div>
                     </div>
-                        <h3>Aulas assistidas</h3>
+                    <h3>Aulas assistidas</h3>
                     <div class="row">
 
                         @foreach($user->videos as $video)
