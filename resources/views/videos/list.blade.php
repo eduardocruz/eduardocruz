@@ -1,7 +1,7 @@
 <div class="d-flex flex-wrap justify-content-center">
     @foreach($videos as $video)
         <div class="col-sm-2 col-6">
-            <div class="card mb-0 shadow-sm">
+            <div class="card mb-0 shadow-sm mb-2">
                 <img src="{{$video->image_url}}" class="card-img-top" alt="...">
                 <div class="card-body">
                     <div class="d-flex justify-content-between align-items-center">
