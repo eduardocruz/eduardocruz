@@ -1,3 +1,4 @@
+{{--
 <div class="card-deck">
     @foreach($technologies as $technology)
     <div class="card">
@@ -22,8 +23,8 @@
     @endforeach
 
 </div>
+--}}
 
-{{--
 <div class="d-flex flex-wrap justify-content-center">
     @foreach($technologies as $technology)
         <div class="card text-center mr- col-sm-2 col-3 ml-2 mr-2 mb-2 mt-4">
@@ -47,4 +48,4 @@
         </div>
     @endforeach
 </div>
---}}
+
