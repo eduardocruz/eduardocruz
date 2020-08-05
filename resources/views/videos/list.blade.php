@@ -17,4 +17,15 @@
             </div>
         </div>
     @endforeach
+
+        <div class="card">
+            <div class="card-body text-center pb-0">
+                <a href="/videos" class="h3">Todas as Aulas</a>
+            </div>
+            <div class="card-footer text-center">
+                <small class="text-muted">
+                    <a href="/videos" class="btn btn-primary btn-sm">Listar Todas</a>
+                </small>
+            </div>
+        </div>
 </div>

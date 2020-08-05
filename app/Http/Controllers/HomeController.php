@@ -50,7 +50,7 @@ class HomeController extends Controller
             return $user->checkins->count();
         });
 
-        $videos = Video::whereNotNull('video_url')->orderBy('created_at', 'desc')->get()->take(6);
+        $videos = Video::whereNotNull('video_url')->orderBy('created_at', 'desc')->get()->take(5);
 
         return view('home', compact(
             'users',

@@ -24,7 +24,7 @@
         @endforeach
             <div class="card">
                 <div class="card-body text-center pb-0">
-                    <a href="/technologies" class="h3">Listar Todas</a>
+                    <a href="/technologies" class="h4">Listar Todas</a>
                 </div>
                 <div class="card-footer text-center">
                     <small class="text-muted">
