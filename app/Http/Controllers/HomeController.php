@@ -40,7 +40,7 @@ class HomeController extends Controller
         $technologies = Technology::with('checkins')->distinct()->get()->sortByDesc(function($technology)
         {
             return $technology->checkins->count();
-        });
+        })->take(5);
 
         $interactions = Interaction::orderBy('created_at', 'desc')->get()->take(11);;
         $checkins = Checkin::orderBy('created_at', 'desc')->get()->take(11);
