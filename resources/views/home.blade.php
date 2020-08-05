@@ -20,6 +20,9 @@
                                     <a type="button" class="btn btn-sm btn-outline-secondary" href="/videos/{{$video->id}}">Assistir</a>
                                 </div>
                                 <small class="text-muted">{{$video->duration}} mins</small>
+                                @if($video->created_at > now()->subDays(7) )
+                                    <span class="badge badge-danger">Novo</span>
+                                @endif
                             </div>
                         </div>
                     </div>
