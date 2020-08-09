@@ -39,6 +39,16 @@ class TeamSubscription extends CashierSubscription
     }
 
     /**
+     * Get the subscription items related to the subscription.
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\HasMany
+     */
+    public function items()
+    {
+        return $this->hasMany(TeamSubscriptionItem::class, 'subscription_id');
+    }
+
+    /**
      * Get the "provider_plan" attribute from the model.
      *
      * @return string
