@@ -14,7 +14,7 @@ use Multicaret\Acquaintances\Traits\CanFollow;
 class User extends SparkUser
 {
 
-    use CanJoinTeams;
+    //use CanJoinTeams;
     use CanFollow, CanBeFollowed;
 
     /**
