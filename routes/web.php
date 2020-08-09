@@ -14,8 +14,6 @@
 Route::get('/', 'WelcomeController@show');
 Route::get('inscricoes', 'WelcomeController@inscricoes');
 
-
-
 Route::get('callback/upwork', 'UpworkController@getToken');
 Route::post('callback/upwork', 'UpworkController@getToken');
 
@@ -31,7 +29,7 @@ Route::middleware(['subscribed', 'auth'])->group(function () {
     Route::get('follow/{user}', 'FollowController@follow');
     Route::get('unfollow/{user}', 'FollowController@unfollow');
     Route::get('toggle/watch/{video}', 'UserVideoController@toggleWatched');
-    Route::get('checkin/{technology}', 'CheckinController@checkin')->middleware('auth');
+    Route::get('checkin/{technology}', 'CheckinController@checkin');
     Route::get('upwork/info', 'UpworkController@getInfo');
     Route::get('upwork/jobs', 'UpworkController@jobs');
 
