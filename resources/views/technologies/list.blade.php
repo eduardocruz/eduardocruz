@@ -4,6 +4,7 @@
         @foreach($technologies as $technology)
         <div class="card">
             <div class="card-body text-center pb-0">
+                <a href="/technologies/{{$technology->id}}">
                 <img
                     src="{{Storage::url($technology->image)}}"
                     class="img-thumbnail  rounded  w-1 mr-2 mt-2 h-50"
@@ -13,7 +14,9 @@
                     title="{{$technology->name}}"
                     alt="{{$technology->name}}"
                 />
+
                 <p class="card-text">{{$technology->name}}</p>
+                </a>
             </div>
             <div class="card-footer text-center">
                 <small class="text-muted">
