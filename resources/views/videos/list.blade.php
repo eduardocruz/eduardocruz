@@ -5,7 +5,7 @@
                 <a type="button" class="btn btn-sm btn-outline-secondary" href="/videos/{{$video->id}}">
                 <img src="{{$video->image_url}}" class="card-img-top" alt="...">
                 </a>
-                <div class="card-body">
+                <div class="card-body pb-2 pt-2 pl-2 pr-2">
                     <div class="d-flex justify-content-between align-items-center">
                         {{--
                         <div class="btn-group">
