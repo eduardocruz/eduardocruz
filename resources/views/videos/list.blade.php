@@ -2,13 +2,35 @@
     @foreach($videos as $video)
         <div class="col-sm-2 col-6">
             <div class="card mb-0 shadow-sm mb-2">
+                <a type="button" class="btn btn-sm btn-outline-secondary" href="/videos/{{$video->id}}">
                 <img src="{{$video->image_url}}" class="card-img-top" alt="...">
+                </a>
                 <div class="card-body">
                     <div class="d-flex justify-content-between align-items-center">
+                        {{--
                         <div class="btn-group">
-                            <a type="button" class="btn btn-sm btn-outline-secondary" href="/videos/{{$video->id}}">Assistir</a>
+                            <a type="button" class="btn btn-sm btn-outline-secondary" href="/videos/{{$video->id}}">
+                                Assistir</a>
                         </div>
                         <small class="text-muted">{{$video->duration}} mins</small>
+                        --}}
+                        @forelse($video->users()->orderBy('created_at', 'desc')->get()->take(3) as $user)
+                            <img
+                                src="{{$user->photo_url}}"
+                                class="img-thumbnail rounded-circle rounded-full w-1 h-1 mr-1 mt-1 mx-auto
+                                {{$user->status == 'success' ? 'bg-success' : null}}
+                                {{$user->status == 'danger' ? 'bg-danger' : null}}
+                                {{$user->status == 'warning' ? 'bg-warning' : null}}"
+                                width="45"
+                                data-toggle="tooltip"
+                                data-placement="top"
+                                title="{{$user->name}}"
+                                alt="{{$user->name}}"
+                            />
+                        @empty
+                            Seja o primeiro a assistir
+                        @endforelse
+
                         @if($video->created_at > now()->subDays(7) )
                             <span class="badge badge-danger">Novo</span>
                         @endif
