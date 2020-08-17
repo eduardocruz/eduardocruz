@@ -8,7 +8,7 @@
             <div class="col-md-12">
                 <div class="card card-default">
                     <div class="card-header">
-                        <h1>Videos</h1>
+                        <h1>Aulas</h1>
                         {{floor($video_minutes/60)}} horas e {{$video_minutes%60}} minutos em {{$video_count}} aulas para você ir para outro patamar profissional.
                     </div>
 
