@@ -67,7 +67,10 @@ class User extends SparkUser
 
     public function videos()
     {
-        return $this->belongsToMany(Video::class);
+        return $this->belongsToMany(Video::class)->using('App\Models\UserVideo')->withPivot([
+            'created_at',
+            'updated_at'
+        ])->withTimestamps();
     }
 
     public function checkins()

@@ -13,6 +13,9 @@ class Video extends Model
 
     public function users()
     {
-        return $this->belongsToMany(User::class);
+        return $this->belongsToMany(User::class)->using('App\Models\UserVideo')->withPivot([
+            'created_at',
+            'updated_at'
+        ])->withTimestamps();
     }
 }
