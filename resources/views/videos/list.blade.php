@@ -14,7 +14,7 @@
                         </div>
                         <small class="text-muted">{{$video->duration}} mins</small>
                         --}}
-                        @forelse($video->users()->orderBy('created_at', 'desc')->get()->take(3) as $user)
+                        @forelse($video->users()->orderBy('user_video.created_at', 'desc')->get()->take(3) as $user)
                             <img
                                 src="{{$user->photo_url}}"
                                 class="img-thumbnail rounded-circle rounded-full w-1 h-1 mr-1 mt-1 mx-auto
