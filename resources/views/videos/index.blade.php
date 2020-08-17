@@ -26,7 +26,7 @@
                                                 {!! $video->summary !!}
                                             </p>
                                             <div class="d-flex justify-content-between align-items-center">
-                                                @forelse($video->users()->orderBy('created_at', 'desc')->get()->take(7) as $user)
+                                                @forelse($video->users()->orderBy('user_video.created_at', 'desc')->get()->take(7) as $user)
                                                     <img
                                                         src="{{$user->photo_url}}"
                                                         class="img-thumbnail rounded-circle rounded-full w-1 h-1 mr-1 mt-1 mx-auto
