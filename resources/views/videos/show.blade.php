@@ -46,7 +46,7 @@
                     <h3>Assistiram essa aula:</h3>
                     <div class="d-flex flex-wrap justify-content-center">
 
-                        @foreach($video->users as $user)
+                        @foreach($video->users()->orderBy('user_video.created_at', 'desc')->get() as $user)
                             <div class="card text-center col-sm-2 col-3 mr-2 ml-2 mb-2">
                                 <a href="/users/{{$user->id}}">
                                     <img
