@@ -2,12 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a300180f-8194-421a-b8d9-300ec0c31afa" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/eduardocruz.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/eduardocruz.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Providers/SparkServiceProvider.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Providers/SparkServiceProvider.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/vendor/spark/layouts/app.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/vendor/spark/layouts/app.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/spark/src/Http/Middleware/VerifyUserIsSubscribed.php" beforeDir="false" afterPath="$PROJECT_DIR$/spark/src/Http/Middleware/VerifyUserIsSubscribed.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -295,6 +291,7 @@
       <workItem from="1597701820187" duration="836000" />
       <workItem from="1597754941796" duration="9000" />
       <workItem from="1597771592906" duration="27000" />
+      <workItem from="1597771629449" duration="307000" />
     </task>
     <servers />
   </component>
