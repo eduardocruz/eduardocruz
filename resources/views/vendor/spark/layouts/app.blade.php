@@ -23,7 +23,7 @@
     <script>
         window.Spark = <?php echo json_encode(array_merge(Spark::scriptVariables(), [])); ?>;
     </script>
-@if(App::environment('production'))
+    @if(App::environment('production'))
     <!-- Global site tag (gtag.js) - Google Analytics -->
         <script async src="https://www.googletagmanager.com/gtag/js?id=UA-165183-17"></script>
         <script>

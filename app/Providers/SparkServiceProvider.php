@@ -34,8 +34,8 @@ class SparkServiceProvider extends ServiceProvider
      */
     protected $developers = [
         'eduardo@eduardocruz.com',
-        'lilian.cunha.comp@gmail.com',
-        'viniciuspa87@hotmail.com'
+        //'lilian.cunha.comp@gmail.com',
+        //'viniciuspa87@hotmail.com'
     ];
 
     /**
@@ -62,13 +62,12 @@ class SparkServiceProvider extends ServiceProvider
 
         //Spark::freePlan('Fila de Espera')->features(['Inscreva-se e aguarde novas vagas'])->trialDays(0);
 
-
         Spark::plan('Mensal', 'plan_HFhocp5DrQZTu7')
+//            ->trialDays(7)
             ->price(43.34)
             ->features([
                 'Aulas semanais ao vivo.', 'Acesso a gravação das aulas semanais.', 'Acesso a lives antigas.'
             ]);
-
 
         Spark::plan('Mensal Founder', 'plan_HF9ozhVlP1Pgyg')
             ->price(21.67)
