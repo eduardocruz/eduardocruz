@@ -84,7 +84,7 @@
                     <h2  class="mb-4">Algumas aulas que você terá acesso.</h2>
                     <div class="row">
 
-                        @foreach(\App\Models\Video::whereNotNull('video_url')->where('created_at', '<', '2020-04-20 00:00:00')->orderby('created_at', 'desc')->get() as $video)
+                        @foreach(\App\Models\Video::whereNotNull('video_url')->orderby('created_at', 'desc')->get() as $video)
                             <div class="col-md-6">
                                 <div class="card mb-4 shadow-sm">
                                     <img src="{{$video->image_url}}" class="card-img-top" alt="...">
