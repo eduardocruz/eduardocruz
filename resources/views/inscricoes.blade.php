@@ -12,17 +12,16 @@
                     </h1>
                 </div>
                 <div class="card-body">
-                    <h4>Para você aprender com quem sabe, como trabalhar com desenvolvimento de software, de casa e ganhando em dólar.</h4>
+                    <h4>Eu trabalho como desenvolvedor Laravel para startups americanas. E compartilho conhecimento em aulas semanais.</h4>
                     <p>
-                        Se você chegou nessa página, você já me conhece. Já sabe que meu nome é Eduardo Cruz, que desde
-                        2013 eu trabalho como desenvolvedor de software remotamente do Brasil para startups americanas.
-                        E que eu comecei a compartilhar o que eu aprendi desde 2012 através de vídeos do Youtube, Facebook
-                        Video e Instagram/IGTV.
+                        Meu nome é Eduardo Cruz, desenvolvedor de software a mais de vinte anos. Desde
+                        2013 eu trabalho como desenvolvedor de software usando o framework Laravel, remotamente do Brasil para startups americanas.
                     </p>
                     <p>
-                        E o mais importante não é sobre mim. Mas que eu tenho ajudado pessoas como você a evoluir profissionalmente.
-                        Aprender a trabalhar remotamente, prospectar clientes no Exterior através do Upwork e ganhar em dólar
-                        valores acima da média salarial brasileira.
+                        Se você quer aprender mais, eu dou aulas semanais ao vivo todas as Segundas-feiras às 20h00.
+                    </p>
+                    <p>
+                        Além das aulas ao vivo, você tem acesso a {{$video_count}} aulas gravadas, que totalizam {{floor($video_minutes/60)}} horas e {{$video_minutes%60}} minutos de conteúdo sobre diversos temas (Veja a lista no final da página).
                     </p>
                     <p class="col text-center"><a href="/register" class="btn btn-primary btn-large">Fazer a minha inscrição agora.</a></p>
 
@@ -48,8 +47,8 @@
                         O foco aqui é ter aulas semanais ligadas a desenvolvimento web (com ênfase no framework Laravel)
                         empreendedorismo, marketing digital e tudo que você precisa para: trabalhar com desenvolvimento
                         web apoiando alguém a criar a uma startup baseada em um serviço web (SaaS).  Ou você criando a sua
-                        startup. Prospectando clientes no Brasil ou no exterior. Os das aulas semanais são diversos. Ferramentas,
-                        framwork, infra-estrutura ... mas o objetivo é um só. Levar você para o seu próximo patamar profissional.
+                        startup. Prospectando clientes no Brasil ou no exterior. Os temas das aulas semanais são diversos. Ferramentas,
+                        framework, infra-estrutura ... mas o objetivo é um só. Levar você para o seu próximo patamar profissional.
                     </p>
                     <h4>Importante</h4>
                     <p>Aqui não tem esquema ou truque para ganhar dinheiro rápido. Se esse é o seu objetivo, você veio ao lugar errado.
@@ -75,31 +74,10 @@
                     </p>
                     <h4>Inscrição</h4>
                     <p>
-                        O processo de incrição é super simples. Você vai para a página de registro, coloca os seus dados
-                        de pagamento e automaticamente faz a sua inscrição. O valor será cobrado mensalmente no seu cartão
-                        de crédito. (Infelizmente não existe outra opção de pagamento além de cartão de crédito) Após você
-                        fazer a sua inscrição você terá acesso imeadiato a sequência de vídeos abaixo. Eles são uma amostra
-                        do que você terá acesso após você "entrar para o time  de alunos".
-                    </p>
-                    <h4>Entrando para o time de alunos</h4>
-                    <p>
-                        Entrar para o time de alunos também é um processo simples. Após você se inscrever, basta você
-                        participar da próxima aula ao vivo na Segunda-feira as 20h. Todas as aulas ao vivo acontecem as
-                        Segundas-feiras as 20h. E porque é necessário que você participe de pelo menos uma aula ao vivo
-                        para ter acesso a todos os vídeos gravados? Exatamente para que nos possamos entender quem é você,
-                        qual o seu nível de experiência, qual a sua expectativa em relação a comunidade e como você pode
-                        contribuir. "Forçar" você a participar de uma aula ao vivo é o que permite nós saibamos quem é você.
-                        E você também vai começar a perceber a importância disso após você estar na turma e começar a
-                        outras pessoas chegando depois de você e se apresentando também. O que vai ajudar entre outras
-                        coisas a melhorar o seu networking.
-                    </p>
-                    <h4>Faça a sua inscrição agora</h4>
-                    <p>
-                        Creio que essas informações já são o suficiente para tirar as principais dúvidas e lhe dar uma
-                        noção de como será participar da comunidade. Assim que você se inscrever eu vou receber uma
-                        notificação e tentarei enviar um email para você em até 24h. Aproveite a oportunidade e faça a
-                        sua inscrição agora.
-
+                        O processo de incrição é super simples. Os pagamentos são cobrados mensalmente no cartão de crédito.
+                        As cobrancas são feitas pelo Stripe (gateway de pagamento).
+                        Após você fazer a sua inscrição você terá acesso imeadiato a sequência de vídeos abaixo. E as Segundas-feiras
+                        você terá acesso as aulas ao vivo.
                     </p>
                     <p class="col text-center"><a href="/register" class="btn btn-primary btn-large">Fazer a minha inscrição agora.</a></p>
 

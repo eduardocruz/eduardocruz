@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Video;
 use App\User;
 use Illuminate\Http\Request;
 
@@ -20,6 +21,8 @@ class WelcomeController extends Controller
     public function inscricoes()
     {
         $users = User::orderBy('id', 'asc')->get();
-        return view('inscricoes', compact('users'));
+        $video_minutes = Video::whereNotNull('video_url')->sum('duration');
+        $video_count = Video::whereNotNull('video_url')->count();
+        return view('inscricoes', compact('users', 'video_minutes', 'video_count'));
     }
 }
