@@ -21,7 +21,7 @@
                         Se você quer aprender mais, eu dou aulas semanais ao vivo todas as Segundas-feiras às 20h00.
                     </p>
                     <p>
-                        Além das aulas ao vivo, você tem acesso a {{$video_count}} aulas gravadas, que totalizam {{floor($video_minutes/60)}} horas e {{$video_minutes%60}} minutos de conteúdo sobre diversos temas (Veja a lista no final da página).
+                        Além das aulas ao vivo, você tem acesso a <strong>{{$video_count}} aulas gravadas, que totalizam {{floor($video_minutes/60)}} horas e {{$video_minutes%60}} minutos de conteúdo sobre diversos temas</strong> (Veja a lista no final da página).
                     </p>
                     <p class="col text-center"><a href="/register" class="btn btn-primary btn-large">Fazer a minha inscrição agora.</a></p>
 
