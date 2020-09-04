@@ -14,15 +14,15 @@
                 {{ session('status') }}
             </div>
         @endif
-        @livewire('home.video-list')
+        <livewire:home.video-list />
         <div class="row">
             <div class="col-sm-8">
-                @livewire('home.technology-list')
-                @livewire('home.user-ranking')
+                <livewire:home.technology-list />
+                <livewire:home.user-ranking />
             </div>
             <div class="col-sm-4">
-                @livewire('home.latest-checkins')
-                @livewire('home.latest-events')
+                <livewire:home.latest-checkins />
+                <livewire:home.latest-events />
             </div>
         </div>
     </div>
