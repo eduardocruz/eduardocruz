@@ -33,34 +33,7 @@ class HomeController extends Controller
      */
     public function show()
     {
-        $video_count = Video::whereNotNull('video_url')->count();
-        $video_minutes = Video::whereNotNull('video_url')->sum('duration');
-
-        //$technologies = Technology::orderBy('created_at', 'desc')->get();
-        $technologies = Technology::with('checkins')->distinct()->get()->sortByDesc(function($technology)
-        {
-            return $technology->checkins->count();
-        })->take(5);
-
-        $interactions = Interaction::orderBy('created_at', 'desc')->get()->take(11);;
-        $checkins = Checkin::orderBy('created_at', 'desc')->get()->take(11);
-
-        $users = User::with('checkins')->distinct()->get()->sortByDesc(function($user)
-        {
-            return $user->checkins->count();
-        });
-
-        $videos = Video::whereNotNull('video_url')->orderBy('created_at', 'desc')->get()->take(5);
-
-        return view('home', compact(
-            'users',
-            'video_count',
-            'video_minutes',
-            'interactions',
-            'technologies',
-            'checkins',
-            'videos'
-        ));
+        return view('home');
     }
 
 
