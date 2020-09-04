@@ -14,15 +14,15 @@
                 {{ session('status') }}
             </div>
         @endif
-        @include('videos.list')
-
+        @livewire('video-list')
         <div class="row">
             <div class="col-sm-8">
-                @include('technologies.list')
-               @include('users.list')
+                @livewire('technology-list')
+                @livewire('user-ranking')
             </div>
             <div class="col-sm-4">
-                @include('events.list')
+                @livewire('latest-checkins')
+                @livewire('latest-events')
             </div>
         </div>
     </div>
