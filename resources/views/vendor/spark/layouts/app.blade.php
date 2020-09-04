@@ -70,6 +70,8 @@
         </script>
         <!-- end Mixpanel -->
     @endif
+    @livewireStyles
+
 </head>
 <body>
     <div id="spark-app" v-cloak>
@@ -96,5 +98,6 @@
     <!-- JavaScript -->
     <script src="{{ mix('js/app.js') }}"></script>
     <script src="{{ asset('/js/sweetalert.min.js') }}"></script>
+    @livewireScripts
 </body>
 </html>
