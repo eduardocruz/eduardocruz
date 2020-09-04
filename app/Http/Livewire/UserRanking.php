@@ -7,12 +7,14 @@ use Livewire\Component;
 
 class UserRanking extends Component
 {
+    public $users;
+
     public function render()
     {
-        $users = User::with('checkins')->distinct()->get()->sortByDesc(function($user)
+        $this->users = User::with('checkins')->distinct()->get()->sortByDesc(function($user)
         {
             return $user->checkins->count();
         });
-        return view('livewire.user-ranking', ['users' => $users]);
+        return view('livewire.user-ranking');
     }
 }

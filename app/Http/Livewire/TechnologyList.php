@@ -7,15 +7,15 @@ use Livewire\Component;
 
 class TechnologyList extends Component
 {
+
+    public $technologies;
+
     public function render()
     {
-        //$technologies = Technology::orderBy('created_at', 'desc')->get();
-        $technologies = Technology::with('checkins')->distinct()->get()->sortByDesc(function($technology)
+        $this->technologies = Technology::with('checkins')->distinct()->get()->sortByDesc(function($technology)
         {
             return $technology->checkins->count();
         })->take(5);
-        return view('livewire.technology-list', [
-            'technologies' => $technologies
-        ]);
+        return view('livewire.technology-list');
     }
 }
