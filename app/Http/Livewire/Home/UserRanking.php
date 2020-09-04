@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Livewire;
+namespace App\Http\Livewire\Home;
 
 use App\User;
 use Livewire\Component;
@@ -15,6 +15,6 @@ class UserRanking extends Component
         {
             return $user->checkins->count();
         });
-        return view('livewire.user-ranking');
+        return view('livewire.home.user-ranking');
     }
 }

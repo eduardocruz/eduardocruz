@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Livewire;
+namespace App\Http\Livewire\Home;
 
 use App\Models\Technology;
 use Livewire\Component;
@@ -16,6 +16,6 @@ class TechnologyList extends Component
         {
             return $technology->checkins->count();
         })->take(5);
-        return view('livewire.technology-list');
+        return view('livewire.home.technology-list');
     }
 }

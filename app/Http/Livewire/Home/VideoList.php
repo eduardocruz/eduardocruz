@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Livewire;
+namespace App\Http\Livewire\Home;
 
 use App\Models\Video;
 use Livewire\Component;
@@ -17,6 +17,6 @@ class VideoList extends Component
         $this->video_count = Video::whereNotNull('video_url')->count();
         $this->video_minutes = Video::whereNotNull('video_url')->sum('duration');
         $this->videos = Video::whereNotNull('video_url')->orderBy('created_at', 'desc')->get()->take(5);
-        return view('livewire.video-list');
+        return view('livewire.home.video-list');
     }
 }
