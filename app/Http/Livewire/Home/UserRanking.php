@@ -2,6 +2,7 @@
 
 namespace App\Http\Livewire\Home;
 
+use App\Models\Level;
 use App\User;
 use Livewire\Component;
 
