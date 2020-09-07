@@ -18,7 +18,6 @@
             <div class="col-sm-8">
                 <livewire:home.technology-list />
                 <livewire:home.user-ranking />
-                <livewire:home.levels />
             </div>
             <div class="col-sm-4">
                 <livewire:home.latest-checkins />
