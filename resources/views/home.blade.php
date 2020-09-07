@@ -4,11 +4,10 @@
 <home :user="user" inline-template>
     <div class="container-fluid">
         <!-- Application Dashboard -->
-        {{--
         <a href="https://us02web.zoom.us/j/87951985429" class="text-center">
-            <h3>Zoom Meeting 31/08 20h - https://us02web.zoom.us/j/87951985429</h3>
+            <h3>Zoom Meeting 07/09 20h - https://us02web.zoom.us/j/87951985429</h3>
         </a>
-        --}}
+
         @if (session('status'))
             <div class="alert alert-success">
                 {{ session('status') }}
@@ -19,6 +18,7 @@
             <div class="col-sm-8">
                 <livewire:home.technology-list />
                 <livewire:home.user-ranking />
+                <livewire:home.levels />
             </div>
             <div class="col-sm-4">
                 <livewire:home.latest-checkins />
