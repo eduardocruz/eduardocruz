@@ -4,11 +4,9 @@
 <home :user="user" inline-template>
     <div class="container-fluid">
         <!-- Application Dashboard -->
-        {{--
-        <a href="https://us02web.zoom.us/j/87951985429" class="text-center">
-            <h3>Zoom Meeting 07/09 20h - https://us02web.zoom.us/j/87951985429</h3>
+        <a href="https://us02web.zoom.us/j/82132275565" class="text-center">
+            <h3>Zoom Meeting 14/09 20h - https://us02web.zoom.us/j/82132275565</h3>
         </a>
-        --}}
         @if (session('status'))
             <div class="alert alert-success">
                 {{ session('status') }}
