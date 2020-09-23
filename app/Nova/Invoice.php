@@ -45,9 +45,9 @@ class Invoice extends Resource
         return [
             ID::make()->sortable(),
             BelongsTo::make('User')->nullable(),
-            Currency::make('Total'),
-            DateTime::make('Created_At')->format('d/m/Y')->sortable(),
-            DateTime::make('Updated_At')->format('d/m/Y')->sortable(),
+            Currency::make('Total')->locale('br'),
+            DateTime::make('Created_At')->format('DD MMM YYYY')->sortable(),
+            DateTime::make('Updated_At')->format('DD MMM YYYY')->sortable(),
         ];
     }
 
