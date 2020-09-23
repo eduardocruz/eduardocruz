@@ -44,7 +44,7 @@ class Subscription extends Resource
     {
         return [
             ID::make()->sortable(),
-            Badge::make('Status')->map([
+            Badge::make('Stripe Status')->map([
                 'canceled' => 'danger',
                 'unpaid' => 'warning',
                 'incomplete' => 'warning',
