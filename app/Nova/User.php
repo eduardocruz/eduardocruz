@@ -70,7 +70,7 @@ class User extends Resource
 
             BelongsToMany::make('Technologies')->nullable(),
 
-            HasMany::make('Invoice')
+            HasMany::make('Invoices','localInvoices', )
         ];
     }
 
