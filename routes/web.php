@@ -12,6 +12,8 @@
 */
 
 Route::get('/', 'WelcomeController@show');
+
+Route::get('welcome', 'WelcomeController@show');
 Route::get('inscricoes', 'WelcomeController@inscricoes');
 
 Route::get('callback/upwork', 'UpworkController@getToken');
@@ -32,6 +34,7 @@ Route::middleware(['subscribed', 'auth'])->group(function () {
     Route::get('checkin/{technology}', 'CheckinController@checkin');
     Route::get('upwork/info', 'UpworkController@getInfo');
     Route::get('upwork/jobs', 'UpworkController@jobs');
+    Route::get('mobile', '\App\Http\Livewire\Mobile@render');
 
 });
 /*
