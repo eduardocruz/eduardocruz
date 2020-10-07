@@ -18,6 +18,11 @@ class WelcomeController extends Controller
         return view('welcome');
     }
 
+    public function welcome()
+    {
+        return view('welcome');
+    }
+
     public function inscricoes()
     {
         $users = User::orderBy('id', 'asc')->get();
