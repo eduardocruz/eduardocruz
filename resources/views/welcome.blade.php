@@ -194,14 +194,7 @@
                 </video>
             @else
                 <div class="display-3 m-b-md">
-                    {{config('app.name')}}
-                </div>
-                <div class="flex-center">
-                    <span class="mr-1">Made with</span>
-                    <span class="icon">
-                    <i class="fa fa-heart fa-w" aria-hidden="true" style="color:red"></i>
-                    </span>
-                    <span class="ml-1">in Brazil 🇧🇷</span>
+                    Somente para usuários logados
                 </div>
             @endauth
 

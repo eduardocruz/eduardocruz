@@ -13,7 +13,7 @@
 
 Route::get('/', 'WelcomeController@show');
 
-Route::get('welcome', 'WelcomeController@show');
+Route::get('welcome', 'WelcomeController@welcome');
 Route::get('inscricoes', 'WelcomeController@inscricoes');
 
 Route::get('callback/upwork', 'UpworkController@getToken');
