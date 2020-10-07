@@ -173,16 +173,38 @@
     @endif
 
         <div class="content">
-            <div class="display-3 m-b-md">
-                {{config('app.name')}}
-            </div>
-            <div class="flex-center">
-                <span class="mr-1">Made with</span>
-                <span class="icon">
+
+            @auth
+                <video
+                    id="my-player"
+                    class="video-js"
+                    controls
+                    preload="auto"
+                    width="80%"
+                    poster="https://eduardocruz.nyc3.cdn.digitaloceanspaces.com/devremoto/BoasVindas.png"
+                    data-setup='{}'>
+                    <source src="https://eduardocruz.nyc3.cdn.digitaloceanspaces.com/devremoto/BoasVindas.mp4" type="video/mp4"></source>
+                    <p class="vjs-no-js huge">
+                        To view this video please enable JavaScript, and consider upgrading to a
+                        web browser that
+                        <a href="https://videojs.com/html5-video-support/" target="_blank">
+                            supports HTML5 video
+                        </a>
+                    </p>
+                </video>
+            @else
+                <div class="display-3 m-b-md">
+                    {{config('app.name')}}
+                </div>
+                <div class="flex-center">
+                    <span class="mr-1">Made with</span>
+                    <span class="icon">
                     <i class="fa fa-heart fa-w" aria-hidden="true" style="color:red"></i>
                     </span>
-                <span class="ml-1">in Brazil 🇧🇷</span>
-            </div>
+                    <span class="ml-1">in Brazil 🇧🇷</span>
+                </div>
+            @endauth
+
             {{--
             <p>Powered by:</p>
             <div class="flex-center">
