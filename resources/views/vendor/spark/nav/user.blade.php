@@ -77,6 +77,18 @@
                             <a class="dropdown-item" href="/settings">
                                 <i class="fa fa-fw text-left fa-btn fa-cog"></i> {{__('Your Settings')}}
                             </a>
+                            <div class="dropdown-divider"></div>
+                            <!-- Content -->
+                            <h6 class="dropdown-header">Conteúdo</h6>
+                            <a class="dropdown-item" href="/videos">
+                                <i class="fa fa-fw text-left fa-btn fa-video"></i> Aulas
+                            </a>
+                            <a class="dropdown-item" href="/technologies">
+                                <i class="fa fa-fw text-left fa-btn fa-check-circle"></i> Tecnologias
+                            </a>
+                            <a class="dropdown-item" href="/projects">
+                                <i class="fa fa-fw text-left fa-btn fa-tasks"></i> Projetos
+                            </a>
 
                             <div class="dropdown-divider"></div>
 

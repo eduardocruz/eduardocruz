@@ -3,6 +3,7 @@
 namespace App;
 
 use App\Models\Checkin;
+use App\Models\Project;
 use App\Models\Service;
 use App\Models\Technology;
 use App\Models\Video;
@@ -86,5 +87,10 @@ class User extends SparkUser
     public function max_checkins()
     {
         return $this->checkins()->selectRaw('count(id) as total')->groupBy('technology_id')->get()->max('total');
+    }
+
+    public function projects()
+    {
+        return $this->hasMany(Project::class);
     }
 }
