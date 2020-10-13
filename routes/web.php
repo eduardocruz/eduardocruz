@@ -27,6 +27,7 @@ Route::middleware(['subscribed', 'auth'])->group(function () {
     Route::resource('videos', 'VideoController');
     Route::resource('users', 'UserController');
     Route::resource('technologies', 'TechnologyController');
+    Route::resource('projects', 'ProjectController');
     Route::resource('services', 'ServiceController');
     Route::get('follow/{user}', 'FollowController@follow');
     Route::get('unfollow/{user}', 'FollowController@unfollow');
