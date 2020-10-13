@@ -7,7 +7,6 @@
         <a href="https://us02web.zoom.us/j/86924363618" class="text-center">
             <h3>Zoom Meeting 13/10 20h - https://us02web.zoom.us/j/86924363618</h3>
         </a>
-        <h2>Próxima aula 13/10 (Terça) às 20h</h2>
         @if (session('status'))
             <div class="alert alert-success">
                 {{ session('status') }}
