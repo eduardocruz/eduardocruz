@@ -49,7 +49,13 @@ class Project extends Resource
                 ->rules('required', 'max:255'),
             Text::make('Description')
                 ->sortable()
-                ->rules('required', 'max:255'),
+                ->rules('max:10000'),
+            Text::make('Code Repository')
+                ->sortable()
+                ->rules('max:255'),
+            Text::make('Url')
+                ->nullable()
+                ->rules('max:1000'),
             BelongsTo::make('User')->nullable(),
         ];
     }
