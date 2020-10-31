@@ -6,7 +6,7 @@
         <!-- Application Dashboard -->
 
         <a href="https://us02web.zoom.us/j/86924363618" class="text-center">
-            <h3>Zoom Meeting 26/10 20h - https://us02web.zoom.us/j/86924363618</h3>
+            <h3>Zoom Meeting 03/11 <strong>(Terça)</strong> 20h - https://us02web.zoom.us/j/86924363618</h3>
         </a>
 
         @if (session('status'))
