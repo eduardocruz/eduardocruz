@@ -115,6 +115,7 @@ class VideoController extends Controller
     public function devOps()
     {
         $unlockedVideos = Video::whereIn('id', [34, 41, 51, 60])->get();
-         return view('videos.section', compact('unlockedVideos'));
+        $sectionName = 'DevOps';
+        return view('videos.section', compact('unlockedVideos', 'sectionName'));
     }
 }

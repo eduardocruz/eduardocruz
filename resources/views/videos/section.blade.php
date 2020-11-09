@@ -8,7 +8,7 @@
             <div class="col-md-12">
                 <div class="card card-default">
                     <div class="card-header">
-                        <h1>Aulas</h1>
+                        <h1>{{$sectionName}}</h1>
                     </div>
 
                     <div class="card-body">
