@@ -83,13 +83,15 @@
                             <a class="dropdown-item" href="/videos">
                                 <i class="fa fa-fw text-left fa-btn fa-video"></i> Aulas
                             </a>
+                            <a class="dropdown-item" href="/devops">
+                                <i class="fa fa-fw text-left fa-btn fa-video"></i> DevOps
+                            </a>
                             <a class="dropdown-item" href="/technologies">
                                 <i class="fa fa-fw text-left fa-btn fa-check-circle"></i> Tecnologias
                             </a>
                             <a class="dropdown-item" href="/projects">
                                 <i class="fa fa-fw text-left fa-btn fa-tasks"></i> Projetos
                             </a>
-
                             <div class="dropdown-divider"></div>
 
                             @if (Spark::usesTeams() && (Spark::createsAdditionalTeams() || Spark::showsTeamSwitcher()))

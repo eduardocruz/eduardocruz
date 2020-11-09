@@ -22,7 +22,7 @@ class VideoController extends Controller
 
         // $this->middleware('verified');
     }
-    
+
     /**
      * Display a listing of the resource.
      *
@@ -110,5 +110,11 @@ class VideoController extends Controller
     public function destroy(Video $video)
     {
         //
+    }
+
+    public function devOps()
+    {
+        $unlockedVideos = Video::whereIn('id', [34, 41, 51, 60])->get();
+         return view('videos.section', compact('unlockedVideos'));
     }
 }
