@@ -22,6 +22,7 @@ Route::post('callback/upwork', 'UpworkController@getToken');
 
 Route::middleware(['subscribed', 'auth'])->group(function () {
     Route::get('/home', 'HomeController@show');
+    Route::get('/home2', 'HomeController@show2');
     Route::get('/connect', 'HomeController@connect');
     Route::get('/connected', 'HomeController@connected');
     Route::get('devops', 'VideoController@devOps');

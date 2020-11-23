@@ -36,6 +36,17 @@ class HomeController extends Controller
         return view('home');
     }
 
+    /**
+     * Show the application dashboard.
+     *
+     * @return Response
+     */
+    public function show2()
+    {
+        $videos = Video::orderBy('created_at', 'desc')->get();
+        return view('home2', compact('videos'));
+    }
+
 
     public function connect()
     {
