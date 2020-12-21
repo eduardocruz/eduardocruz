@@ -5,8 +5,8 @@
     <div class="container-fluid">
         <!-- Application Dashboard -->
 
-        <a href="https://us02web.zoom.us/j/88438794377" class="text-center">
-            <h3>Zoom Meeting 14/12 20h - https://us02web.zoom.us/j/88438794377</h3>
+        <a href="https://us02web.zoom.us/j/82652566813" class="text-center">
+            <h3>Zoom Meeting 21/12 20h - https://us02web.zoom.us/j/82652566813</h3>
         </a>
 
         @if (session('status'))
