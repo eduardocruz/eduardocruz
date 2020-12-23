@@ -7,6 +7,7 @@ use Laravel\Nova\Fields\BelongsTo;
 use Laravel\Nova\Fields\Currency;
 use Laravel\Nova\Fields\DateTime;
 use Laravel\Nova\Fields\ID;
+use Laravel\Nova\Fields\Text;
 use Laravel\Nova\Http\Requests\NovaRequest;
 
 class Invoice extends Resource
@@ -46,8 +47,9 @@ class Invoice extends Resource
             ID::make()->sortable(),
             BelongsTo::make('User')->nullable(),
             Currency::make('Total')->currency('BRL'),
+            Text::make('Provider Id'),
             DateTime::make('Created_At')->format('DD MMM YYYY')->sortable(),
-            DateTime::make('Updated_At')->format('DD MMM YYYY')->sortable(),
+            DateTime::make('Updated_At')->format('DD MMM YYYY')->hideFromIndex(),
         ];
     }
 
