@@ -5,8 +5,8 @@
     <div class="container-fluid">
         <!-- Application Dashboard -->
 
-        <a href="https://us02web.zoom.us/j/82652566813" class="text-center">
-            <h3>Zoom Meeting 21/12 20h - https://us02web.zoom.us/j/82652566813</h3>
+        <a href="#" class="text-center">
+            <h3>Nào haverá aula ao vivo nos dias 28/12/2020 e 04/01/2021</h3>
         </a>
 
         @if (session('status'))
