@@ -3,6 +3,7 @@
 namespace App\Nova;
 
 use Carbon\Carbon;
+use Illuminate\Database\Eloquent\Relations\HasOneThrough;
 use Illuminate\Http\Request;
 use Laravel\Nova\Fields\BelongsTo;
 use Laravel\Nova\Fields\Currency;
@@ -54,6 +55,9 @@ class NotaFiscal extends Resource
             BelongsTo::make('Invoice')->nullable(),
             Number::make('Number'),
             Text::make('Verification_Code'),
+            Text::make('User', function() {
+                return optional($this->invoice)->user->name;
+            })->onlyOnIndex(),
             DateTime::make('Emitted_At')->format('DD MMM YYYY')->withMeta(['value' => $this->emitted_at ?? Carbon::now()->toDateString()])->showOnUpdating()->sortable(),
             DateTime::make('Created_At')->format('DD MMM YYYY')->hideWhenCreating()->sortable(),
             DateTime::make('Updated_At')->format('DD MMM YYYY')->hideWhenCreating()->hideFromIndex(),
