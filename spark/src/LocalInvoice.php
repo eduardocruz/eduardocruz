@@ -2,6 +2,7 @@
 
 namespace Laravel\Spark;
 
+use App\Models\NotaFiscal;
 use Illuminate\Database\Eloquent\Model;
 
 class LocalInvoice extends Model
@@ -33,5 +34,10 @@ class LocalInvoice extends Model
     public function user()
     {
         return $this->belongsTo(Spark::userModel(), 'user_id');
+    }
+
+    public function notaFiscal()
+    {
+        return $this->hasOne(NotaFiscal::class, 'invoice_id');
     }
 }

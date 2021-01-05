@@ -2,31 +2,35 @@
 
 namespace App\Nova;
 
+use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Laravel\Nova\Fields\BelongsTo;
 use Laravel\Nova\Fields\Currency;
 use Laravel\Nova\Fields\DateTime;
-use Laravel\Nova\Fields\HasMany;
-use Laravel\Nova\Fields\HasOne;
 use Laravel\Nova\Fields\ID;
+use Laravel\Nova\Fields\Number;
 use Laravel\Nova\Fields\Text;
 use Laravel\Nova\Http\Requests\NovaRequest;
 
-class Invoice extends Resource
+class NotaFiscal extends Resource
 {
     /**
      * The model the resource corresponds to.
      *
      * @var string
      */
-    public static $model = \Laravel\Spark\LocalInvoice::class;
+    public static $model = \App\Models\NotaFiscal::class;
 
     /**
      * The single value that should be used to represent the resource when being displayed.
      *
      * @var string
      */
-    public static $title = 'id';
+
+    public function title()
+    {
+        return $this->number . ' - ' . $this->verification_code . ' - '. $this->invoice->user->name;
+    }
 
     /**
      * The columns that should be searched.
@@ -34,7 +38,7 @@ class Invoice extends Resource
      * @var array
      */
     public static $search = [
-        'id', 'provider_id'
+        'id','number' , 'verification_code'
     ];
 
     /**
@@ -47,15 +51,13 @@ class Invoice extends Resource
     {
         return [
             ID::make()->sortable(),
-            BelongsTo::make('User')->nullable(),
-            Currency::make('Total')->currency('BRL'),
-            Text::make('NotaFiscal', function() {
-                return optional($this->notaFiscal)->number .' - '. optional($this->notaFiscal)->verification_code;
-            })->onlyOnIndex(),
-            HasOne::make('NotaFiscal'),
-            Text::make('Provider Id')->hideFromIndex(),
-            DateTime::make('Created_At')->format('DD MMM YYYY')->sortable(),
-            DateTime::make('Updated_At')->format('DD MMM YYYY')->hideFromIndex(),
+            BelongsTo::make('Invoice')->nullable(),
+            Number::make('Number'),
+            Text::make('Verification_Code'),
+            DateTime::make('Emitted_At')->format('DD MMM YYYY')->withMeta(['value' => $this->emitted_at ?? Carbon::now()->toDateString()])->showOnUpdating()->sortable(),
+            DateTime::make('Created_At')->format('DD MMM YYYY')->hideWhenCreating()->sortable(),
+            DateTime::make('Updated_At')->format('DD MMM YYYY')->hideWhenCreating()->hideFromIndex(),
+            Currency::make('Total')->currency('BRL')->nullable(),
         ];
     }
 
