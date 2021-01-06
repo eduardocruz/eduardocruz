@@ -53,7 +53,7 @@ class Invoice extends Resource
                 return optional($this->notaFiscal)->number .' - '. optional($this->notaFiscal)->verification_code;
             })->onlyOnIndex(),
             HasOne::make('NotaFiscal'),
-            Text::make('Provider Id')->hideFromIndex(),
+            Text::make('Provider Id'),
             DateTime::make('Created_At')->format('DD MMM YYYY')->sortable(),
             DateTime::make('Updated_At')->format('DD MMM YYYY')->hideFromIndex(),
         ];
