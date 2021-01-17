@@ -86,6 +86,9 @@
                             <a class="dropdown-item" href="/devops">
                                 <i class="fa fa-fw text-left fa-btn fa-video"></i> DevOps
                             </a>
+                            <a class="dropdown-item" href="/hands-on">
+                                <i class="fa fa-fw text-left fa-btn fa-video"></i>Hands-on
+                            </a>
                             <a class="dropdown-item" href="/technologies">
                                 <i class="fa fa-fw text-left fa-btn fa-check-circle"></i> Tecnologias
                             </a>

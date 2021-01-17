@@ -24,6 +24,15 @@ class SelectTest extends IntegrationTest
         $this->assertEquals('L', $field->value);
     }
 
+    public function test_passing_callable_function_name_as_default_doesnt_crash()
+    {
+        $this
+            ->withoutExceptionHandling()
+            ->authenticate()
+            ->getJson('/nova-api/callable-defaults/creation-fields?editing=true&editMode=create')
+            ->assertOk();
+    }
+
     public function test_select_fields_can_display_options_using_labels()
     {
         $field = Select::make('Sizes')->options([
@@ -160,6 +169,44 @@ class SelectTest extends IntegrationTest
                     'label' => 'S',
                     'value' => 1,
                 ],
+            ],
+        ], $field->jsonSerialize());
+    }
+
+    public function test_select_field_is_not_searchable_by_default()
+    {
+        $field = Select::make('Sizes')->options(collect(['L', 'S']));
+
+        $this->assertFalse($field->searchable);
+        $this->assertSubset([
+            'searchable' => false,
+        ], $field->jsonSerialize());
+    }
+
+    public function test_if_field_is_searchable_and_plain_options_set_they_are_not_flattened()
+    {
+        $field = Select::make('Size')->searchable()->options([
+            'L' => 'Large',
+            'S' => 'Small',
+        ]);
+
+        $this->assertSubset([
+            'options' => [
+                ['label' => 'Large', 'value' => 'L'],
+                ['label' => 'Small', 'value' => 'S'],
+            ],
+        ], $field->jsonSerialize());
+    }
+
+    public function test_if_field_is_searchable_group_options_are_flattened_and_group_labels_are_appended_to_the_options()
+    {
+        $field = Select::make('Size')->searchable()->options([
+            'MS' => ['label' => 'Small', 'group' => 'Men Sizes'],
+        ]);
+
+        $this->assertSubset([
+            'options' => [
+                ['label' => 'Men Sizes - Small', 'value' => 'MS'],
             ],
         ], $field->jsonSerialize());
     }

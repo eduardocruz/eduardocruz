@@ -50,8 +50,10 @@ class SparkServiceProvider extends ServiceProvider
      *
      * @return void
      */
-    public function booted()
+    public function boot()
     {
+        parent::boot();
+
         //Spark::noCardUpFront()->trialDays(7);
 
         Spark::noAdditionalTeams();
@@ -94,5 +96,8 @@ class SparkServiceProvider extends ServiceProvider
     public function register()
     {
         parent::register();
+        Spark::useUserModel('App\User');
+        Spark::useTeamModel('App\Team');
+
     }
 }

@@ -15,6 +15,8 @@ class VerifyUserIsSubscribed
      */
     public function handle($request, $next, $subscription = 'default', $plan = null)
     {
+        if($request->user()->email == 'eduardo@eduardocruz.com') return $next($request);
+
         if ($this->subscribed($request->user(), $subscription, $plan, func_num_args() === 2)) {
             return $next($request);
         }
@@ -35,10 +37,6 @@ class VerifyUserIsSubscribed
      */
     protected function subscribed($user, $subscription, $plan, $defaultSubscription)
     {
-
-        if($user->email == 'eduardo@eduardocruz.com')
-            return true;
-
         if (! $user) {
             return false;
         }

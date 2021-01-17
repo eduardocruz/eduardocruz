@@ -33,7 +33,7 @@
         >&larr;</router-link
       >
 
-      <span class="px-2 text-70">/</span> {{ resourceResponse.name }}
+      <span class="px-2 text-70">/</span> {{ lenseName }}
     </heading>
 
     <card>
@@ -87,9 +87,9 @@
         <div class="flex items-center ml-auto px-3">
           <!-- Action Selector -->
           <action-selector
-            v-if="selectedResources.length > 0"
+            v-if="selectedResources.length > 0 || haveStandaloneActions"
             :resource-name="resourceName"
-            :actions="actions"
+            :actions="availableActions"
             :pivot-actions="pivotActions"
             :pivot-name="pivotName"
             :selected-resources="selectedResourcesForActionSelector"
@@ -112,7 +112,9 @@
             :via-has-one="viaHasOne"
             :trashed="trashed"
             :per-page="perPage"
-            :per-page-options="perPageOptions"
+            :per-page-options="
+              perPageOptions || resourceInformation.perPageOptions
+            "
             :show-trashed-option="
               authorizedToForceDeleteAnyResources ||
               authorizedToRestoreAnyResources
@@ -211,6 +213,7 @@
             :selected-resources="selectedResources"
             :selected-resource-ids="selectedResourceIds"
             :actions-are-available="allActions.length > 0"
+            :actions-endpoint="lensActionEndpoint"
             :should-show-checkboxes="shouldShowCheckBoxes"
             :via-resource="viaResource"
             :via-resource-id="viaResourceId"
@@ -218,6 +221,7 @@
             :relationship-type="relationshipType"
             :update-selection-status="updateSelectionStatus"
             @order="orderByField"
+            @reset-order-by="resetOrderBy"
             @delete="deleteResources"
             @restore="restoreResources"
             @actionExecuted="getResources"
@@ -257,6 +261,7 @@
 
 <script>
 import { Errors, Minimum } from 'laravel-nova'
+import HasActions from '@/mixins/HasActions'
 
 import {
   HasCards,
@@ -270,6 +275,7 @@ import {
 
 export default {
   mixins: [
+    HasActions,
     HasCards,
     Deletable,
     Filterable,
@@ -279,24 +285,35 @@ export default {
     InteractsWithQueryString,
   ],
 
+  metaInfo() {
+    return {
+      title: this.lenseName,
+    }
+  },
+
   props: {
     resourceName: {
       type: String,
       required: true,
     },
+
     viaResource: {
       default: '',
     },
+
     viaResourceId: {
       default: '',
     },
+
     viaRelationship: {
       default: '',
     },
+
     relationshipType: {
       type: String,
       default: '',
     },
+
     lens: {
       type: String,
       required: true,
@@ -317,8 +334,6 @@ export default {
 
     deleteModalOpen: false,
 
-    actions: [],
-    pivotActions: null,
     actionValidationErrors: new Errors(),
 
     authorizedToRelate: false,
@@ -342,8 +357,6 @@ export default {
     this.initializePerPageFromQueryString()
     this.initializeTrashedFromQueryString()
     this.initializeOrderingFromQueryString()
-
-    this.perPage = this.resourceInformation.perPageOptions[0]
 
     await this.initializeFilters(this.lens)
     this.getResources()
@@ -374,7 +387,16 @@ export default {
 
   beforeRouteUpdate(to, from, next) {
     next()
-    this.initializeState(this.lens)
+
+    if (
+      to.params.resourceName === from.params.resourceName &&
+      to.params.lens === from.params.lens
+    ) {
+      this.initializeState(this.lens)
+    } else {
+      this.initializeFilters(this.lens)
+      this.getActions()
+    }
   },
 
   methods: {
@@ -492,13 +514,25 @@ export default {
      * Sort the resources by the given field.
      */
     orderByField(field) {
-      var direction = this.currentOrderByDirection == 'asc' ? 'desc' : 'asc'
-      if (this.currentOrderBy != field.attribute) {
+      let direction = this.currentOrderByDirection == 'asc' ? 'desc' : 'asc'
+
+      if (this.currentOrderBy != field.sortableUriKey) {
         direction = 'asc'
       }
+
       this.updateQueryString({
-        [this.orderByParameter]: field.attribute,
+        [this.orderByParameter]: field.sortableUriKey,
         [this.orderByDirectionParameter]: direction,
+      })
+    },
+
+    /**
+     * Reset the order by to its default state
+     */
+    resetOrderBy(field) {
+      this.updateQueryString({
+        [this.orderByParameter]: field.sortableUriKey,
+        [this.orderByDirectionParameter]: null,
       })
     },
 
@@ -583,7 +617,8 @@ export default {
      */
     initializePerPageFromQueryString() {
       this.perPage =
-        this.$route.query[this.perPageParameter] || _.first(this.perPageOptions)
+        this.$route.query[this.perPageParameter] ||
+        this.resourceInformation.perPageOptions[0]
     },
   },
 
@@ -681,36 +716,6 @@ export default {
     },
 
     /**
-     * Get all of the actions available to the resource.
-     */
-    allActions() {
-      return this.hasPivotActions
-        ? this.actions.concat(this.pivotActions.actions)
-        : this.actions
-    },
-
-    /**
-     * Determine if the resource has any pivot actions available.
-     */
-    hasPivotActions() {
-      return this.pivotActions && this.pivotActions.actions.length > 0
-    },
-
-    /**
-     * Determine if the resource has any actions available.
-     */
-    actionsAreAvailable() {
-      return this.allActions.length > 0
-    },
-
-    /**
-     * Get the name of the pivot model for the resource.
-     */
-    pivotName() {
-      return this.pivotActions ? this.pivotActions.name : ''
-    },
-
-    /**
      * Get the current search value from the query string.
      */
     currentSearch() {
@@ -769,13 +774,6 @@ export default {
      */
     singularName() {
       return this.resourceInformation.singularLabel
-    },
-
-    /**
-     * Get the selected resources for the action selector.
-     */
-    selectedResourcesForActionSelector() {
-      return this.selectAllMatchingChecked ? 'all' : this.selectedResourceIds
     },
 
     /**
@@ -964,6 +962,15 @@ export default {
     perPageOptions() {
       if (this.resourceResponse) {
         return this.resourceResponse.per_page_options
+      }
+    },
+
+    /**
+     * The Lense name.
+     */
+    lenseName() {
+      if (this.resourceResponse) {
+        return this.resourceResponse.name
       }
     },
   },
