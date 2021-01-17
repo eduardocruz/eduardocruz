@@ -121,7 +121,7 @@ class VideoController extends Controller
 
     public function handsOn()
     {
-        $unlockedVideos = Video::whereIn('id', [43])->get();
+        $unlockedVideos = Video::whereIn('id', [71])->get();
         $sectionName = 'Hands-on';
         return view('videos.section', compact('unlockedVideos', 'sectionName'));
     }
