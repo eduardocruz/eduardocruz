@@ -12,16 +12,13 @@
                     </h1>
                 </div>
                 <div class="card-body">
-                    <h4>Eu trabalho como desenvolvedor Laravel para startups americanas. E compartilho conhecimento em aulas semanais.</h4>
+                    <h4>Eu trabalho como desenvolvedor Laravel para startups americanas. Se quer aprender a fazer o mesmo, continue lendo.</h4>
                     <p>
                         Meu nome é Eduardo Cruz, desenvolvedor de software a mais de vinte anos. Desde
                         2013 eu trabalho como desenvolvedor de software usando o framework Laravel, remotamente do Brasil para startups americanas.
                     </p>
                     <p>
-                        Se você quer aprender mais, eu dou aulas semanais ao vivo todas as Segundas-feiras às 20h00.
-                    </p>
-                    <p>
-                        Além das aulas ao vivo, você tem acesso a <strong>{{$video_count}} aulas gravadas, que totalizam {{floor($video_minutes/60)}} horas e {{$video_minutes%60}} minutos de conteúdo sobre diversos temas</strong> (Veja a lista no final da página).
+                        Eu disponibilizei <strong>{{$video_count}} aulas gravadas, que totalizam {{floor($video_minutes/60)}} horas e {{$video_minutes%60}} minutos de conteúdo sobre diversos temas</strong> (Veja a lista no final da página). Nova aulas serão disponibilizadas em breve.
                     </p>
                     <p class="col text-center"><a href="/register" class="btn btn-primary btn-large">Fazer a minha inscrição agora.</a></p>
 
