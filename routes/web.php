@@ -14,7 +14,7 @@
 Route::get('/', 'WelcomeController@show');
 
 Route::get('welcome', 'WelcomeController@welcome');
-//Route::get('inscricoes', 'WelcomeController@inscricoes');
+Route::get('inscricoes', 'WelcomeController@inscricoes');
 
 Route::get('callback/upwork', 'UpworkController@getToken');
 Route::post('callback/upwork', 'UpworkController@getToken');
