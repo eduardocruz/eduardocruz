@@ -73,8 +73,7 @@
                     <p>
                         O processo de incrição é super simples. Os pagamentos são cobrados mensalmente no cartão de crédito.
                         As cobrancas são feitas pelo Stripe (gateway de pagamento).
-                        Após você fazer a sua inscrição você terá acesso imeadiato a sequência de vídeos abaixo. E as Segundas-feiras
-                        você terá acesso as aulas ao vivo.
+                        Após você fazer a sua inscrição você terá acesso imeadiato a sequência de vídeos abaixo.
                     </p>
                     <p class="col text-center"><a href="/register" class="btn btn-primary btn-large">Fazer a minha inscrição agora.</a></p>
 
