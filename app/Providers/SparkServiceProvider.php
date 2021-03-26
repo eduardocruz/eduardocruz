@@ -74,14 +74,14 @@ class SparkServiceProvider extends ServiceProvider
                 'DevOps e muito mais',
                 'Sete dias avaliação(Trial)'
             ]);
-/*
+
         Spark::plan('Mensal Founder', 'plan_HF9ozhVlP1Pgyg')
             ->price(21.67)
             ->archived()
             ->features([
                 'Aulas semanais ao vivo.', 'Acesso a gravação das aulas semanais.', 'Acesso a lives antigas.'
             ]);
-*/
+
         /*
         Spark::plan('Dev Test', 'plan_H3xDm6bX8tWPey')
             ->price(5.00)
