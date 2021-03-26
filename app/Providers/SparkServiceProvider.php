@@ -65,19 +65,23 @@ class SparkServiceProvider extends ServiceProvider
         //Spark::freePlan('Fila de Espera')->features(['Inscreva-se e aguarde novas vagas'])->trialDays(0);
 
         Spark::plan('Mensal', 'plan_HFhocp5DrQZTu7')
-//            ->trialDays(7)
+            ->trialDays(7)
             ->price(43.34)
             ->features([
-                'Aulas semanais ao vivo.', 'Acesso a gravação das aulas semanais.', 'Acesso a lives antigas.'
+                'Dezenas de aulas gravadas com diversos temas.',
+                'Aprendendo a conseguir clientes americanos no Upwork.',
+                'Básico e ecossistema do PHP/Laravel.',
+                'DevOps e muito mais',
+                'Sete dias avaliação(Trial)'
             ]);
-
+/*
         Spark::plan('Mensal Founder', 'plan_HF9ozhVlP1Pgyg')
             ->price(21.67)
             ->archived()
             ->features([
                 'Aulas semanais ao vivo.', 'Acesso a gravação das aulas semanais.', 'Acesso a lives antigas.'
             ]);
-
+*/
         /*
         Spark::plan('Dev Test', 'plan_H3xDm6bX8tWPey')
             ->price(5.00)
