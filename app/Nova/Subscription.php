@@ -5,6 +5,7 @@ namespace App\Nova;
 use Illuminate\Http\Request;
 use Laravel\Nova\Fields\Badge;
 use Laravel\Nova\Fields\BelongsTo;
+use Laravel\Nova\Fields\DateTime;
 use Laravel\Nova\Fields\ID;
 use Laravel\Nova\Fields\Text;
 use Laravel\Nova\Http\Requests\NovaRequest;
@@ -55,6 +56,7 @@ class Subscription extends Resource
             Text::make('Name'),
             Text::make('Stripe Id'),
             Text::make('Stripe Plan'),
+            DateTime::make('Created At')->sortable()
         ];
     }
 
