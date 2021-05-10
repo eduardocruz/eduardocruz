@@ -45,7 +45,7 @@ class Subscription extends Resource
         return [
             ID::make()->sortable(),
             Badge::make('Stripe Status')->map([
-                'past_due' => 'danger',
+                'past_due' => 'warning',
                 'canceled' => 'danger',
                 'unpaid' => 'warning',
                 'incomplete' => 'warning',
@@ -77,7 +77,9 @@ class Subscription extends Resource
      */
     public function filters(Request $request)
     {
-        return [];
+        return [
+            new Filters\SubscriptionStripeStatus
+        ];
     }
 
     /**
