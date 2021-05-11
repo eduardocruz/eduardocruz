@@ -70,4 +70,12 @@ class VideoReleased extends Notification
             ->icon('fa-users')
             ->body('Uma nova aula está disponível: '.$this->video->title);
     }
+    /*
+        $video = App\Models\Video::find(75);
+        $subscriptions = Laravel\Spark\Subscription::where('stripe_status', 'past_due')->get();
+        foreach($subscriptions as $subscription)
+        {
+	        $subscription->user->notify(new App\Notifications\VideoReleased($video));
+        }
+    */
 }
