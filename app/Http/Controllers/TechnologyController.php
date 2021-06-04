@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Checkin;
 use App\Models\Technology;
 use App\User;
+use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
@@ -64,7 +65,9 @@ class TechnologyController extends Controller
         $topUser->totalCheckins = $mainUser->total;
         */
         //$users = $technology->users()->distinct()->get()->except($topUser->id);
-        $users = $technology->users()->distinct()->get()->sortByDesc(function($user) use ($technology)
+        $users = $technology->users()->distinct()->whereHas('subscriptions', function (Builder $query) {
+            $query->whereIn('stripe_status',  ['active', 'trialing']);
+        })->get()->sortByDesc(function($user) use ($technology)
         {
             return $user->checkins()->where('technology_id', $technology->id)->count();
         });
