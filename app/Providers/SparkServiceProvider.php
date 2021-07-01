@@ -64,6 +64,19 @@ class SparkServiceProvider extends ServiceProvider
 
         //Spark::freePlan('Fila de Espera')->features(['Inscreva-se e aguarde novas vagas'])->trialDays(0);
 
+        Spark::plan('Anual', 'plan_HFhq659dFFkfbr')
+            ->trialDays(7)
+            ->price(520.00)
+            ->features([
+                'Dezenas de aulas gravadas com diversos temas.',
+                'Piloto Automático: Módulo prático mostrando desde a criação do servidor na Digital Ocean, até o deploy e cobraça no cartão com Stripe Billing e Laravel Spark',
+                'Aprendendo a conseguir clientes americanos no Upwork.',
+                'Ecossistema do PHP/Laravel.',
+                'DevOps com Laravel Forge, Envoyer e muito mais',
+                'Expatriados: Entrevistas com brasileiros trabalham no exterior',
+                'Sete dias avaliação(Trial)'
+            ]);
+        /*
         Spark::plan('Mensal', 'plan_HFhocp5DrQZTu7')
             ->trialDays(7)
             ->price(43.34)
@@ -74,7 +87,7 @@ class SparkServiceProvider extends ServiceProvider
                 'DevOps e muito mais',
                 'Sete dias avaliação(Trial)'
             ]);
-
+*/
         Spark::plan('Mensal Founder', 'plan_HF9ozhVlP1Pgyg')
             ->price(21.67)
             ->archived()
