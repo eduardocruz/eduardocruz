@@ -76,9 +76,10 @@ class SparkServiceProvider extends ServiceProvider
                 'Expatriados: Entrevistas com brasileiros trabalham no exterior',
                 'Sete dias avaliação(Trial)'
             ]);
-        /*
+
         Spark::plan('Mensal', 'plan_HFhocp5DrQZTu7')
             ->trialDays(7)
+            ->archived()
             ->price(43.34)
             ->features([
                 'Dezenas de aulas gravadas com diversos temas.',
@@ -87,7 +88,7 @@ class SparkServiceProvider extends ServiceProvider
                 'DevOps e muito mais',
                 'Sete dias avaliação(Trial)'
             ]);
-*/
+
         Spark::plan('Mensal Founder', 'plan_HF9ozhVlP1Pgyg')
             ->price(21.67)
             ->archived()
