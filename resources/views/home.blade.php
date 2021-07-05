@@ -6,7 +6,7 @@
         <!-- Application Dashboard -->
 
         <a href="https://us02web.zoom.us/j/85992260489" class="text-center">
-            <h3>05/07/2021 - Aula1 - Projeto Piloto Automático</h3>
+            <h3>05/07/2021 às 20h00 - Aula1 - Projeto Piloto Automático</h3>
         </a>
 
         @if (session('status'))
