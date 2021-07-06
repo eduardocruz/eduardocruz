@@ -64,7 +64,7 @@ class SparkServiceProvider extends ServiceProvider
 
         //Spark::freePlan('Fila de Espera')->features(['Inscreva-se e aguarde novas vagas'])->trialDays(0);
 
-        Spark::plan('Anual', 'plan_HFhq659dFFkfbr')
+        Spark::plan('Anual', 'price_1J9znf48gdCLm2TzuVUq6xRC')
             ->yearly()
             ->trialDays(7)
             ->price(520.00)
