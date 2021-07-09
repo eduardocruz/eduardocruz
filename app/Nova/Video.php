@@ -54,8 +54,10 @@ class Video extends Resource
             Text::make('video_url')->sortable()->hideFromIndex(),
             Text::make('image_url')->sortable()->hideFromIndex(),
             Number::make('Duration')->sortable(),
-            Text::make('Duration_String')->sortable(),
-            DateTime::make('Released_At')->sortable(),
+            Text::make('Duration_String')->sortable()->hideFromIndex(),
+            DateTime::make('Released_At')->sortable()->hideFromIndex(),
+            DateTime::make('Created At')->sortable(),
+            DateTime::make('Updated At')->sortable(),
         ];
     }
 
