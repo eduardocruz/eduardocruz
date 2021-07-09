@@ -146,7 +146,7 @@ class VideoController extends Controller
         {
             abort(403, 'Acesso restrito a alunos do plano anual');
         }
-        $unlockedVideos = Video::whereIn('id', [78])->get();
+        $unlockedVideos = Video::whereIn('id', [78, 79])->orderBy('id', 'asc')->get();
         $sectionName = 'Anual';
 
         return view('videos.section', compact('unlockedVideos', 'sectionName'));
