@@ -70,10 +70,24 @@ class VideoController extends Controller
     public function show(Video $video)
     {
         if(!isset($video->video_url))
+        {
             return abort(403);
+        }
+
 
         if(Spark::usesTeams() && !auth()->user()->hasTeams() && $video->created_at > '2020-04-17 00:00:00')
+        {
             return abort(403);
+        }
+
+
+        if(in_array($video->id, [79]))
+        {
+            if(auth()->user()->subscriptions()->where('stripe_status', 'active')->where('stripe_plan', 'price_1J9znf48gdCLm2TzuVUq6xRC')->count() < 1)
+            {
+                abort(403, 'Acesso restrito a alunos do plano anual');
+            }
+        }
 
         return view('videos.show', compact('video'));
     }
