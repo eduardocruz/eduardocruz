@@ -26,6 +26,7 @@ Route::middleware(['subscribed', 'auth'])->group(function () {
     Route::get('/connect', 'HomeController@connect');
     Route::get('/connected', 'HomeController@connected');
     Route::get('devops', 'VideoController@devOps');
+    Route::get('anual', 'VideoController@anual');
     Route::get('hands-on', 'VideoController@handsOn');
     Route::resource('videos', 'VideoController');
     Route::resource('users', 'UserController');

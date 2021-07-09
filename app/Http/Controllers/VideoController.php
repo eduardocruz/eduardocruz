@@ -125,4 +125,16 @@ class VideoController extends Controller
         $sectionName = 'Hands-on';
         return view('videos.section', compact('unlockedVideos', 'sectionName'));
     }
+
+    public function anual()
+    {
+        if(auth()->user()->subscriptions()->where('stripe_status', 'active')->where('stripe_plan', 'price_1J9znf48gdCLm2TzuVUq6xRC')->count() < 1)
+        {
+            abort(403, 'Acesso restrito a alunos do plano anual');
+        }
+        $unlockedVideos = Video::whereIn('id', [78])->get();
+        $sectionName = 'Anual';
+
+        return view('videos.section', compact('unlockedVideos', 'sectionName'));
+    }
 }
