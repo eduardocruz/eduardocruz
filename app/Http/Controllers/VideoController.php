@@ -81,7 +81,7 @@ class VideoController extends Controller
         }
 
 
-        if(in_array($video->id, [79]))
+        if(in_array($video->id, [79, 80]))
         {
             if(auth()->user()->subscriptions()->where('stripe_status', 'active')->where('stripe_plan', 'price_1J9znf48gdCLm2TzuVUq6xRC')->count() < 1)
             {
@@ -146,7 +146,7 @@ class VideoController extends Controller
         {
             abort(403, 'Acesso restrito a alunos do plano anual');
         }
-        $unlockedVideos = Video::whereIn('id', [78, 79])->orderBy('id', 'asc')->get();
+        $unlockedVideos = Video::whereIn('id', [78, 79, 80])->orderBy('id', 'asc')->get();
         $sectionName = 'Anual';
 
         return view('videos.section', compact('unlockedVideos', 'sectionName'));
