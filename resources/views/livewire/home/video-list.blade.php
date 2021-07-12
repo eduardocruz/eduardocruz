@@ -14,24 +14,30 @@
                         </div>
                         <small class="text-muted">{{$video->duration}} mins</small>
                         --}}
-                        @forelse($video->users()->orderBy('user_video.created_at', 'desc')->get()->take(3) as $user)
-                            <img
-                                src="{{$user->photo_url}}"
-                                class="img-thumbnail rounded-circle rounded-full w-1 h-1 mr-1 mt-1 mx-auto
+                        @if(in_array($video->id, [79, 80]))
+                            Exclusivo do plano Anual
+                        @else
+                            @forelse($video->users()->orderBy('user_video.created_at', 'desc')->get()->take(3) as $user)
+                                <img
+                                    src="{{$user->photo_url}}"
+                                    class="img-thumbnail rounded-circle rounded-full w-1 h-1 mr-1 mt-1 mx-auto
                                 {{$user->status == 'success' ? 'bg-success' : null}}
-                                {{$user->status == 'danger' ? 'bg-danger' : null}}
-                                {{$user->status == 'warning' ? 'bg-warning' : null}}"
-                                width="45"
-                                data-toggle="tooltip"
-                                data-placement="top"
-                                title="{{$user->name}}"
-                                alt="{{$user->name}}"
-                            />
-                        @empty
-                            Seja o primeiro a assistir
-                        @endforelse
-
-                        @if($video->created_at > now()->subDays(7) )
+                                    {{$user->status == 'danger' ? 'bg-danger' : null}}
+                                    {{$user->status == 'warning' ? 'bg-warning' : null}}"
+                                    width="45"
+                                    data-toggle="tooltip"
+                                    data-placement="top"
+                                    title="{{$user->name}}"
+                                    alt="{{$user->name}}"
+                                />
+                            @empty
+                                Seja o primeiro a assistir
+                            @endforelse
+                        @endif
+                        
+                        @if(in_array($video->id, [79, 80]))
+                            <span class="badge badge-success">Anual</span>
+                        @elseif($video->created_at > now()->subDays(7) )
                             <span class="badge badge-danger">Novo</span>
                         @endif
                     </div>
