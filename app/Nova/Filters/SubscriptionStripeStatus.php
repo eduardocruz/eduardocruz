@@ -36,11 +36,12 @@ class SubscriptionStripeStatus extends Filter
     public function options(Request $request)
     {
         return [
+            'Active' => 'active',
+            'Trialing' => 'trialing',
             'Past Due' => 'past_due',
-            'Canceled' => 'canceled',
             'Unpaid' => 'unpaid',
             'Incomplete' => 'incomplete',
-            'Active' => 'active',
+            'Canceled' => 'canceled',
         ];
     }
 }

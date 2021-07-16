@@ -56,7 +56,7 @@ class Subscription extends Resource
             BelongsTo::make('User')->nullable(),
             Text::make('Name'),
             Text::make('Stripe Id'),
-            Text::make('Stripe Plan'),
+            Text::make('Stripe Plan')->sortable(),
             DateTime::make('Created At')->sortable()
         ];
     }
