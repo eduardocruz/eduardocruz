@@ -57,7 +57,9 @@ class Subscription extends Resource
             Text::make('Name'),
             Text::make('Stripe Id'),
             Text::make('Stripe Plan')->sortable(),
-            DateTime::make('Created At')->sortable()
+            DateTime::make('Created At')->sortable(),
+            DateTime::make('Trial Ends At')->sortable(),
+            DateTime::make('Ends At')->sortable()
         ];
     }
 
