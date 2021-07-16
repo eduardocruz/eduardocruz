@@ -49,6 +49,7 @@ class Subscription extends Resource
                 'past_due' => 'warning',
                 'canceled' => 'danger',
                 'unpaid' => 'warning',
+                'trialing' => 'info',
                 'incomplete' => 'warning',
                 'active' => 'success',
             ]),
