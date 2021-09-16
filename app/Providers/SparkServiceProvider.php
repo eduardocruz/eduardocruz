@@ -66,7 +66,7 @@ class SparkServiceProvider extends ServiceProvider
 
         Spark::plan('Anual', 'price_1J9znf48gdCLm2TzuVUq6xRC')
             ->yearly()
-            ->trialDays(7)
+            //->trialDays(7)
             ->price(520.00)
             ->features([
                 'Dezenas de aulas gravadas com diversos temas.',
@@ -81,7 +81,7 @@ class SparkServiceProvider extends ServiceProvider
         Spark::plan('Anual Legacy', 'plan_HFhq659dFFkfbr')
             ->yearly()
             ->archived()
-            ->trialDays(7)
+            //->trialDays(7)
             ->price(520.00)
             ->features([
                 'Dezenas de aulas gravadas com diversos temas.',
@@ -93,15 +93,26 @@ class SparkServiceProvider extends ServiceProvider
                 'Sete dias avaliação(Trial)'
             ]);
 
-        Spark::plan('Mensal', 'plan_HFhocp5DrQZTu7')
-            ->trialDays(7)
+        Spark::plan('Mensal Light', 'plan_HFhocp5DrQZTu7')
+            //->trialDays(7)
             ->price(43.34)
+            ->archived()
             ->features([
                 'Dezenas de aulas gravadas com diversos temas.',
                 'Aprendendo a conseguir clientes americanos no Upwork.',
                 'Básico e ecossistema do PHP/Laravel.',
                 'DevOps e muito mais',
                 'Sete dias avaliação(Trial)'
+            ]);
+
+        Spark::plan('Mensal', 'price_1JaNPG48gdCLm2TzYZZrISOO')
+            //->trialDays(7)
+            ->price(86.68)
+            ->features([
+                'Dezenas de aulas gravadas com diversos temas.',
+                'Aprendendo a conseguir clientes americanos no Upwork.',
+                'Básico e ecossistema do PHP/Laravel.',
+                'DevOps e muito mais'
             ]);
 
         Spark::plan('Mensal Founder', 'plan_HF9ozhVlP1Pgyg')
