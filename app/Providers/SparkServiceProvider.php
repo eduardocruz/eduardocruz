@@ -66,6 +66,7 @@ class SparkServiceProvider extends ServiceProvider
 
         Spark::plan('Anual', 'price_1J9znf48gdCLm2TzuVUq6xRC')
             ->yearly()
+            ->archived()
             //->trialDays(7)
             ->price(520.00)
             ->features([
@@ -83,6 +84,20 @@ class SparkServiceProvider extends ServiceProvider
             ->archived()
             //->trialDays(7)
             ->price(520.00)
+            ->features([
+                'Dezenas de aulas gravadas com diversos temas.',
+                'Piloto Automático: Módulo prático mostrando desde a criação do servidor na Digital Ocean, até o deploy e cobrança no cartão com Stripe Billing e Laravel Spark',
+                'Aprendendo a conseguir clientes americanos no Upwork.',
+                'Ecossistema do PHP/Laravel.',
+                'DevOps com Laravel Forge, Envoyer e muito mais',
+                'Expatriados: Entrevistas com brasileiros trabalham no exterior',
+                'Sete dias avaliação(Trial)'
+            ]);
+
+        Spark::plan('Anual', 'price_1JeVYf48gdCLm2Tz8B5rrsed')
+            ->yearly()
+            //->trialDays(7)
+            ->price(1040.00)
             ->features([
                 'Dezenas de aulas gravadas com diversos temas.',
                 'Piloto Automático: Módulo prático mostrando desde a criação do servidor na Digital Ocean, até o deploy e cobrança no cartão com Stripe Billing e Laravel Spark',
