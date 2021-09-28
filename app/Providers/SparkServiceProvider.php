@@ -122,6 +122,7 @@ class SparkServiceProvider extends ServiceProvider
 
         Spark::plan('Mensal', 'price_1JaNPG48gdCLm2TzYZZrISOO')
             //->trialDays(7)
+            ->archived()
             ->price(86.68)
             ->features([
                 'Dezenas de aulas gravadas com diversos temas.',
