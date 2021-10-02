@@ -74,7 +74,6 @@ class VideoController extends Controller
             return abort(403);
         }
 
-
         if(Spark::usesTeams() && !auth()->user()->hasTeams() && $video->created_at > '2020-04-17 00:00:00')
         {
             return abort(403);
@@ -83,7 +82,7 @@ class VideoController extends Controller
 
         if(in_array($video->id, [79, 80]))
         {
-            if(auth()->user()->subscriptions()->where('stripe_status', 'active')->where('stripe_plan', 'price_1J9znf48gdCLm2TzuVUq6xRC')->count() < 1)
+            if(auth()->user()->subscriptions()->where('stripe_status', 'active')->whereIn('stripe_plan', ['price_1J9znf48gdCLm2TzuVUq6xRC','price_1JeVYf48gdCLm2Tz8B5rrsed' ])->count() < 1)
             {
                 abort(403, 'Acesso restrito a alunos do plano anual');
             }
