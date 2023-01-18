@@ -205,18 +205,15 @@
                 </div>
             @endauth
 
-            {{--
-            <p>Powered by:</p>
-            <div class="flex-center">
-
-                <img src="/images/laravel.svg" alt="" width="100">&nbsp;&nbsp;&nbsp;
-                <img src="/images/vuejs.svg" alt="" width="30">
-                <img src="/images/stripe.svg" alt="" width="80">
-                <img src="/images/digitalocean.svg" alt="" width="50">
-                <img src="/images/twilio.svg" alt="" width="30">
-                <img src="/images/phpstorm.svg" alt="" width="30">
-            </div>
-            --}}
+            <p>Eduardo Cruz is a highly experienced web developer with over 20 years of experience in web development and
+                10 years of experience in Laravel/PHP, working remotely for startups in the US.
+                Currently a web developer at Seek Business Capital and a top-rated freelancer on Upwork.
+                Has held various leadership positions in the past, including Co-Founder of RiSE,
+                an organization focused on Reuse in Software Engineering,
+                and CTO of Mobciti. Has also been an advisor for various startups and organizations,
+                including The RSVP App and Porto Digital. Has a background in software engineering education and
+                has worked as a course coordinator and business manager. Strongly skilled in balancing technical
+                decisions with business goals.</p>
         </div>
 </div>
 
