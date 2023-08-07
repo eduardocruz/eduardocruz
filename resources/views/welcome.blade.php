@@ -213,7 +213,7 @@
                 and CTO of Mobciti. Has also been an advisor for various startups and organizations,
                 including The RSVP App and Porto Digital. Has a background in software engineering education and
                 has worked as a course coordinator and business manager. Strongly skilled in balancing technical
-                decisions with business goals.</p>
+                decisions with business goals!</p>
         </div>
 </div>
 
