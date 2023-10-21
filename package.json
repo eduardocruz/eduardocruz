@@ -4,27 +4,31 @@
     "dev": "cross-env NODE_ENV=development node_modules/webpack/bin/webpack.js --progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js",
     "watch": "cross-env NODE_ENV=development node_modules/webpack/bin/webpack.js --watch --progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js",
     "hot": "cross-env NODE_ENV=development node_modules/webpack-dev-server/bin/webpack-dev-server.js --inline --hot --config=node_modules/laravel-mix/setup/webpack.config.js",
-    "production": "cross-env NODE_ENV=production node_modules/webpack/bin/webpack.js --progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js"
+    "production": "cross-env NODE_ENV=production node_modules/webpack/bin/webpack.js --progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js",
+    "prepare": "npm run snyk-protect",
+    "snyk-protect": "snyk-protect"
   },
   "dependencies": {
     "@fortawesome/fontawesome-free": "^5.13.0",
-    "axios": "^0.18",
+    "axios": "^0.21.3",
     "bootstrap": "^4.1.1",
     "cross-env": "^5.1",
     "dinero.js": "^1.6.0",
     "jquery": "^3.2",
-    "laravel-mix": "^4.0.7",
-    "lodash": "^4.17.4",
-    "moment": "^2.10.6",
+    "laravel-mix": "^6.0.0",
+    "lodash": "^4.17.21",
+    "moment": "^2.29.4",
     "popper.js": "^1.12",
     "promise": "^7.1.1",
-    "resolve-url-loader": "3.1.0",
-    "rtlcss": "^2.2",
+    "resolve-url-loader": "3.1.4",
+    "rtlcss": "^3.0.0",
     "sass": "^1.22.5",
     "sass-loader": "7.*",
     "sweetalert2": "^8.13.6",
-    "urijs": "^1.17.0",
+    "urijs": "^1.19.11",
     "vue": "2.*",
-    "vue-template-compiler": "^2.6.10"
-  }
+    "vue-template-compiler": "^2.6.10",
+    "@snyk/protect": "latest"
+  },
+  "snyk": true
 }
