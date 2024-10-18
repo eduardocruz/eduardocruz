@@ -13,7 +13,7 @@
     "cross-env": "^5.1",
     "dinero.js": "^1.6.0",
     "jquery": "^3.2",
-    "laravel-mix": "^4.0.7",
+    "laravel-mix": "^5.0.8",
     "lodash": "^4.17.4",
     "moment": "^2.10.6",
     "popper.js": "^1.12",
@@ -24,7 +24,7 @@
     "sass-loader": "7.*",
     "sweetalert2": "^8.13.6",
     "urijs": "^1.17.0",
-    "vue": "2.*",
+    "vue": "3.0.0",
     "vue-template-compiler": "^2.6.10"
   }
 }
